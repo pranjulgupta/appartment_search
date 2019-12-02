@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class=" header fixed-top toolbar ">
+    <button mat-button class="navbar-brand" [routerLink]="['/home']">Infy<img class="icons"
+            src="../assets/logo.png">ansions</button>
+    <button mat-button class="nav-link">
+        BUY
+    </button>
+    <button mat-button class="nav-link">
+        SELL
+    </button>
+    <span class="spacing"></span>
+    <!-- This fills the remaining space of the current row -->
+    <span class="spacing"></span>
+    <span *ngIf="userName">
+        Welcome {{userName}}
+    </span>
+    <button mat-button matTooltip="wishlist" class="nav-link">
+        <mat-icon>grade</mat-icon>
+    </button>&nbsp;&nbsp;&nbsp;
+    <button mat-button matTooltip="profile" class="nav-link">
+        <mat-icon>person</mat-icon>
+    </button>
+    <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
+    <button mat-button *ngIf="userName"  class="nav-link">SIGN OUT</button>
+</mat-toolbar>
+<div class="flex-wrapper">
+    <br>
+    <br>
+    <router-outlet class="page-content top-margin"></router-outlet>
+    <br>
+    <br>
+    <footer class="text-white-50 footer fixed-bottom toolbar">
+        <div class="container-fluid">
+            <div class="row">
+                <br>
+                <div class="col-md-2 offset-1 mr-auto">
+                    <span>&copy; InfyMansions</span>
+                </div>
+                <div class="col-md-3 offset-1">
+                    <span>
+                        www.infymansions.com
+                    </span>
+                </div>
+                <div class="col-md-3 offset-1 ml-auto">
+                    <span>Powered by Angular 8.3.3</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </footer>
+</div>
