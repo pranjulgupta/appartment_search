@@ -3,7 +3,7 @@ const Mongoose = require("mongoose")
 Mongoose.Promise = global.Promise;
 Mongoose.set('useCreateIndex', true)
 const url = "mongodb://localhost:27017/InfyMansions_DB";
-collection={}
+collection = {}
 const userSchema = Schema({
     userId: String,
     name: String,
@@ -15,6 +15,89 @@ const userSchema = Schema({
     password: String,
     wishlist: []
 }, { collection: "User" });
+
+const roleSchema = Schema({
+    registeredUsers: [],
+    buyers: [],
+    sellers: []
+}, { collection: "Role" });
+
+const featuresSchema = Schema({
+    propertyType: String,
+    propertyOwnership: String,
+    buildingType: String,
+    noOfBathrooms: Number,
+    noOfBedrooms: Number,
+    noOfBalconies: Number,
+    furnishing: String,
+    availability: String,
+}, { collection: "Features" });
+
+
+const propertySchema = Schema({
+
+    // ids
+    propertyId: String,
+    sellerId: String,
+    buyerId: String,
+    pincode: Number,
+    // features
+    // propertyType: String,
+    // propertyOwnership: String,
+    // buildingType: String,
+    // noOfBathrooms: Number,
+    // noOfBedrooms: Number,
+    // noOfBalconies: Number,
+    // furnishing: String,
+    // availability: String,
+    // amenities
+    lifts: Boolean,
+    ac: Boolean,
+    heater: Boolean,
+    maintenenceStaff: Boolean,
+    visitorParking: Boolean,
+    IntercomFacility: Boolean,
+    wifi: Boolean,
+    fireAlarm: Boolean,
+    WaterPurifier: Boolean,
+    PowerBackup: Boolean,
+    // highlights
+    WaterSupplyFor24Hours: Boolean,
+    CloseToSchool: Boolean,
+    CloseToHospital: Boolean,
+    CloseToRailwayStation: Boolean,
+    CloseToBusStand: Boolean,
+    CloseToAirport: Boolean,
+    CloseToBank: Boolean,
+    CloseToPark: Boolean,
+    // other details
+    status: String,
+    Address: String,
+    price: Number,
+    Advance: Number,
+    transactionType: String,
+    ageOfProperty: String,
+    availabilityBy: String,
+    totalFloors: Number,
+    PropertyFloor: Number,
+    propertyArea: Number,
+    poojaRoom: Boolean,
+    servantRoonm: Boolean,
+    noofCoveredParking: Number,
+    noOfOpenParking: Number,
+    description: String,
+    imageUrls: String,
+    extras: String
+}, { collection: "Property" });
+
+const locationSchema = Schema({
+    propertyIds: [],
+    pincode: Number,
+    area: String,
+    city: String,
+    state: String
+}, { collection: "Location" });
+
 
 collection.getUserCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {
