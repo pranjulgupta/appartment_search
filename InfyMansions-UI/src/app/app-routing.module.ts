@@ -1,20 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
-import { HomeComponent } from './shared/home/home.component';
+import { BuyComponent } from './shared/buy/buy.component';
 const routes: Routes = [
-{
-  path:"login",
-  component:LoginComponent
-},
-{
-  path:"home",
-  component:HomeComponent
-},
-{
-  path:"**", 
-  redirectTo:"home"
-},
+{path:"login",component:LoginComponent},
+{path:"buy",component:BuyComponent},
+{path:"**", redirectTo:"login"}
+
 ];
 
 @NgModule({
