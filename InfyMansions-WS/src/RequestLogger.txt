@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+Tue Dec 03 2019 12:35:29 GMT+0530 (India Standard Time) GET /favicon.ico
+=======
 Tue Dec 03 2019 12:35:44 GMT+0530 (India Standard Time) GET /
 Tue Dec 03 2019 12:35:44 GMT+0530 (India Standard Time) GET /favicon.ico
+<<<<<<< HEAD
 Tue Dec 03 2019 19:43:00 GMT+0530 (India Standard Time) GET /favicon.ico
+=======
+>>>>>>> 174f8d4ebb6d801dd08d9349c1bf4ffce6d8f4d0
+>>>>>>> cac05269f7f746b8eb547bbb0be6d4142eb06674

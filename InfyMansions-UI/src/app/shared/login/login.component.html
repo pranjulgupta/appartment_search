@@ -19,6 +19,7 @@
 
                         <mat-error *ngIf=loginForm.controls.contactEmail.errors class="text-danger" id="ContactEmailError">Enter valid ContactNo/EmailId</mat-error>
                     </mat-form-field>
+                    
                     <mat-form-field class="full-width">
                         <mat-label>Password</mat-label>
                         <input matInput placeholder="Password" formControlName="password"  required name="password" [type]="hide ? 'password' : 'text'">

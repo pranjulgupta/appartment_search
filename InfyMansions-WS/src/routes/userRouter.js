@@ -15,6 +15,12 @@ router.post('/login', function (req, res, next) {
     }).catch(err => next(err));
 })
 
+router.post('/register', function (req, res, next) {
+    const userObj= new User(req.body);
+    userService.addDetails(userObj).then((data)=>{
+        res.json({"message":"Registered successfully "+data});
+    }).catch((err)=>next(err))  
+})
 
 //To Register
 // router.post('/register', function (req, res, next) {

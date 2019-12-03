@@ -37,4 +37,17 @@ userModel.searchUser = ( userId )=> {
         } )
     } )
 }
+
+userModel.addUser=(UserObj)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.create(UserObj).then((userData)=>{
+            if(userData.length==0){
+                return null;
+            }else{
+                return userData;
+            }
+        })
+    })
+}
+
 module.exports = userModel;
