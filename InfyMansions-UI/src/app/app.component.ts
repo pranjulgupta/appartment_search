@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Routes, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',

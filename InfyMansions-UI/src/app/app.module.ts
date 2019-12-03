@@ -7,14 +7,15 @@ import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule}  from '@angular/material';
-import {MatRadioModule}  from '@angular/material';
-import {MatSelectModule}  from '@angular/material';
-import {MatCheckboxModule,MatSidenavModule,MatButtonModule,MatIconModule,MatButtonToggleModule}  from '@angular/material';
+
+
 import { RegisterComponent } from './register/register.component';
 
 
+
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule, MatSelectModule,MatCheckboxModule,MatRadioModule  } from '@angular/material';
+import { MatButtonModule,MatButtonToggleModule,MatIconModule,MatProgressSpinnerModule,MatSidenavModule } from '@angular/material';
 
 
 
@@ -27,23 +28,17 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     BrowserModule,
     MaterialModule,
+    NgModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatInputModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatButtonModule,
-    MatButtonToggleModule
+    MatCheckboxModule,MatRadioModule,MatSelectModule,MatInputModule,
+    MatButtonModule,MatButtonToggleModule,MatIconModule,MatProgressSpinnerModule,MatSidenavModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
