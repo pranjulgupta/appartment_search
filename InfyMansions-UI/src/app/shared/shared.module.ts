@@ -8,11 +8,12 @@ import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '../../../node_modules/@angular/material';
+import { BuyComponent } from './buy/buy.component';
 
 let tobeShared =[MaterialModule]
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, BuyComponent],
   imports: [
     CommonModule,
     MaterialModule, 
