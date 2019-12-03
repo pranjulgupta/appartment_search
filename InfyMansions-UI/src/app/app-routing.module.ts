@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
-import { HomeComponent } from './shared/home/home.component';
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
 {
   path:"login",
