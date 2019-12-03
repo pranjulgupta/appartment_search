@@ -24,5 +24,8 @@ export class AppComponent {
   }
   onActivate(event) {
   }
+  buy(){
+    this.router.navigate(['/buy'])
+  }
   
 }

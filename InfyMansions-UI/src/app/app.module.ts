@@ -1,4 +1,4 @@
-// import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,12 @@ import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import {MatInputModule}  from '@angular/material';
+import {MatRadioModule}  from '@angular/material';
+import {MatSelectModule}  from '@angular/material';
+import {MatCheckboxModule,MatSidenavModule,MatButtonModule,MatIconModule,MatButtonToggleModule}  from '@angular/material';
+
+
 
 
 @NgModule({
@@ -15,15 +21,25 @@ import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/for
   ],
   imports: [
     AppRoutingModule,
-    // BrowserModule,
+    BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
