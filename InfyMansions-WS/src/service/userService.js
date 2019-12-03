@@ -28,6 +28,7 @@ hUserService.checkUser = (emailId, password) => {
     })
 }
 
+
 //To check while registering that whether the login credential already exist or not.If not allow him/her to register
 hUserService.addDetails = (UserObj) => {
 

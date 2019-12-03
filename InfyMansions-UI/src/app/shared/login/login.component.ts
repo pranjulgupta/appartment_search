@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import { LoginService } from './loginService';
 import { log } from 'util';
 import { AppComponent } from '../../app.component';
-import { MatSnackBar } from 'node_modules/@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 
 
