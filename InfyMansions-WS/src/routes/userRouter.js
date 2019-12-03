@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+
 //To login
 router.post('/login', function (req, res, next) {
     let emailId = req.body.emailId;
@@ -14,5 +15,16 @@ router.post('/login', function (req, res, next) {
     }).catch(err => next(err));
 })
 
+
+//To Register
+// router.post('/register', function (req, res, next) {
+//     let emailId = req.body.emailId;
+//     let name = req.body.name;
+//     let contactNo = req.body.contactNo;
+//     let password = req.body.password;
+
+
+
+// } )
 
 module.exports = router;
