@@ -1,0 +1,65 @@
+<!-- <div *ngIf="show"> -->
+    <mat-grid-list cols="4" rowHeight="310px">
+        <!-- <mat-grid-tile [colspan]=1 [rowspan]=1 style="background-color:lightpink">
+            <div>
+                <h1 align="center">Login </h1>
+                <h4 align="center">Get access to your Wishlist and Recommendation</h4>
+            </div>
+        </mat-grid-tile> -->
+    
+        <mat-grid-tile [colspan]=3 [rowspan]=2 style.background="lightblue">
+            <mat-card class="my-card offset-4">
+                <h1 align="center">Register</h1>
+                
+                <mat-card-content>
+                    <form class="my-form" [formGroup]="registerForm" (ngSubmit)="register()">
+    
+                        <mat-form-field class="full-width">
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput placeholder="Name" name="myName" required formControlName="myName">
+                            <mat-error *ngIf="(registerForm.controls.myName.errors?.required || registerForm.controls.myName.errors?.pattern) && registerForm.controls.myName.dirty" class="text-danger" id="myNameError">Name can contain only alphabets and spaces</mat-error>
+                        </mat-form-field> <br>
+
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Email" name="emailId" required formControlName="emailId">
+                            <mat-error *ngIf="(registerForm.controls.emailId.errors?.required || registerForm.controls.emailId.errors?.pattern) && registerForm.controls.emailId.dirty" class="text-danger" id="emailIdError">Enter valid EmailId</mat-error>
+                        </mat-form-field> <br>
+
+
+                        <mat-form-field class="full-width">
+                            <mat-label>ContactNo</mat-label>
+                            <input type="number" matInput placeholder="ContactNo" name="contactNo" required formControlName="contactNo">
+                            <mat-error *ngIf="(registerForm.controls.contactNo.errors?.required || registerForm.controls.contactNo.errors?.pattern) && registerForm.controls.contactNo.dirty" class="text-danger" id="ContactNoError">Enter valid ContactNo</mat-error>
+                        </mat-form-field> <br>
+
+
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password"  required name="password" [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="(registerForm.controls.password.errors?.required || registerForm.controls.password.errors?.pattern) && registerForm.controls.password.errors?.dirty" class="text-danger" id="PasswordError">Enter valid Password</mat-error>
+                          </mat-form-field> <br>
+    
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button [disabled]="registerForm.invalid" (click)="register()" color="primary">REGISTER</button>
+                    <br />
+                    <br />
+    
+                </mat-card-actions>
+                <div *ngIf="errorMessage!=null" class="text-danger">
+                    {{errorMessage}}
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!-- </div> -->
+    
+    <!-- <div *ngIf="key">
+        <app-admin></app-admin>
+    </div> -->

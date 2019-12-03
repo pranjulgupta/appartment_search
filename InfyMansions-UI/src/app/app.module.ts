@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
+
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatSelectModule,MatCheckboxModule,MatRadioModule  } from '@angular/material';
 import { MatButtonModule,MatButtonToggleModule,MatIconModule,MatProgressSpinnerModule,MatSidenavModule } from '@angular/material';
-import { } from '@angular/material';
-import {} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [

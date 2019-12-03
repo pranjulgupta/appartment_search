@@ -7,13 +7,19 @@ import { MaterialModule } from './material/material.module';
 
 import { LoginComponent } from './login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '../../../node_modules/@angular/material';
+
+import { MatDialogModule } from '@angular/material';
+import { RegisterComponent } from './register/register.component';
+
 import { BuyComponent } from './buy/buy.component';
+
 
 let tobeShared =[MaterialModule]
 
 @NgModule({
+
   declarations: [LoginComponent, BuyComponent],
+
   imports: [
     CommonModule,
     MaterialModule, 
