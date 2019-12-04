@@ -1,1 +1,0 @@
-console.log("WELCOME INFY MANSIONS")

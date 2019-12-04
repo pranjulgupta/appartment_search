@@ -9,20 +9,23 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule } from '../../node_modules/@angular/material';
+import { SellComponent } from './sell/sell.component';
+import { RegisterComponent } from './register/register.component';
+import { BuyComponent } from './shared/buy/buy.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent
    
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     MaterialModule,
-    NgModule,
+    // NgModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
