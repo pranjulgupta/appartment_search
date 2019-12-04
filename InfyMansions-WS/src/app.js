@@ -5,9 +5,7 @@ const cors = require("cors")
 const app = express();
 const errorLogger= require('./utilities/ErrorLogger')
 const requestLogger= require('./utilities/RequestLogger')
-<<<<<<< HEAD
-const create= require('./model/dbsetup')
-=======
+
 const create = require('./model/dbsetup')
 >>>>>>> 174f8d4ebb6d801dd08d9349c1bf4ffce6d8f4d0
 
