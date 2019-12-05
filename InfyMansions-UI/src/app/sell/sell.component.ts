@@ -43,4 +43,5 @@ export class SellComponent implements OnInit {
   
   }
 
+    
 }
