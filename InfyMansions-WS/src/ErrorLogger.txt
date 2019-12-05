@@ -68,3 +68,24 @@ ReferenceError: create is not defined
     at cors (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
     at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
 >>>>>>> 174f8d4ebb6d801dd08d9349c1bf4ffce6d8f4d0
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)

@@ -4,6 +4,7 @@ import { LoginComponent } from './shared/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
+import { BuyComponent } from './buy/buy.component';
 
 const routes: Routes = [
 {
@@ -22,6 +23,10 @@ const routes: Routes = [
 {
   path:"sell",
   component:SellComponent
+},
+{
+  path:"buy",
+  component:BuyComponent
 },
 {
   path:"**", 

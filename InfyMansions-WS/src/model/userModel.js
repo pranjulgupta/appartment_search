@@ -50,4 +50,21 @@ userModel.addUser=(UserObj)=>{
     })
 }
 
+
+userModel.propertyDetails = () => {
+    return dbModel.getPropertyCollection().then(model => {
+        return model.find().then(data => {
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+
+            }
+        })
+    })
+}
+
+
+
 module.exports = userModel;

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const userService = require('../service/userService');
+// const propertyService=require('./service/propertyService')
+// const Property=require('model/propertyModel')
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -20,6 +22,39 @@ router.post('/register', function (req, res, next) {
     userService.addDetails(userObj).then((data)=>{
         res.json({"message":"Registered successfully "+data});
     }).catch((err)=>next(err))  
+})
+//buy
+// router.get('/properties', function (req, res, next) {
+//     propertyService.getProperty().then((data)=>{
+//         res.json(data);
+//     }).catch((err)=>next(err))  
+// })
+
+// router.get('/features', function (req, res, next) {
+//     propertyService.getFeature().then((data)=>{
+//         res.json(data);
+//     }).catch((err)=>next(err))  
+// })
+
+router.get('/location', function (req, res, next) {
+    userService.location().then((data)=>{
+        res.json(data);
+    }).catch((err)=>next(err))  
+})
+
+
+// router.get('/buy', function (req, res, next) {
+//     userService.showProperty().then((data)=>{
+//         res.json(data);
+//     }).catch((err)=>next(err))  
+// })
+
+router.get('/buy', function(req,res,next){
+    userService.getPropertyDetails().then(data=>{
+        // console.log(3)
+        console.log(data,3);
+        res.send(data)
+    }).catch(err => next(err));
 })
 
 //To Register
