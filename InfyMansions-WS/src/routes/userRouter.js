@@ -13,6 +13,30 @@ router.post('/login', function (req, res, next) {
         res.json(result);
     }).catch(err => next(err));
 })
+//To get user properties
+router.get('/profile/:emailId',(req,res,next)=>{
+    
+    const emailid=req.params.emailId;
+    console.log(emailid,3);
+    
+    userService.getProfile(emailid).then(data=>{
+        console.log(data)
+        res.json(data)
+    }).catch(err=>{
+        next(err)
+    })
+    
+})
+
+router.get('/properties/:userId',(req,res,next)=>{
+    const userid=req.params.userId
+    console.log(userid);
+    
+    userService.getProperty(userid).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
 
 
 module.exports = router;

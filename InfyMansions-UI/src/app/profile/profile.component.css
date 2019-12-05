@@ -6,3 +6,11 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+  .cardStyle{
+    max-width: 300px;
+
+  }
+  .cardp {
+    border: 5px;
+    box-sizing: border-box; 
+  }

@@ -55,4 +55,34 @@ hUserService.addDetails = (UserObj) => {
     })
 
 }
+//PROFILE COMPONENT
+hUserService.getProfile=(emailid)=>{
+    // console.log(emailid,6);
+    
+    return userdb.viewProfile(emailid).then((data)=>{
+        if(data){
+            console.log(data,1);
+            
+            return data
+        }
+        else{
+            let err=Error("No User");
+            err.status=404;
+            throw err;
+        }
+    })
+}
+
+hUserService.getProperty=(userid)=>{
+    return userdb.postedProperty(userid).then(res=>{
+        if(res){
+            console.log(res)
+            return res
+        }else{
+            let err=Error("No User");
+            err.status=404;
+            throw err;
+        }
+    })
+}
 module.exports = hUserService;
