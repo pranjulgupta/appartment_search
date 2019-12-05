@@ -18,7 +18,7 @@ import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent
    
   ],
   imports: [

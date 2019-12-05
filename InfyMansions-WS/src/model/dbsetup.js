@@ -621,7 +621,7 @@ const propertyDb = [
         noofCoveredParking: false,
         noOfOpenParking: true,
         description: "Recently renovated and restored. Upper Unit - 2 Bedrooms 2 Full Bathroom - New kitchen, appliances, bathroom and flooring - Kitchen appliances included: Refrigerator, Gas Oven/ Range, Dishwasher, Over the Range Microwave - Private Washer and Dryer - 2 driveway parking spaces - All Bedrooms have large closets - 2 minute walk from village center: Restaurants, cafes, shops, bars, festivals, farmers market - Tenant pays Gas and Electricity - Available Immediately - Sorry, no pets Tenant pays gas and electricity",
-        imageUrls: "../../../../assets/house2.jpg",
+        imageUrls: "../../../../assets/house7.jpg",
         extras: "Pets are not allowed"
     },
     {
@@ -729,7 +729,7 @@ const propertyDb = [
         noofCoveredParking: true,
         noOfOpenParking: false,
         description: "Recently renovated and restored. Upper Unit - 2 Bedrooms 2 Full Bathroom - New kitchen, appliances, bathroom and flooring - Kitchen appliances included: Refrigerator, Gas Oven/ Range, Dishwasher, Over the Range Microwave - Private Washer and Dryer - 2 driveway parking spaces - All Bedrooms have large closets - 2 minute walk from village center: Restaurants, cafes, shops, bars, festivals, farmers market - Tenant pays Gas and Electricity - Available Immediately - Sorry, no pets Tenant pays gas and electricity",
-        imageUrls: "../../../assets/house7.jpg",
+        imageUrls: "../../../assets/house2.jpg",
         extras: "Pets are not allowed"
     },
     {
