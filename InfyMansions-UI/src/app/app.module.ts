@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,18 +12,19 @@ import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, Mat
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
 import { BuyComponent } from './buy/buy.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent
    
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule,
+    //BrowserModule,
     MaterialModule,
     // NgModule,
     BrowserAnimationsModule,
