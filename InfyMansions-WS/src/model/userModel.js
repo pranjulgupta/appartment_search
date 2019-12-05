@@ -60,6 +60,7 @@ userModel.viewProfile = (emailid) => {
 }
 
 
+<<<<<<< HEAD
 userModel.postedProperty = (userId) => {
     return dbModel.getPropertyCollection().then((data) => {
         return data.find({ "sellerId": userId }).then((model) => {
@@ -71,9 +72,25 @@ userModel.postedProperty = (userId) => {
                 let err = Error("User not found");
                 err.status = 404;
                 throw err;
+=======
+userModel.propertyDetails = () => {
+    return dbModel.getPropertyCollection().then(model => {
+        return model.find().then(data => {
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+>>>>>>> 823ce17b7ec8eaa8a480d5c5e7b20d0dd917beb5
 
             }
         })
     })
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 823ce17b7ec8eaa8a480d5c5e7b20d0dd917beb5
 module.exports = userModel;

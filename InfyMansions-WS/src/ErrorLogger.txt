@@ -1,4 +1,5 @@
 ReferenceError: create is not defined
+<<<<<<< HEAD
     at app.get (C:\Users\suramyamol.ks\Desktop\fa4\infymansions\InfyMansions-WS\src\app.js:13:5)
     at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
     at next (C:\Users\suramyamol.ks\Desktop\fa4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
@@ -324,4 +325,95 @@ Error: User not found
     at process.internalTickCallback (internal/process/next_tick.js:77:7)
 Error: User not found
     at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+=======
+<<<<<<< HEAD
+    at app.get (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\src\app.js:13:5)
+    at Layer.handle [as handle_request] (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at cors (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
+=======
+    at app.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\app.js:13:5)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at cors (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
+ReferenceError: create is not defined
+    at app.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\app.js:13:5)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at cors (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
+ReferenceError: create is not defined
+    at app.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\app.js:13:5)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at cors (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
+>>>>>>> 174f8d4ebb6d801dd08d9349c1bf4ffce6d8f4d0
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'legth' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:74:17)
+>>>>>>> 823ce17b7ec8eaa8a480d5c5e7b20d0dd917beb5
     at process.internalTickCallback (internal/process/next_tick.js:77:7)

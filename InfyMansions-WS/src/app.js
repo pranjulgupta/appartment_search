@@ -5,7 +5,11 @@ const cors = require("cors")
 const app = express();
 const errorLogger= require('./utilities/ErrorLogger')
 const requestLogger= require('./utilities/RequestLogger')
+<<<<<<< HEAD
 const create=require("./model/dbsetup");
+=======
+const create= require('./model/dbsetup')
+>>>>>>> 823ce17b7ec8eaa8a480d5c5e7b20d0dd917beb5
 
 app.use(cors())
 app.use(bodyParser.json());
