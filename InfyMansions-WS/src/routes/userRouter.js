@@ -3,8 +3,10 @@ const router = express.Router();
 const userService = require('../service/userService');
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
+const propService = require('../service/propertyService')
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+
 
 //To login
 router.post('/login', function (req, res, next) {
@@ -32,5 +34,14 @@ router.post('/register', function (req, res, next) {
 
 
 // } )
+
+//To Sell
+router.post('/sell', function(req, res, next){
+    let data=req.body;
+    propService.addNewProperty(data).then( response => {
+        res.json(response)
+    }).catch( err => next(err))
+
+})
 
 module.exports = router;

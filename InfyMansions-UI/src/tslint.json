@@ -1,17 +1,13 @@
+
 {
-    "extends": "../tslint.json",
-    "rules": {
-        "directive-selector": [
-            true,
-            "attribute",
-            "app",
-            "camelCase"
-        ],
-        "component-selector": [
-            true,
-            "element",
-            "app",
-            "kebab-case"
-        ]
-    }
+	"extends": "tslint:recommended",
+	"rules": {
+	  "only-arrow-functions": true,
+			  "curly": [true, "ignore-same-line"],
+			  "no-empty": true,
+			  "no-empty-interface": true,
+			  "no-var-keyword": true,
+			  "triple-equals": true,
+			  "no-console": [true, "log", "error"]
+  }
 }
