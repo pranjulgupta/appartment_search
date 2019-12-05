@@ -1,0 +1,84 @@
+<br>
+<br>
+<mat-tab-group>
+    <mat-tab label="Personal Details">
+
+
+        <mat-grid-list cols="3" rowHeight="150px">
+            <mat-grid-tile [colspan]=3 [rowspan]=2 style.background="lightblue">
+
+                <mat-card class="example-card">
+
+                    <table class="table">
+                        <tr>
+                            <td>Name :</td>
+                            <td>{{details.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email Id :</td>
+                            <td>{{details.emailId}}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact No:</td>
+                            <td>{{details.contactNo}}</td>
+                        </tr>
+                    </table>
+
+
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </mat-tab>
+
+
+
+
+
+
+     <mat-tab label="Posted Properties">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="cardStyle col-md-3 offset-1"*ngFor= "let e of property">
+                    <br>
+                    <mat-card class="cardp">
+                        <mat-card-header>
+                             <mat-card-title>{{e.price | currency:"INR" : 'symbol'}}</mat-card-title>
+                            <mat-card-subtitle>For {{e.propertyType}}</mat-card-subtitle> 
+                        </mat-card-header>
+                        <div class="text-center">
+                            <img class="img-thumbnail" mat-card-image src="../../assets/house.jpg" alt="A house">
+                        </div>
+                        <mat-card-content>
+                            <table class="text-center" width="250px">
+                                <tr>
+                                     <td>{{e.propertyArea}} sq Ft</td>
+                                    <td>{{e.noOfBedrooms}} BHK House</td> 
+
+                                </tr>
+                                <tr>
+                                    <td>{{e.furnishing}}</td>
+                                    <td>{{e.availability}}</td>
+                                </tr>
+                            </table>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <div class="text-center text-primary">
+                                <button mat-stroked-button (click)="contactOwner(property)">Contact Owner</button>
+                            </div>
+                            <br>
+                            <div class="text-center text-primary">
+                                <button mat-raised-button color="primary" (click)="viewDetails(property)">viewDetails</button>
+                            </div>
+
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+            </div>
+
+    </mat-tab> 
+
+
+</mat-tab-group>
+<br>

@@ -18,12 +18,19 @@ router.post('/login', function (req, res, next) {
         res.json(result);
     }).catch(err => next(err));
 })
-
-router.post('/register', function (req, res, next) {
-    const userObj= new User(req.body);
-    userService.addDetails(userObj).then((data)=>{
-        res.json({"message":"Registered successfully "+data});
-    }).catch((err)=>next(err))  
+//To get user properties
+router.get('/profile/:emailId',(req,res,next)=>{
+    
+    const emailid=req.params.emailId;
+    console.log(emailid,3);
+    
+    userService.getProfile(emailid).then(data=>{
+        console.log(data)
+        res.json(data)
+    }).catch(err=>{
+        next(err)
+    })
+    
 })
 //buy
 // router.get('/properties', function (req, res, next) {
@@ -59,16 +66,16 @@ router.get('/buy', function(req,res,next){
     }).catch(err => next(err));
 })
 
-//To Register
-// router.post('/register', function (req, res, next) {
-//     let emailId = req.body.emailId;
-//     let name = req.body.name;
-//     let contactNo = req.body.contactNo;
-//     let password = req.body.password;
+router.get('/properties/:userId',(req,res,next)=>{
+    const userid=req.params.userId
+    console.log(userid);
+    
+    userService.getProperty(userid).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
 
-
-
-// } )
 
 //To Sell
 router.post('/sell', function(req, res, next){

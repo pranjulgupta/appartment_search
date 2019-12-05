@@ -151,7 +151,7 @@ clear(){
 //   this.guService.getUserbyId(sellerId).subscribe(success=>{
 //     this.ownerDetail=success;
 //     const dialogRef= this.dialog.open(DialogueBoxComponent,{
-//       width:'600pz',height:"125px",
+//       width:'600px',height:"125px",
 //       data:this.ownerDetail,
 //       position:{
 //         left:'400px',
