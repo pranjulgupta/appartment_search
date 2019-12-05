@@ -4,11 +4,16 @@ import { LoginComponent } from './shared/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
 {
   path:"login",
   component:LoginComponent
+},
+{
+  path:"admin",
+  component:AdminComponent
 },
 
 {
@@ -23,11 +28,11 @@ const routes: Routes = [
   path:"sell",
   component:SellComponent
 },
+
 {
   path:"**", 
   redirectTo:"home"
 }
-
 ];
 
 @NgModule({

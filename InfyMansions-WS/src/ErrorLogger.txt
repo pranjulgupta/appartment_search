@@ -68,3 +68,73 @@ ReferenceError: create is not defined
     at cors (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:188:7)
     at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\cors\lib\index.js:224:17
 >>>>>>> 174f8d4ebb6d801dd08d9349c1bf4ffce6d8f4d0
+SyntaxError: Unexpected token { in JSON at position 98
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected token , in JSON at position 93
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected token , in JSON at position 93
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected token , in JSON at position 93
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected token , in JSON at position 93
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected string in JSON at position 34
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)
+SyntaxError: Unexpected token } in JSON at position 93
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:89:19)
+    at C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\read.js:121:18
+    at invokeCallback (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:224:16)
+    at done (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:213:7)
+    at IncomingMessage.onEnd (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\raw-body\index.js:273:7)
+    at IncomingMessage.emit (events.js:182:13)
+    at endReadableNT (_stream_readable.js:1094:12)
+    at process.internalTickCallback (internal/process/next_tick.js:72:19)

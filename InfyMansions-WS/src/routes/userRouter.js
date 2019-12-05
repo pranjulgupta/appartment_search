@@ -22,15 +22,18 @@ router.post('/register', function (req, res, next) {
     }).catch((err)=>next(err))  
 })
 
-//To Register
-// router.post('/register', function (req, res, next) {
-//     let emailId = req.body.emailId;
-//     let name = req.body.name;
-//     let contactNo = req.body.contactNo;
-//     let password = req.body.password;
+router.get('/admin',function(req,res,next){
+    userService.registeredUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
 
+router.delete('admin/:id',function(req,res,next){
+    const Id=req.params.id;
+    userService.deleteUser(Id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
 
-
-// } )
 
 module.exports = router;

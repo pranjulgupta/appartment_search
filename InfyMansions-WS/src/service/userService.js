@@ -31,7 +31,6 @@ hUserService.checkUser = (emailId, password) => {
 
 //To check while registering that whether the login credential already exist or not.If not allow him/her to register
 hUserService.addDetails = (UserObj) => {
-
     return userdb.findUser(UserObj.contactNo, UserObj.emailId).then(object => {
         {
             if (object != null) {
@@ -54,6 +53,30 @@ hUserService.addDetails = (UserObj) => {
             }
         }
     })
-
 }
+
+hUserService.registeredUser=()=>{
+    return userdb.regUser().then(regData=>{
+        if(regData){
+            return regData
+        }else{
+            let err = new Error("User cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+hUserService.deleteUser=(Id)=>{
+    return userdb.delUser(Id).then(delData=>{
+        if(delData==null){
+            let err = new Error("User cannot be deleted");
+            err.status = 404;
+            throw err;
+        }else{
+            return delData;
+        }
+    })
+}
+
 module.exports = hUserService;

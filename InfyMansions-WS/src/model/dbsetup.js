@@ -25,6 +25,7 @@ const userDb = [
     }
 
 ]
+
 exports.setupDb = () => {
     return collection.getUserCollection().then((user) => {
         return user.deleteMany().then(() => {
@@ -39,3 +40,5 @@ exports.setupDb = () => {
         })
     })
 }
+
+

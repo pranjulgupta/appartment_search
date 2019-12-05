@@ -50,4 +50,30 @@ userModel.addUser=(UserObj)=>{
     })
 }
 
+userModel.regUser=()=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({},{_id:0,userId:1,name:1,contactNo:1}).then((regData)=>{
+            if(regData.length==0){
+                return null;
+            }else{
+                return regData;
+            }
+        })
+    })
+}
+
+userModel.delUser=(Id)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.deleteOne({userId:Id}).then(delData=>{
+            if(delData.n>0){
+                return Id;
+            }else{
+                return null;
+            }
+        })
+    })
+}
+
+
+
 module.exports = userModel;

@@ -5,57 +5,138 @@ Mongoose.set('useCreateIndex', true)
 const url = "mongodb://localhost:27017/InfyMansions_DB";
 collection = {}
 const userSchema = Schema({
-    userId: String,
-    name: String,
-    emailId: String,
-    contactNo: Number,
-    city: String,
-    area: String,
-    pincode: Number,
-    password: String,
-    wishlist: []
+    userId:{
+        required: [true, 'This field is Required'],
+        type: String,
+        unique:true
+    },
+    name:{
+        required: [true, 'This field is Required'],
+        type: String
+    },
+    emailId:{
+        required: [true, 'This field is Required'],
+        type: String,
+        unique:true,
+        match:[/^[A-Za-z].+@[A-Za-z]{2,}[.][a-zA-Z]{2,}$/,"Enter a valid Email Id"]
+    },
+    contactNo:{
+        required: [true, 'This field is Required'],
+        type: Number,
+        validate:[(contactNo)=>String(contactNo).length==10,'Contact No should have 10 digits only']
+    },
+    city: {
+        type: String,
+        match:[/^[A-Za-z]{3,}$/,'City must have only characters and must have atleast 3 chars']
+    },
+    area:{
+        type: String,
+        match:[/^.{3,}$/,'Area must have atleast 3 chars']
+    },
+    pincode: {
+        required: [true, 'This field is Required'],
+        type: Number,
+        validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
+    },
+    password: {
+        required: [true, 'This field is Required'],
+        type: String
+    },
+    wishlist:{
+        type: []
+    }
 }, { collection: "User" });
 
 const roleSchema = Schema({
-    registeredUsers: [],
-    buyers: [],
-    sellers: []
+    registeredUsers: {
+        type: []
+    },
+    buyers: {
+        type: []
+    },
+    sellers: {
+        type: []
+    }
 }, { collection: "Role" });
 
 const featuresSchema = Schema({
-    propertyType: String,
-    propertyOwnership: String,
-    buildingType: String,
-    noOfBathrooms: Number,
-    noOfBedrooms: Number,
-    noOfBalconies: Number,
-    furnishing: String,
-    availability: String,
+    propertyIds:{
+        type:[]
+    },
+    propertyType:{
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyType)=>(propertyType=='Sale'|| propertyType=='Rent'),"Property Type must be either 'Sale' or 'Rent'"]
+    }, 
+    propertyOwnership: {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyOwnership)=>(propertyOwnership=='Owner'|| propertyOwnership=='Broker'|| propertyOwnership=='Dealer'),"Ownership must be 'Owner' or 'Dealer' or 'Broker'"]
+    }, 
+    buildingType:  {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(buildingType)=>(buildingType=='House'|| buildingType=='Apartment'),"Building Type must be either 'House' or 'Apartment'"]
+    }, 
+    noOfBathrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBedrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBalconies:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    furnishing: {
+        type:String,
+        validate:[(furnishing)=>(furnishing=='Fully Furnished'|| furnishing=='Semi Furnished'|| furnishing=='Unfurnished'),"Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'"]
+    }, 
+    availability:  {
+        type:String,
+        validate:[(availability)=>(availability=='Ready to move'|| availability=='Under construction'),"Availability must be either 'Ready to move' or 'Under construction'"]
+    }, 
 }, { collection: "Features" });
 
 
 const propertySchema = Schema({
 
     // ids
-    propertyId: String,
-    sellerId: String,
-    buyerId: String,
-    pincode: Number,
-    // features
-    // propertyType: String,
-    // propertyOwnership: String,
-    // buildingType: String,
-    // noOfBathrooms: Number,
-    // noOfBedrooms: Number,
-    // noOfBalconies: Number,
-    // furnishing: String,
-    // availability: String,
-    // amenities
-    lifts: Boolean,
-    ac: Boolean,
-    heater: Boolean,
-    maintenenceStaff: Boolean,
-    visitorParking: Boolean,
+    propertyId: {
+        type:String,
+        required: [true, 'This field is Required'],
+    },
+    sellerId: {
+        type:String,
+        required: [true, 'This field is Required'],
+    }, 
+    buyerId:  {
+        type:String,
+        required: [true, 'This field is Required'],
+    },
+    pincode:  {
+        required: [true, 'This field is Required'],
+        type: Number,
+        validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
+    },
+    lifts:{
+        type: Boolean
+    },
+    ac: {
+        type: Boolean
+    },
+    heater: {
+        type: Boolean
+    },
+    maintenenceStaff: {
+        type: Boolean
+    },
+    visitorParking: {
+        type: Boolean
+        //
+    },
     IntercomFacility: Boolean,
     wifi: Boolean,
     fireAlarm: Boolean,
@@ -72,30 +153,63 @@ const propertySchema = Schema({
     CloseToPark: Boolean,
     // other details
     status: String,
-    Address: String,
-    price: Number,
+    Address: {
+        type: String,
+        required: [true, 'This field is Required'],
+        match:[/^.{3,}$/,'Address must have atleast 3 chars']
+    },
+    price:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
     Advance: Number,
-    transactionType: String,
-    ageOfProperty: String,
+    transactionType: {
+        type:String,
+        validate:[(transactionType)=>(transactionType=='New'||transactionType=='Old'),"Transaction Type must be 'New' or 'Old'"]
+    },
+    ageOfProperty: {
+        type:String,
+    },
     availabilityBy: String,
     totalFloors: Number,
     PropertyFloor: Number,
-    propertyArea: Number,
+    propertyArea:{
+        type: Number,
+        required:[true, 'This is required']
+    },
     poojaRoom: Boolean,
     servantRoonm: Boolean,
     noofCoveredParking: Number,
     noOfOpenParking: Number,
     description: String,
-    imageUrls: String,
+    imageUrls:  {
+        type:String,
+        required: [true, 'This field is Required'],
+    },
     extras: String
 }, { collection: "Property" });
 
 const locationSchema = Schema({
-    propertyIds: [],
-    pincode: Number,
-    area: String,
-    city: String,
-    state: String
+    propertyIds:{
+        type:[]
+    },
+    pincode:{
+        required: [true, 'This field is Required'],
+        type: Number,
+        validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
+    },
+    area:{
+        type: String,
+        match:[/^.{3,}$/,'Area must have atleast 3 chars']
+    },
+    city:{
+        type: String,
+        match:[/^[A-Za-z]{3,}$/,'City must have only characters and must have atleast 3 chars']
+    },
+    state:{
+        type:String,
+        match:[/^[A-Za-z]{3,}$/,'State must have only characters and must have atleast 3 chars']
+    }
 }, { collection: "Location" });
 
 

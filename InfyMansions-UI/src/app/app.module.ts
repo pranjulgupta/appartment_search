@@ -12,13 +12,14 @@ import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, Mat
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
 import { BuyComponent } from './shared/buy/buy.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent
    
   ],
   imports: [
