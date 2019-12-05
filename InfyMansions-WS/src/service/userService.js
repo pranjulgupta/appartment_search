@@ -67,6 +67,7 @@ hUserService.registeredUser=()=>{
     })
 }
 
+
 hUserService.deleteUser=(Id)=>{
     return userdb.delUser(Id).then(delData=>{
         if(delData==null){
@@ -75,6 +76,35 @@ hUserService.deleteUser=(Id)=>{
             throw err;
         }else{
             return delData;
+        }
+    })
+}
+
+
+// hUserService.showProperty=()=>{
+//     return userdb.findProperty().then(object=>{
+//         if(object==null){
+//             let err= new Error("");
+//             err.status=404;
+//             throw err;
+//         }else{
+//             return object
+//         }
+//     })
+// }
+
+hUserService.getPropertyDetails=()=>{
+    return userdb.propertyDetails().then(data=>{
+        console.log(data,33);
+        if(data.length==0){
+            console.log(44);
+            let err = new Error("Error in fetching Properties");
+                err.status = 404;
+                throw err;
+        }
+        else{
+            console.log(data,55);
+            return data
         }
     })
 }

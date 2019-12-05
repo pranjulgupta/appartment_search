@@ -1,3 +1,4 @@
+
 {
 	"extends": "tslint:recommended",
 	"rules": {
@@ -8,4 +9,5 @@
 			  "no-var-keyword": true,
 			  "triple-equals": true,
 			  "no-console": [true, "log", "error"]
-  }}
+  }
+}

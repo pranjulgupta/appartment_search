@@ -11,8 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule } from '../../node_modules/@angular/material';
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
-import { BuyComponent } from './shared/buy/buy.component';
 import { AdminComponent } from './admin/admin.component';
+import { BuyComponent } from './buy/buy.component';
+
 
 
 

@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { AdminComponent } from './admin/admin.component';
+import { BuyComponent } from './buy/buy.component';
 
 const routes: Routes = [
 {
@@ -29,6 +30,10 @@ const routes: Routes = [
   component:SellComponent
 },
 
+{
+  path:"buy",
+  component:BuyComponent
+},
 {
   path:"**", 
   redirectTo:"home"

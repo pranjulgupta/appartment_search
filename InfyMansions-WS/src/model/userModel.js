@@ -50,6 +50,7 @@ userModel.addUser=(UserObj)=>{
     })
 }
 
+
 userModel.regUser=()=>{
     return dbModel.getUserCollection().then(model=>{
         return model.find({},{_id:0,userId:1,name:1,contactNo:1}).then((regData)=>{
@@ -69,6 +70,20 @@ userModel.delUser=(Id)=>{
                 return Id;
             }else{
                 return null;
+            }
+        })
+    })
+}
+
+            
+userModel.propertyDetails = () => {
+    return dbModel.getPropertyCollection().then(model => {
+        return model.find().then(data => {
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
             }
         })
     })

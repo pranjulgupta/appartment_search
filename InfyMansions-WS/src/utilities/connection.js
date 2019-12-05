@@ -104,6 +104,7 @@ const featuresSchema = Schema({
 const propertySchema = Schema({
 
     // ids
+
     propertyId: {
         type:String,
         required: [true, 'This field is Required'],
@@ -137,6 +138,26 @@ const propertySchema = Schema({
         type: Boolean
         //
     },
+
+    propertyId: String,
+    sellerId: String,
+    buyerId: String,
+    pincode: Number,
+    // features
+    propertyType: String,
+    propertyOwnership: String,
+    buildingType: String,
+    noOfBathrooms: Number,
+    noOfBedrooms: Number,
+    noOfBalconies: Number,
+    furnishing: String,
+    availability: String,
+    // amenities
+    lifts: Boolean,
+    ac: Boolean,
+    heater: Boolean,
+    maintenenceStaff: Boolean,
+    visitorParking: Boolean,
     IntercomFacility: Boolean,
     wifi: Boolean,
     fireAlarm: Boolean,
