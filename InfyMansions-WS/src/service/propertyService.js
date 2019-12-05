@@ -1,29 +1,24 @@
-propertyService={}
+const propertydb = require('../model/propertyModel');
+let propService = {}
 
-propertyService.getProperty=()=>{
-    return propertydb.getProperty().then((data)=>{
-        if(data){
-            return data;
-        }
-        else{
-            let error=new error("Properties cannot be fetched");
-            error.status=500;
-            throw error;
+propService.addNewproperty = (dataObj) => {
+    return propertydb.generateId().then(id => {
+        if(id == null){
+            let err = new Error("Property cannot be added! Try Again.")
+            err.status=404;
+            throw err;
+        }else{
+            dataObj.propertyId=id;
+            return propertydb.addNewProperty(dataObj).then( response => {
+                if(response == null){
+                    let err = new Error("Property cannot be added! Try Again.")
+                    err.status=404;
+                    throw err;
+
+                }else{
+                    return response;
+                }
+            })
         }
     })
 }
-
-
-propertyService.getFeature=()=>{
-    return propertydb.getFeature().then((data)=>{
-        if(data){
-            return data;
-        }
-        else{
-            let error=new error("Features cannot be fetched");
-            error.status=500;
-            throw error;
-        }
-    })
-}
-module.exports=propertyService;

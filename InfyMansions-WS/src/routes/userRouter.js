@@ -5,8 +5,10 @@ const userService = require('../service/userService');
 // const Property=require('model/propertyModel')
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
+const propService = require('../service/propertyService')
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+
 
 //To login
 router.post('/login', function (req, res, next) {
@@ -67,5 +69,14 @@ router.get('/buy', function(req,res,next){
 
 
 // } )
+
+//To Sell
+router.post('/sell', function(req, res, next){
+    let data=req.body;
+    propService.addNewProperty(data).then( response => {
+        res.json(response)
+    }).catch( err => next(err))
+
+})
 
 module.exports = router;

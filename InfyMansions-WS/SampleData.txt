@@ -1,6 +1,6 @@
 // user collection 
-const userDb = [
-    {
+const userDb = [ 
+    { 
         wishlist: ["P1001"],
         name: "admin",
         emailId: "admin@gmail.com",
@@ -21,7 +21,7 @@ const userDb = [
         pincode : 123457,
         password : "User@123",
         userId : "U1002"
-    }
+    } 
 
 ]
 // role collection
@@ -33,7 +33,7 @@ const roleDb =
 }
 //property Collection 
 const propertyDb = [
-    {
+    { 
         // ids
         propertyId: "P1001",
         sellerId: "U1001",
@@ -87,7 +87,7 @@ const propertyDb = [
         imageUrls: "../../../assets/house1.jpg",
         extras: "Pets are not allowed"
     },
-    {
+    { 
         // ids
         propertyId: "P1002",
         sellerId: "U1002",
@@ -141,7 +141,7 @@ const propertyDb = [
         imageUrls: "../../../assets/house2.jpg",
         extras: "Pets are not allowed"
     },
-    {
+    { 
         // ids
         propertyId: "P1003",
         sellerId: "U1001",
