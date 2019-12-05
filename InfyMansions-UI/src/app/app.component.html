@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class=" header fixed-top toolbar ">
     <button mat-button class="navbar-brand" [routerLink]="['/home']">Infy<img class="icons"
             src="../assets/logo.png">ansions</button>
-    <button mat-button class="nav-link">
+    <button mat-button class="nav-link" [routerLink]="['/buy']">
         BUY
     </button>
     <button mat-button class="nav-link">
@@ -16,7 +16,7 @@
     <button mat-button matTooltip="wishlist" class="nav-link">
         <mat-icon>grade</mat-icon>
     </button>&nbsp;&nbsp;&nbsp;
-    <button mat-button matTooltip="profile" class="nav-link">
+    <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
         <mat-icon>person</mat-icon>
     </button>
     <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
@@ -28,7 +28,9 @@
     <router-outlet class="page-content top-margin"></router-outlet>
     <br>
     <br>
+</div>
     <footer class="text-white-50 footer fixed-bottom toolbar">
+    <mat-toolbar color="primary">
         <div class="container-fluid">
             <div class="row">
                 <br>
@@ -46,5 +48,6 @@
                 <br>
             </div>
         </div>
+    </mat-toolbar>
     </footer>
-</div>
+

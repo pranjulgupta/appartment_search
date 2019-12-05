@@ -1,0 +1,233 @@
+<br>
+<br>
+<br>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <mat-form-field color="primary" class="example-full-width">
+            <mat-label>Enter Area</mat-label>
+            <input matInput autofocus type="text" matInput>
+            <br>
+
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+
+        <label>Property for :</label>
+        <br>
+        <mat-radio-group>
+            <mat-radio-button value="buy">Buy</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="rent">Rent</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="both">Both</mat-radio-button>&nbsp;&nbsp;
+        </mat-radio-group>
+        <br>
+        <br>
+
+        <label>Property type :</label>
+        <br>
+        <mat-radio-group aria-label="Property for:">
+            <mat-radio-button value="house">House</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="apartments">Apartments</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="both">Both</mat-radio-button>&nbsp;&nbsp;
+        </mat-radio-group>
+        <br>
+        <br>
+        <mat-form-field color="primary" class="example-full-width">
+            <input matInput type="number" matInput placeholder="Bedrooms">
+            <br>
+            <mat-icon class="button-side" matSuffix>king_bed</mat-icon>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <mat-form-field color="primary" class="example-full-width">
+            <input matInput type="number" matInput placeholder="Bathrooms">
+            <br>
+            <mat-icon class="button-side" matSuffix>bathtub</mat-icon>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <mat-form-field color="primary" class="example-full-width">
+            <input matInput type="number" matInput placeholder="Min Amount :">
+            <br>
+        </mat-form-field>
+        <br>
+        <br>
+
+        <mat-form-field color="primary" class="example-full-width">
+            <input matInput type="number" matInput placeholder="Max Amount :">
+            <br>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-button matSuffix mat-icon-button>Clear Field
+
+        </button>
+    </mat-sidenav>
+
+    <!-- <mat-sidenav-content>
+        <mat-grid-list cols="3" rowHeight="1:1.5">
+            <mat-grid-title *ngFor="let property of propertyDb">
+                <mat-card>
+                    <mat-card-header class="card-flex row">
+                        <div class="flx1">
+                            <mat-card-title>
+                                {{property.price|currency:"INR"}}
+                            </mat-card-title>
+                        </div>
+                        <div class="flex-extra"></div>
+                        <div class="flx2">
+                            <mat-card-title>
+                                <mat-icon>favourite_border</mat-icon>
+                            </mat-card-title>
+                        </div>
+
+                    </mat-card-header>
+                    <mat-card-header>
+                        <mat-card-subtitle>For : {{property.propertyType}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="../../../assets/download.jpg" alt=" property1">
+                    <mat-card-content>
+                        <mat-grid-list cols="2" rowHeight="5:0.5">
+                            <mat-grid-tile>{{property.propertyArea}}sq. Ft </mat-grid-tile>
+
+                            <mat-grid-tile>{{property.noOfBedrooms}} BHK House</mat-grid-tile>
+                            <mat-grid-tile>{{property.furnishing}}</mat-grid-tile>
+                            <mat-grid-tile>{{property.availability}} </mat-grid-tile>
+
+                        </mat-grid-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="cardButton">
+                            <button mat-stroked-button color="primary">Contact Owner</button>
+                        </div>
+                        <br>
+                        <div class="cardButton">
+                            <button mat-raised-button color="primary">View Details</button>
+                        </div>
+                    </mat-card-action>
+                </mat-card> -->
+
+                <br>
+                <br>
+                <br>
+                <mat-sidenav-container class="example-container">
+                    <mat-sidenav mode="side" opened>
+                        <mat-form-field color="primary" class="example-full-width">
+                            <mat-label>Enter Area</mat-label>
+                            <input matInput autofocus type="text" matInput>
+                            <br>
+                
+                            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                                <mat-icon>search</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <br>
+                
+                        <label>Property for :</label>
+                        <br>
+                        <mat-radio-group>
+                            <mat-radio-button value="buy">Buy</mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="rent">Rent</mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="both">Both</mat-radio-button>&nbsp;&nbsp;
+                        </mat-radio-group>
+                        <br>
+                        <br>
+                
+                        <label>Property type :</label>
+                        <br>
+                        <mat-radio-group aria-label="Property for:">
+                            <mat-radio-button value="house">House</mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="apartments">Apartments</mat-radio-button>&nbsp;&nbsp;
+                            <mat-radio-button value="both">Both</mat-radio-button>&nbsp;&nbsp;
+                        </mat-radio-group>
+                        <br>
+                        <br>
+                        <mat-form-field color="primary" class="example-full-width">
+                            <input matInput type="number" matInput placeholder="Bedrooms">
+                            <br>
+                            <mat-icon class="button-side" matSuffix>king_bed</mat-icon>
+                        </mat-form-field>
+                        <br>
+                        <br>
+                
+                        <mat-form-field color="primary" class="example-full-width">
+                            <input matInput type="number" matInput placeholder="Bathrooms">
+                            <br>
+                            <mat-icon class="button-side" matSuffix>bathtub</mat-icon>
+                        </mat-form-field>
+                        <br>
+                        <br>
+                
+                        <mat-form-field color="primary" class="example-full-width">
+                            <input matInput type="number" matInput placeholder="Min Amount :">
+                            <br>
+                        </mat-form-field>
+                        <br>
+                        <br>
+                
+                        <mat-form-field color="primary" class="example-full-width">
+                            <input matInput type="number" matInput placeholder="Max Amount :">
+                            <br>
+                        </mat-form-field>
+                        <br>
+                        <br>
+                        <button mat-button matSuffix mat-icon-button>Clear Field
+                
+                        </button>
+                    </mat-sidenav>
+                
+                    <!-- <mat-sidenav-content>
+                        <mat-grid-list cols="3" rowHeight="1:1.5">
+                            <mat-grid-title *ngFor="let property of propertyDb">
+                                <mat-card>
+                                    <mat-card-header class="card-flex row">
+                                        <div class="flx1">
+                                            <mat-card-title>
+                                                {{property.price|currency:"INR"}}
+                                            </mat-card-title>
+                                        </div>
+                                        <div class="flex-extra"></div>
+                                        <div class="flx2">
+                                            <mat-card-title>
+                                                <mat-icon>favourite_border</mat-icon>
+                                            </mat-card-title>
+                                        </div>
+                
+                                    </mat-card-header>
+                                    <mat-card-header>
+                                        <mat-card-subtitle>For : {{property.propertyType}}</mat-card-subtitle>
+                                    </mat-card-header>
+                                    <img mat-card-image src="../../../assets/download.jpg" alt=" property1">
+                                    <mat-card-content>
+                                        <mat-grid-list cols="2" rowHeight="5:0.5">
+                                            <mat-grid-tile>{{property.propertyArea}}sq. Ft </mat-grid-tile>
+                
+                                            <mat-grid-tile>{{property.noOfBedrooms}} BHK House</mat-grid-tile>
+                                            <mat-grid-tile>{{property.furnishing}}</mat-grid-tile>
+                                            <mat-grid-tile>{{property.availability}} </mat-grid-tile>
+                
+                                        </mat-grid-list>
+                                    </mat-card-content>
+                                    <mat-card-actions>
+                                        <div class="cardButton">
+                                            <button mat-stroked-button color="primary">Contact Owner</button>
+                                        </div>
+                                        <br>
+                                        <div class="cardButton">
+                                            <button mat-raised-button color="primary">View Details</button>
+                                        </div>
+                                    </mat-card-action>
+                                </mat-card> -->
+                
+                
+                
+                                   
+                    <!-- </mat-sidenav-content> -->
+                </mat-sidenav-container>
+
+                   
+    <!-- </mat-sidenav-content> -->
+</mat-sidenav-container>

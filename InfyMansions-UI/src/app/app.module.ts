@@ -1,4 +1,4 @@
-// import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,19 +7,22 @@ import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,
-    // BrowserModule,
+    //BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
     FormsModule,
+    // NgModule,
     ReactiveFormsModule
   ],
   providers: [],
