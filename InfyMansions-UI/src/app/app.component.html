@@ -7,9 +7,10 @@
     <button mat-button class="nav-link" [routerLink]="['/sell']" *ngIf="userName">
         SELL
     </button>
-    <button mat-button class="nav-link" [routerLink]="['/sell']" *ngIf="!userName" (click)="sellLogin()">
+    <button mat-button class="nav-link" [routerLink]="['/home']" *ngIf="!userName" (click)="loginSell()">
         SELL
     </button>
+
     <span class="spacing"></span>
     <!-- This fills the remaining space of the current row -->
     <span class="spacing"></span>
@@ -23,7 +24,7 @@
         <mat-icon>person</mat-icon>
     </button>
     <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
-    <button mat-button *ngIf="userName"  class="nav-link">SIGN OUT</button>
+    <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button>
 </mat-toolbar>
 <div class="flex-wrapper">
     <br>
@@ -51,5 +52,6 @@
         </div>
     </mat-toolbar>
 </div>
-    
+   
+
 

@@ -10,15 +10,15 @@
         <mat-grid-tile [colspan]=3 [rowspan]=2 style.background="lightblue">
             <mat-card class="my-card offset-4">
                 <h1 align="center">Register </h1>
-                <mat-card-content>
+                <mat-card-content id="card1">
                     <form class="my-form" [formGroup]="registerForm" (ngSubmit)="register()">
     
                         <mat-form-field class="full-width">
                             <mat-label>Name</mat-label>
-                            <input type="text" matInput placeholder="Name" name="myName" required formControlName="myName">
-                            <mat-error *ngIf="registerForm.controls.myName.errors?.required  && registerForm.controls.myName.dirty" class="text-danger" id="myNameError">Field Required</mat-error>
+                            <input type="text" matInput placeholder="Name" name="name" required formControlName="name">
+                            <mat-error *ngIf="registerForm.controls.name.errors?.required  && registerForm.controls.name.dirty" class="text-danger" id="nameError">Field Required</mat-error>
                             
-                            <mat-error *ngIf="registerForm.controls.myName.errors?.pattern  && registerForm.controls.myName.dirty" class="text-danger" id="myNameError">Name can contain only alphabets and spaces</mat-error>
+                            <mat-error *ngIf="registerForm.controls.name.errors?.pattern  && registerForm.controls.name.dirty" class="text-danger" id="nameError">Name can contain only alphabets and spaces</mat-error>
 
                         </mat-form-field> <br>
 

@@ -55,7 +55,6 @@ openSnackBar(message: string, action: string) {
 login() {
 
   this.validateContactEmail(this.loginForm.value.contactEmail)
-
   this.loginService.login(this.loginForm.value).subscribe(
     (response) => {
       sessionStorage.setItem("contactNo", response.contactNo);

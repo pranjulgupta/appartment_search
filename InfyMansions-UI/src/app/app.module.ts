@@ -10,6 +10,7 @@ import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/for
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule } from '../../node_modules/@angular/material';
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
@@ -17,11 +18,12 @@ import { HomeComponent } from './home/home.component';
 
 
 
+
 @NgModule({
   declarations: [
-    AppComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, HomeComponent
-   
+    AppComponent,HomeComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent
   ],
+  
   imports: [
     AppRoutingModule,
     //BrowserModule,

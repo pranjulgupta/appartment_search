@@ -17,6 +17,11 @@ export class SellComponent implements OnInit {
   availabilityBy=["Anytime", "Within 1 Week", "Within 2 Weeks"]
   errorMessage:String;
 
+  color:'primary';
+  mode='determinate';
+  progressVal=0;
+  
+
 
   constructor(private fb: FormBuilder, private service : SellService, private _snackBar:MatSnackBar) { }
 
@@ -26,10 +31,11 @@ export class SellComponent implements OnInit {
       area:['',Validators.required],
       pincode:['',Validators.required],
       propertyOwnership:['',Validators.required],
+      buildingType:['',Validators.required],
       propertyType:['',Validators.required],
-      noOfBedrooms:['',Validators.required],
-      noOfBathrooms:['',Validators.required],
-      noOfBalconies:['',Validators.required],
+      noOfBedrooms:['',[Validators.required]],
+      noOfBathrooms:['',[Validators.required]],
+      noOfBalconies:['',[Validators.required]],
       price:['',Validators.required],
       transactionType:[''],
       ageOfProperty:[''],
@@ -54,10 +60,7 @@ export class SellComponent implements OnInit {
     return value;
   }
 
-  color:'primary';
-  mode='determinate';
-  value=100;
-
+  
     sell(){
       this.errorMessage=null;
       console.log(this.sellForm.value)
@@ -85,5 +88,12 @@ export class SellComponent implements OnInit {
         horizontalPosition:'center'
       })
 
+    }
+
+    progress(){
+      if(this.progressVal<100){
+        this.progressVal=this.progressVal+10
+      }
+      
     }
 }

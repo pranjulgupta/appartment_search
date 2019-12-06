@@ -1,153 +1,63 @@
-TypeError: userService.propertyviewer is not a function
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:82:17
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:101:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at urlencodedParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\urlencoded.js:82:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-TypeError: userService.propertyviewer is not a function
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:82:17
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:101:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at urlencodedParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\urlencoded.js:82:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-ValidationError: Property validation failed: visitorParking: Cast to Boolean failed for value "" at path "visitorParking", lifts: Cast to Boolean failed for value "" at path "lifts", ac: Cast to Boolean failed for value "" at path "ac", heater: Cast to Boolean failed for value "" at path "heater"
+ValidationError: Property validation failed: imageUrls: This field is Required, buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required, Address: This field is Required
     at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
     at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
-    at model._handleIndex (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
-    at model.Document (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
-    at model.Model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
-    at new model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
-    at toExecute.push.callback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3023:22)
-    at toExecute.forEach (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3059:7)
-    at Array.forEach (<anonymous>)
-    at utils.promiseOrCallback.$wrapCallback.cb (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3058:15)
-    at Promise (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:283:5)
-    at new Promise (<anonymous>)
-    at Object.promiseOrCallback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:282:10)
-    at Function.create (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:2994:16)
-ValidationError: Property validation failed: visitorParking: Cast to Boolean failed for value "" at path "visitorParking", lifts: Cast to Boolean failed for value "" at path "lifts", ac: Cast to Boolean failed for value "" at path "ac", heater: Cast to Boolean failed for value "" at path "heater"
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: imageUrls: This field is Required, buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required, Address: This field is Required
     at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
     at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
-    at model._handleIndex (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
-    at model.Document (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
-    at model.Model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
-    at new model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
-    at toExecute.push.callback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3023:22)
-    at toExecute.forEach (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3059:7)
-    at Array.forEach (<anonymous>)
-    at utils.promiseOrCallback.$wrapCallback.cb (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3058:15)
-    at Promise (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:283:5)
-    at new Promise (<anonymous>)
-    at Object.promiseOrCallback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:282:10)
-    at Function.create (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:2994:16)
-ValidationError: Property validation failed: visitorParking: Cast to Boolean failed for value "" at path "visitorParking", lifts: Cast to Boolean failed for value "" at path "lifts", ac: Cast to Boolean failed for value "" at path "ac", heater: Cast to Boolean failed for value "" at path "heater"
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required
     at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
     at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
-    at model._handleIndex (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
-    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
-    at model.Document (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
-    at model.Model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
-    at new model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
-    at toExecute.push.callback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3023:22)
-    at toExecute.forEach (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3059:7)
-    at Array.forEach (<anonymous>)
-    at utils.promiseOrCallback.$wrapCallback.cb (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3058:15)
-    at Promise (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:283:5)
-    at new Promise (<anonymous>)
-    at Object.promiseOrCallback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:282:10)
-    at Function.create (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:2994:16)
-TypeError: userService.getProfile is not a function
-    at router.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:25:17)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-TypeError: userService.getProperty is not a function
-    at router.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:71:17)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-TypeError: userService.getProperty is not a function
-    at router.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:71:17)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-TypeError: userService.getProfile is not a function
-    at router.get (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:25:17)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
-    at Route.dispatch (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
-    at param (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
-    at jsonParser (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
-    at Layer.handle [as handle_request] (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
-    at trim_prefix (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
-    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
-    at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
-    at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: Building Type must be either 'House' or 'Apartment', transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+Error: Password is Incorrect
+    at userdb.findUser.then.userData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:16:31)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes, Router } from '@angular/router';
-import { MatSnackBar } from '../../node_modules/@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,9 @@ export class AppComponent {
   module = true;
   userLoggedIn;
   userName
-  constructor(private router: Router, private _snackBar: MatSnackBar) {  }
+  constructor(private router: Router, private _snackBar:MatSnackBar) {  }
   ngOnInit() {
-    this.userName = sessionStorage.getItem('name');
-   
+    this.userName = sessionStorage.getItem('name')
   }
   reload(){
     this.ngOnInit()
@@ -36,6 +35,20 @@ export class AppComponent {
   }
 
   loginSell(){
-    this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');
+    this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');}
+
+  buy(){
+    this.router.navigate(['/buy'])
+  }
+
+  
+
+
+  signOut(){
+    sessionStorage.clear();
+    this.openSnackBar('Logged out successfully','Ok');
+    this.ngOnInit();
+    this.router.navigate(['/home']);
+    // this.router.navigate(['/login'])
   }
 }

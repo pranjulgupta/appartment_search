@@ -30,7 +30,6 @@ hUserService.checkUser = (emailId, password) => {
 
 //To check while registering that whether the login credential already exist or not.If not allow him/her to register
 hUserService.addDetails = (UserObj) => {
-
     return userdb.findUser(UserObj.contactNo, UserObj.emailId).then(object => {
         {
             if (object != null) {
@@ -53,8 +52,101 @@ hUserService.addDetails = (UserObj) => {
             }
         }
     })
-
 }
+
+
+//admin
+hUserService.registeredUser=()=>{
+    return userdb.regUser().then(regData=>{
+        if(regData){
+            return regData
+        }else{
+            let err = new Error("User cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.deleteUser=(Id)=>{
+    return userdb.delUser(Id).then(delData=>{
+        if(delData==null){
+            let err = new Error("User cannot be deleted");
+            err.status = 404;
+            throw err;
+        }else{
+            return delData;
+        }
+    })
+}
+
+//admin
+hUserService.buyerUser=()=>{
+    return userdb.buyerView().then(buyData=>{
+        if(buyData){
+            return buyData;
+        }else{
+            let err = new Error("BuyerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.sellerUser=()=>{
+    return userdb.sellerView().then(sellData=>{
+        if(sellData){
+            return sellData;
+        }else{
+            let err = new Error("SellerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.propDetails=()=>{
+    return userdb.propertyView().then(propData=>{
+        if(propData==null){
+            let err = new Error("Property Details cannot be fetched");
+            err.status = 404;
+            throw err;
+        }else{
+            return propData;
+        }
+    })
+}
+
+//admin
+hUserService.deleteProperty=(propId)=>{
+    return userdb.delProp(propId).then(delData=>{
+        if(delData==null){
+            let err = new Error("Property cannot be deleted");
+            err.status = 404;
+            throw err;
+        }else{
+            return delData;
+        }
+    })
+}
+
+//admin
+hUserService.locationProp=()=>{
+    return userdb.loc().then(data=>{
+        if(data){
+            return data;
+        }else{
+            let err = new Error("Location cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+
 // hUserService.showProperty=()=>{
 //     return userdb.findProperty().then(object=>{
 //         if(object==null){
@@ -106,5 +198,7 @@ hUserService.addProperty = (dataObj) => {
         }
     })
 }
+
+
 
 module.exports = hUserService;

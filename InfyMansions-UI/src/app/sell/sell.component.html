@@ -1,291 +1,305 @@
 <div class="container-fluid">
-    <mat-sidenav-container class="example-container">
-        <mat-sidenav opened mode="side">
-                <br/>
-                <div id="sidenav1">
-                    <h4>Instructions to fill the Form:</h4>
-                    <div class="text-left">Please Provide all the details of your properties one by one. Depending upon the values you are give. We will add your property in our Website. </div>
-                    <img id="imgSidenav" src="../../assets/house5.jpg">
+        <mat-sidenav-container class="example-container">
+            <mat-sidenav opened mode="side">
+                    <br/>
+                    <div id="sidenav1">
+                        <h4>Instructions to fill the Form:</h4>
+                        <div class="text-left">Please Provide all the details of your properties one by one. Depending upon the values you are give. We will add your property in our Website. </div>
+                        <img id="imgSidenav" src="../../assets/house5.jpg">
+                    </div>
+                   
+                
+    
+            </mat-sidenav>
+            <mat-sidenav opened mode="side" position="end">
+                <br/><br/><br/>
+                <div class="container-fluid">
+                        <h4>Completion Meter</h4>
+                        <div>It shows how much you fill the form..!</div>
+                        <mat-progress-spinner
+                        class="example-margin"
+                        [color]="color"
+                        [mode]="mode"
+                        [value]="value">
+                    </mat-progress-spinner>
+    
                 </div>
-               
-            
-        </mat-sidenav>
-        <mat-sidenav opened mode="side" position="end">
-            <br/><br/><br/>
-            <div class="container-fluid">
-                    <h4>Completion Meter</h4>
-                    <div>It shows how much you fill the form..!</div>
-                    <mat-progress-spinner
-                    class="example-margin"
-                    [color]="color"
-                    [mode]="mode"
-                    [value]="value">
-                </mat-progress-spinner>
-
-            </div>
-            
-        </mat-sidenav>
-        <mat-sidenav-content>
-
-            <br/>
-            <h2 class="text-center">Post your Property Here!</h2>
-
-            <form [formGroup]="sellForm" (submit)="sell()" id="mainContent">
-                <mat-tab-group #matgroup>
-                    <mat-tab label="First Step">
-                        <div class="example-container">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <mat-form-field >
-                                        <mat-label>Please mention area</mat-label>
-                                        <mat-select formControlName="area">
-                                            <mat-option *ngFor="let i of area" [value]="i">{{i}}</mat-option>
-
-                                        </mat-select>
-                                    </mat-form-field>
+                
+            </mat-sidenav>
+            <mat-sidenav-content>
+    
+                <br/>
+                <h2 class="text-center">Post your Property Here!</h2>
+    
+                <form [formGroup]="sellForm" (submit)="sell()" id="mainContent">
+                    <mat-tab-group #matgroup>
+                        <mat-tab label="First Step">
+                            <div class="example-container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <mat-form-field >
+                                            <mat-label>Please mention area</mat-label>
+                                            <mat-select formControlName="area">
+                                                <mat-option *ngFor="let i of area" [value]="i">{{i}}</mat-option>
+    
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+    
+                                    <div class="col-md-3">
+                                        <mat-form-field>
+                                            <mat-label>Property Pincode</mat-label>
+                                            <mat-select formControlName="pincode">
+                                                <mat-option *ngFor="let i of pincode" [value]="i">{{i}}</mat-option>
+    
+                                            </mat-select>
+                                        </mat-form-field>
+    
+                                    </div>
                                 </div>
-
-                                <div class="col-md-3">
-                                    <mat-form-field>
-                                        <mat-label>Property Pincode</mat-label>
-                                        <mat-select formControlName="pincode">
-                                            <mat-option *ngFor="let i of pincode" [value]="i">{{i}}</mat-option>
-
-                                        </mat-select>
-                                    </mat-form-field>
-
+                                <!-- ############################################################################### -->
+    
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <mat-form-field>
+                                            <mat-label>You are...</mat-label>
+                                            <mat-select formControlName="propertyOwnership">
+                                                <mat-option *ngFor="let i of propertyOwnership" [value]="i">{{i}}</mat-option>
+    
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+    
+                                    <div class="col-md-3">
+                                        <mat-radio-group aria-label="Property For:" formControlName="buildingType">
+                                            <br/>
+                                            <mat-radio-button value="Sale">Sale</mat-radio-button>
+                                            <mat-radio-button value="Rent">Rent</mat-radio-button>
+                                        </mat-radio-group>
+                                    </div>
                                 </div>
+                                <!-- ############################################################################### -->
+    
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <mat-radio-group aria-label="" formControlName="propertyType">
+                                            <br/>
+                                            <mat-radio-button value="Sale">
+                                                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                                                House</mat-radio-button>
+                                            <mat-radio-button value="Rent">
+                                                <mat-icon matSuffix>domain</mat-icon>Appartment</mat-radio-button>
+                                        </mat-radio-group>
+    
+                                    </div>
+                                </div>
+                                <!-- ############################################################################### -->
+    
+                                <div class="row">
+                                    <div class="col-md-4">
+    
+    
+                                        <mat-form-field class="example-full-width">
+                                            <input type="number" matInput placeholder="No. of Bedrooms" formControlName="noOfBedrooms">
+                                            <mat-icon matSuffix>hotel</mat-icon>
+                                        </mat-form-field>
+    
+                                    </div>
+    
+                                    <div class="col-md-4">
+    
+                                        <mat-form-field class="example-full-width" >
+                                            <input type="number" matInput placeholder="No. of Bathrooms" formControlName="noOfBathrooms">
+                                            <mat-icon matSuffix>bathtub</mat-icon>
+                                        </mat-form-field>
+    
+    
+    
+                                    </div>
+    
+                                    <div class="col-md-4">
+    
+                                        <mat-form-field class="example-full-width">
+                                            <input type="number" matInput placeholder="No. of Balconies" formControlName="noOfBalconies">
+                                            <mat-icon matSuffix>home</mat-icon>
+                                        </mat-form-field>
+    
+    
+                                    </div>
+    
+    
+    
+                                </div>
+                                <!-- ############################################################################### -->
+    
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <br/> Price:
+                                        <mat-slider formControlName="price" #propPrice min="20000" max="1000000"></mat-slider> {{propPrice.value}}
+                                    </div>
+                                </div>
+                                <!-- ############################################################################### -->
+    
+                                <div class="row">
+                                      
+                                    <div class="col-md-1">
+                                        <button type="submit" mat-raised-button color="primary"  [disabled]="sellForm.invalid">Post</button>
+                                    </div>
+    
+                                    <div class="col-md-6 offset-1">If you want to add more details, go to step 2</div>
+    
+                                    <div class="col-md-1">
+                                        <button type="button" mat-raised-button color="accent"  [disabled]="sellForm.invalid" (click)="matgroup.selectedIndex=1" >Next</button>
+                                    </div>
+    
+                                </div>
+    
+    
                             </div>
-                            <!-- ############################################################################### -->
-
+                        </mat-tab>
+    
+    
+    
+                        <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+                        <mat-tab label="Second Step">
+    
                             <div class="row">
-                                <div class="col-md-3">
-                                    <mat-form-field>
-                                        <mat-label>You are...</mat-label>
-                                        <mat-select formControlName="propertyOwnership">
-                                            <mat-option *ngFor="let i of propertyOwnership" [value]="i">{{i}}</mat-option>
-
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <mat-radio-group aria-label="">
-                                        <br/>
-                                        <mat-radio-button value="Sale">Sale</mat-radio-button>
-                                        <mat-radio-button value="Rent">Rent</mat-radio-button>
+                                <div class="col-md-8">
+                                    <br/>
+                                    <span matPrefix>Property Status:</span>
+                                    <mat-radio-group formControlName="transactionType">
+                                        <mat-radio-button value="New">New</mat-radio-button>
+                                        <mat-radio-button value="Old">Old</mat-radio-button>
                                     </mat-radio-group>
+    
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
-
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <br/> Age of Property:
+                                    <mat-slider id="ageSlider" formControlName="ageOfProperty" min="1" max="20" #propAge></mat-slider> {{propAge.value}} Years
+                                </div>
+                            </div>
+                            <!-- ############################################################################### -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <mat-form-field>
+                                        <mat-label>Select the availability</mat-label>
+                                        <mat-select formControlName="availabilityBy">
+                                            <mat-option *ngFor="let i of availabilityBy" [value]="i">{{i}}</mat-option>
+    
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <!-- ############################################################################### -->
+                            <div class="row">
+                                <div class="col-md-8">
+    
+                                    <mat-radio-group formControlName="furnishing">
+                                        <mat-radio-button value="Fully Furnished">Fully Furnished</mat-radio-button>
+                                        <mat-radio-button value="Semi Furnished">Semi Furnished</mat-radio-button>
+                                        <mat-radio-button value="Unfurnished">Unfurnished</mat-radio-button>
+                                    </mat-radio-group>
+    
+                                </div>
+                            </div>
+                            <!-- ############################################################################### -->
+    
+                            <div class="row">
+                                <div class="col-md-8">
+    
+                                    <mat-radio-group formControlName="furnishing">
+                                        <mat-radio-button value="Ready to Move">Ready to Move</mat-radio-button>
+                                        <mat-radio-button value="Under Construction">Under Construction</mat-radio-button>
+    
+                                    </mat-radio-group>
+    
+                                </div>
+                            </div>
+                            <!-- ############################################################################### -->
                             <div class="row">
                                 <div class="col-md-5">
-                                    <mat-radio-group aria-label="" formControlName="propertyType">
-                                        <br/>
-                                        <mat-radio-button value="Sale">
-                                            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-                                            House</mat-radio-button>
-                                        <mat-radio-button value="Rent">
-                                            <mat-icon matSuffix>domain</mat-icon>Appartment</mat-radio-button>
-                                    </mat-radio-group>
-
+                                    <mat-slide-toggle id="slideToggler" #park class="example-margin" >Parking</mat-slide-toggle>
+                                    <div *ngIf="park.checked">
+                                        <mat-slide-toggle formControlName="noOfOpenParking" value="1">Open Parking</mat-slide-toggle>
+                                        <mat-slide-toggle formControlName="noOfCoveredParking" value="1">Covered Parking</mat-slide-toggle>
+                                    </div>
+    
+    
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
-
+    
                             <div class="row">
-                                <div class="col-md-4">
-
-
-                                    <mat-form-field class="example-full-width">
-                                        <input type="number" matInput placeholder="No. of Bedrooms" formControlName="noOfBedrooms">
-                                        <mat-icon matSuffix>hotel</mat-icon>
-                                    </mat-form-field>
-
-                                </div>
-
-                                <div class="col-md-4">
-
-                                    <mat-form-field class="example-full-width" >
-                                        <input type="number" matInput placeholder="No. of Bathrooms" formControlName="noOfBathrooms">
-                                        <mat-icon matSuffix>bathtub</mat-icon>
-                                    </mat-form-field>
-
-
-
-                                </div>
-
-                                <div class="col-md-4">
-
-                                    <mat-form-field class="example-full-width">
-                                        <input type="number" matInput placeholder="No. of Balconies" formControlName="noOfBalconies">
-                                        <mat-icon matSuffix>home</mat-icon>
-                                    </mat-form-field>
-
-
-                                </div>
-
-
-
-                            </div>
-                            <!-- ############################################################################### -->
-
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <br/> Price:
-                                    <mat-slider formControlName="price" #propPrice min="20000" max="1000000"></mat-slider> {{propPrice.value}}
+                                <div class="col-md-12">
+                                    <br/> Area:
+                                    <mat-slider id="ageSlider" formControlName="propertyArea"></mat-slider> Sq.feets
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
-
                             <div class="row">
-                                  
-                                <div class="col-md-1">
-                                    <button type="submit" mat-raised-button color="primary"  [disabled]="sellForm.invalid">Post</button>
-                                </div>
-
-                                <div class="col-md-6 offset-1">If you want to add more details, go to step 2</div>
-
-                                <div class="col-md-1">
-                                    <button type="button" mat-raised-button color="accent"  [disabled]="sellForm.invalid" (click)="matgroup.selectedIndex=1" >Next</button>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </mat-tab>
-
-
-
-                    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-                    <mat-tab label="Second Step">
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <br/>
-                                <span matPrefix>Property Status:</span>
-                                <mat-radio-group formControlName="transactionType">
-                                    <mat-radio-button value="New">New</mat-radio-button>
-                                    <mat-radio-button value="Old">Old</mat-radio-button>
-                                </mat-radio-group>
-
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <br/> Age of Property:
-                                <mat-slider id="ageSlider" formControlName="ageOfProperty" min="1" max="20" #propAge></mat-slider> {{propAge.value}} Years
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="col-md-3">
-                                <mat-form-field>
-                                    <mat-label>Select the availability</mat-label>
-                                    <mat-select formControlName="availabilityBy">
-                                        <mat-option *ngFor="let i of availabilityBy" [value]="i">{{i}}</mat-option>
-
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="col-md-8">
-
-                                <mat-radio-group formControlName="furnishing">
-                                    <mat-radio-button value="Fully Furnished">Fully Furnished</mat-radio-button>
-                                    <mat-radio-button value="Semi Furnished">Semi Furnished</mat-radio-button>
-                                    <mat-radio-button value="Unfurnished">Unfurnished</mat-radio-button>
-                                </mat-radio-group>
-
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-
-                        <div class="row">
-                            <div class="col-md-8">
-
-                                <mat-radio-group formControlName="furnishing">
-                                    <mat-radio-button value="Ready to Move">Ready to Move</mat-radio-button>
-                                    <mat-radio-button value="Under Construction">Under Construction</mat-radio-button>
-
-                                </mat-radio-group>
-
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="col-md-2">
-                                <mat-slide-toggle id="slideToggler" #park class="example-margin" >Parking</mat-slide-toggle>
-                                <div *ngIf="park.checked">
-                                    <mat-slide-toggle formControlName="noOfOpenParking" value="1">Open Parking</mat-slide-toggle>
-                                    <mat-slide-toggle formControlName="noOfCoveredParking" value="1">Covered Parking</mat-slide-toggle>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <br/> Area:
-                                <mat-slider id="ageSlider" formControlName="propertyArea"></mat-slider> Sq.feets
-                            </div>
-                        </div>
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="col-md-2">
-                                <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="lifts">Lifts</mat-slide-toggle>
-                            </div>
-                            <div class="col-md-2">
-                                <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="ac">AC</mat-slide-toggle>
-                            </div>
-                            <div class="col-md-3">
-                                <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="heater">Water Heater</mat-slide-toggle>
-                            </div>
-
-
-                        </div>
-                        <!-- ############################################################################### -->
-
-                        <div class="row">
-                            <div class="col-md-2">
-                                <mat-form-field>
-                                    <textarea matInput placeholder="Enter Property's Full Address" formControlName="Address"></textarea>
-                                </mat-form-field>
-                            </div>
-                        </div>
-
-                        <!-- ############################################################################### -->
-                        <div class="row">
-                            <div class="example-button-row">
                                 <div class="col-md-2">
+                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="lifts">Lifts</mat-slide-toggle>
+                                </div>
+                                <div class="col-md-2">
+                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="ac">AC</mat-slide-toggle>
+                                </div>
+                                <div class="col-md-3">
+                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="heater">Water Heater</mat-slide-toggle>
+                                </div>
+    
+    
+                            </div>
+                            <!-- ############################################################################### -->
+    
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <mat-form-field>
+                                        <textarea matInput placeholder="Enter Property's Full Address" formControlName="Address"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+    
+                            <!-- ############################################################################### -->
+                            <div class="row">
+                                                       
+                                                            
+                                <div class="col-md-4">
                                     <button type="submit" class="example-button-row" mat-raised-button color="primary">Post</button>
-                                </div>
-
-                                <div class="col-md-2">
-                                        <button type="button" id="btnPrev" (click)="matgroup.selectedIndex=0" mat-raised-button color="accent">Previous</button>
-                                </div>
-                                
-                                
-                                
+                                 </div>
+                                        
+                                <div class="col-md-4">
+                                    <button type="button" id="btnPrev" (click)="matgroup.selectedIndex=0" mat-raised-button color="accent">Previous</button>
+                                </div>  
                             </div>
-
-                            <div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
-                        </div>
-
-                    </mat-tab>
-
-                </mat-tab-group>
-            </form>
-        </mat-sidenav-content>
-
-    </mat-sidenav-container>
-
-
-</div>
+    
+                              <!-- ############################################################################### -->
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
+                                        
+                                    </div>
+                                </div>
+                                
+                               
+                                                           
+                                                           
+                                                            
+                                                            
+                                                       
+                            
+                            
+    
+                        </mat-tab>
+    
+                    </mat-tab-group>
+                </form>
+            </mat-sidenav-content>
+    
+        </mat-sidenav-container>
+    
+    
+    </div>
+    
