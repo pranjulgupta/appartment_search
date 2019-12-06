@@ -519,3 +519,15 @@ TypeError: userService.getProperty is not a function
     at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
     at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
     at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+Error: Property not found
+    at model.findOne.then (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:49:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Property not found
+    at model.findOne.then (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:49:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Property not found
+    at model.findOne.then (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:49:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Property not found
+    at model.findOne.then (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:49:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)

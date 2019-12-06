@@ -13,7 +13,7 @@ export class AppComponent {
   userName
   constructor(private router: Router) {  }
   ngOnInit() {
-   
+    this.userName = sessionStorage.getItem('name');
   }
   reload(){
     this.ngOnInit()

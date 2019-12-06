@@ -13,17 +13,11 @@ import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
-
-
-
+import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent
-=======
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent
->>>>>>> 6a97d2c21ea8f1b703ac9221f13685c34a78fbd0
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, ViewDetailsComponent
    
   ],
   imports: [

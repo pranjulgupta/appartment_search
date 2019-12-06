@@ -67,6 +67,22 @@ hUserService.addDetails = (UserObj) => {
 //     })
 // }
 
+hUserService.getViewDetails=(id)=>{
+    return userdb.viewDetails(id).then((data)=>{
+        if(data){
+            console.log(data,2222)
+            return data;
+        }
+        else{
+            let err = new Error("Error in fetching View Details");
+                err.status = 404;
+                throw err;
+
+        }
+    })
+}
+
+
 hUserService.getPropertyDetails=()=>{
     return userdb.propertyDetails().then(data=>{
         console.log(data,33);

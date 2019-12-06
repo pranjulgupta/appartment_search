@@ -38,6 +38,21 @@ userModel.searchUser = (userId) => {
     })
 }
 
+userModel.viewDetails = (id) => {
+    return dbModel.getPropertyCollection().then(model => {
+
+        return model.findOne({ "propertyId": id }).then((data) => {
+
+            if (data) {
+                return data;
+            } else {
+                let err = Error("Property not found");
+                err.status = 404;
+                throw err;
+            }
+        })
+    })
+}
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);

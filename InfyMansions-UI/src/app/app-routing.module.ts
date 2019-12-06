@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewDetailsComponent } from './viewDetails/view-details.component';
 
 const routes: Routes = [
  
@@ -21,6 +22,10 @@ const routes: Routes = [
 {
   path:"home",
   component:HomeComponent
+},
+{
+  path:"view/:query",
+  component:ViewDetailsComponent
 },
 {
   path:"sell",

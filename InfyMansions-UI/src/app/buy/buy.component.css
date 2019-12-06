@@ -71,6 +71,12 @@ mat-sidenav{
   }
   .card-img{
     border-radius: 10px 10px 10px 10px;
+    border-color:green;
+  }
+  .card-img:hover{
+    border:solid;
+    border-color:green;
+    /* scale: 1.5%; */
   }
   
   .my-card{
