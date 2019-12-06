@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-  
-
-=======
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 const collection = require('../utilities/connection');
 
 const userDb = [
@@ -30,11 +25,6 @@ const userDb = [
     }
 
 ]
-<<<<<<< HEAD
-const locationDb=[]
-const featureDb = []
-const roleDb =[]
-=======
 
 
 
@@ -58,7 +48,6 @@ const featuresDb =
     availability: "Ready to move",
 }
 
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 
 //property Collection 
 const propertyDb = [

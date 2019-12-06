@@ -14,11 +14,7 @@ export class AppComponent {
   userName
   constructor(private router: Router, private _snackBar:MatSnackBar) {  }
   ngOnInit() {
-<<<<<<< HEAD
-    this.userName = sessionStorage.getItem('name');
-=======
     this.userName = sessionStorage.getItem('name')
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
   }
   reload(){
     this.ngOnInit()
