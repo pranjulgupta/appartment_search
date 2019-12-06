@@ -1,0 +1,111 @@
+<br>
+<div class="container-fluid">
+    <h3 class="text-center">Welcome Admin</h3>
+    <mat-tab-group>
+            <mat-tab label="Registered Users"> 
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <br>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Name</th>
+                                    <th>Contact No</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let r of regData'>
+                                    <td>{{r.userId}}</td>
+                                    <td>{{r.name}}</td>
+                                    <td>{{r.contactNo}}</td>
+                                    <td>
+                                        <button type="button" (click)='deleteReg(r.userId)' class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Buyers">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <br>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Name</th>
+                                    <th>Contact No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let b of buyerData">
+                                    <td>{{b.userId}}</td>
+                                    <td>{{b.name}}</td>
+                                    <td>{{b.contactNo}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Sellers" >
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <br>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Name</th>
+                                    <th>Contact No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let s of sellerData">
+                                    <td>{{s.userId}}</td>
+                                    <td>{{s.name}}</td>
+                                    <td>{{s.contactNo}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Properties"> 
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <br>
+                            <br>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Property Id</th>
+                                        <th>Seller Id</th>
+                                        <th>Buyer Id</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of propData'>
+                                        <td>{{p.propertyId}}</td>
+                                        <td>{{p.sellerId}}</td>
+                                        <td>{{p.buyerId}}</td>
+                                        <td>
+                                            <button type="button"  class="btn btn-danger" (click)='deleteProp(p.propertyId)' >Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </mat-tab>
+    </mat-tab-group>
+</div>

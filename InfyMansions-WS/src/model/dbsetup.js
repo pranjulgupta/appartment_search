@@ -1,5 +1,8 @@
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 const collection = require('../utilities/connection');
 
 const userDb = [
@@ -27,9 +30,35 @@ const userDb = [
     }
 
 ]
+<<<<<<< HEAD
 const locationDb=[]
 const featureDb = []
 const roleDb =[]
+=======
+
+
+
+// role collection
+const roleDb =
+{
+    registeredUsers: ["U1002"],
+    buyers: ["U1002"],
+    sellers: ["U1001"]
+}
+
+const featuresDb =
+{
+    propertyType: "Rent",
+    propertyOwnership: "Owner",
+    buildingType: "House",
+    noOfBathrooms: 2,
+    noOfBedrooms: 2,
+    noOfBalconies: 1,
+    furnishing: "Fully Furnished",
+    availability: "Ready to move",
+}
+
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 
 //property Collection 
 const propertyDb = [
@@ -359,92 +388,91 @@ const propertyDb = [
     }
 ]
 
+//location Collection
+const locationDb = [
+    {
+        "propertyIds": ["P1001", "P1002"],
+        "pincode": 570001,
+        "area": "Mandimohalla",
+        "city": "Mysore",
+        "state": "KARNATAKA"
+    },
+    {
+        "propertyIds": ["P1002"],
+        "pincode": 570001,
+        "area": "Krishna Rajendra Circle",
+        "city": "Mysore",
+        "state": "KARNATAKA"
+    },
+    {
+        "pincode": 570001,
+        "area": "Mysore",
+        "city": "Mysore",
+        "state": "KARNATAKA"
+    },
+    {
+        "pincode": 570002,
+        "area": "Vani Vilas Mohalla",
+        "city": "Mysore",
+        "state": "KARNATAKA"
+    }
+]
+
 
 
 exports.setupDb = () => {
-    // return collection.getUserCollection().then((user) => {
-    //     return user.deleteMany().then(() => {
-    //         return user.insertMany(userDb).then((data) => {
-    //             if (data) {
-    //                 return collection.getLocationCollection().then((location) => {
-    //                     return location.deleteMany().then(() => {
-    //                         return location.insertMany(locationDb).then((data) => {
-    //                             if (data) {
-    //                                 return collection.getPropertyCollection().then((property) => {
-    //                                     return property.deleteMany().then(() => {
-    //                                         return property.insertMany(propertyDb).then((data) => {
-    //                                             if (data) {
-    //                                                 console.log(data);
-    //                                                 return collection.getRoleCollection().then((role) => {
-    //                                                     return property.deleteMany().then(() => {
-    //                                                         return role.insertMany(roleDb).then((data) => {
-    //                                                             if (data) {
-    //                                                                 return collection.getFeaturesCollection().then((feature) => {
-    //                                                                     return feature.deleteMany().then(() => {
-    //                                                                         return feature.insertMany(featureDb).then((data) => {
-    //                                                                             if (data) {
-    //                                                                                 return "Insertion Successfull"
-    //                                                                             }
-    //                                                                             else {
-    //                                                                                 let err = new Error("Insertion Failed");
-    //                                                                                 err.status = 500;
-    //                                                                                 throw err;
-    //                                                                             }
-    //                                                                         })
-
-    //                                                                     })
-    //                                                                 })
-    //                                                             } else {
-    //                                                                 let err = new Error("Insertion Failed");
-    //                                                                 err.status = 500;
-    //                                                                 throw err;
-    //                                                             }
-    //                                                         })
-
-    //                                                     })
-    //                                                 })
-    //                                             } else {
-    //                                                 let err = new Error("Insertion Failed");
-    //                                                 err.status = 500;
-    //                                                 throw err;
-    //                                             }
-    //                                         })
-    //                                     })
-
-    //                                 })
-    //                             } else {
-    //                                 let err = new Error("Insertion Failed");
-    //                                 err.status = 500;
-    //                                 throw err;
-    //                             }
-    //                         })
-    //                     })
-
-
-    //                 })
-    //             } else {
-    //                 let err = new Error("Insertion Failed");
-    //                 err.status = 500;
-    //                 throw err;
-    //             }
-
-    //         })
-    //     })
-    // })
-
-    return collection.getPropertyCollection().then((property) => {
-        return property.deleteMany().then(() => {
-            return property.insertMany(propertyDb).then((data) => {
+    return collection.getUserCollection().then((user) => {
+        return user.deleteMany().then(() => {
+            return user.insertMany(userDb).then((data) => {
                 if (data) {
-                    return collection.getUserCollection().then((user) => {
+                    return collection.getRoleCollection().then((user) => {
                         return user.deleteMany().then(() => {
-                            return user.insertMany(userDb).then((data) => {
+                            return user.insertMany(roleDb).then((data) => {
                                 if (data) {
-                                    return "Insertion Successfull"
+                                    return collection.getLocationCollection().then((user) => {
+                                        return user.deleteMany().then(() => {
+                                            return user.insertMany(locationDb).then((data) => {
+                                                if (data) {
+                                                    return collection.getFeaturesCollection().then((user) => {
+                                                        return user.deleteMany().then(() => {
+                                                            return user.insertMany(featuresDb).then((data) => {
+                                                                if (data) {
+                                                                    return collection.getPropertyCollection().then((user) => {
+                                                                        return user.deleteMany().then(() => {
+                                                                            return user.insertMany(propertyDb).then((data) => {
+                                                                                if (data) {
+                                                                                    return "Insertion Successfull"
+                                                                                }
+                                                                                else {
+                                                                                    let err = new Error("Insertion failed");
+                                                                                    err.status = 400;
+                                                                                    throw err;
+                                                                                }
+                                                                            })
+                                                                        })
+                                                                    })
+                                                                }
+                                                                else {
+                                                                    let err = new Error("Insertion failed");
+                                                                    err.status = 400;
+                                                                    throw err;
+                                                                }
+                                                            })
+                                                        })
+                                                    })
+                                                }
+                                                else {
+                                                    let err = new Error("Insertion failed");
+                                                    err.status = 400;
+                                                    throw err;
+                                                }
+                                            })
+                                        })
+                                    })
                                 }
                                 else {
-                                    let err = new Error("Insertion Failed");
-                                    err.status = 500;
+                                    let err = new Error("Insertion failed");
+                                    err.status = 400;
                                     throw err;
                                 }
                             })
@@ -452,12 +480,17 @@ exports.setupDb = () => {
                     })
                 }
                 else {
-                    let err = new Error("Insertion Failed");
-                    err.status = 500;
+                    let err = new Error("Insertion failed");
+                    err.status = 400;
                     throw err;
                 }
             })
         })
     })
-
 }
+
+
+
+
+
+

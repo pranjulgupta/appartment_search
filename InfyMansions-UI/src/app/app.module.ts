@@ -11,15 +11,22 @@ import { HomeComponent } from './home/home.component';
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule } from '../../node_modules/@angular/material';
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
+
 @NgModule({
   declarations: [
+<<<<<<< HEAD
     AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, ViewDetailsComponent
    
+=======
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
   ],
+  
   imports: [
     AppRoutingModule,
     //BrowserModule,

@@ -38,6 +38,7 @@ userModel.searchUser = (userId) => {
     })
 }
 
+<<<<<<< HEAD
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -49,10 +50,27 @@ userModel.viewDetails = (id) => {
                 let err = Error("Property not found");
                 err.status = 404;
                 throw err;
+=======
+
+userModel.addUser= (UserObj)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.create(UserObj).then(userData=>{
+            if(userData.length==0){
+                return null;
+            }else{
+                return userData;
+                
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
             }
         })
     })
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);
@@ -75,6 +93,33 @@ userModel.viewProfile = (emailid) => {
 }
 
 
+//admin
+userModel.regUser=()=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({},{_id:0,userId:1,name:1,contactNo:1}).then((regData)=>{
+            if(regData.length==0){
+                return null;
+            }else{
+                return regData;
+            }
+        })
+    })
+}
+
+//admin
+userModel.delUser=(Id)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.deleteOne({userId:Id}).then(delData=>{
+            if(delData.deletedCount>0){
+                return Id;
+            }else{
+                return null;
+            }
+        })
+    })
+}
+
+            
 userModel.propertyDetails = () => {
     return dbModel.getPropertyCollection().then(model => {
         return model.find().then(data => {
@@ -83,12 +128,84 @@ userModel.propertyDetails = () => {
             } else {
                 console.log(data, 99);
                 return data
-
             }
         })
     })
 }
 
+//admin
+userModel.buyerView=()=>{
+    return dbModel.getRoleCollection().then(model=>{
+        return model.findOne({},{buyers:1,_id:0}).then(buyerData=>{
+            return dbModel.getUserCollection().then(umodel=>{
+                return umodel.find({userId:{$in:buyerData.buyers}}).then(userData=>{
+                    if(userData.length>0){
+                        return userData;
+                    }else{
+                        return null;
+                    }
+                })
+            })
+        })
+    })
+}
+
+//admin
+userModel.sellerView=()=>{
+    return dbModel.getRoleCollection().then(model=>{
+        return model.findOne({},{sellers:1,_id:0}).then(sellerData=>{
+            return dbModel.getUserCollection().then(umodel=>{
+                return umodel.find({userId:{$in:sellerData.sellers}}).then(userData=>{
+                    if(userData.length>0){
+                        return userData;
+                    }else{
+                        return null;
+                    }
+                })
+            })
+        })
+    })
+}
+
+//admin
+userModel.propertyView=()=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({},{_id:0,propertyId:1,sellerId:1,buyerId:1}).then(propdata=>{
+            if(propdata.length==0){
+                return null;
+            }else{
+                return propdata;
+            }
+        })
+    })
+}
+
+//admin
+userModel.delProp=(propId)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.deleteOne({propertyId:propId}).then(delData=>{
+            if(delData.deletedCount>0){
+                return propId;
+            }else{
+                return null;
+            }
+        })
+    })
+}
+
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+            }
+        })
+    })
+}
 
 
 module.exports = userModel;
