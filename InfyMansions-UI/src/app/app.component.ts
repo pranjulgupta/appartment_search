@@ -14,7 +14,7 @@ export class AppComponent {
   userName
   constructor(private router: Router, private _snackBar:MatSnackBar) {  }
   ngOnInit() {
-   
+    this.userName = sessionStorage.getItem('name')
   }
   reload(){
     this.ngOnInit()
@@ -41,9 +41,9 @@ export class AppComponent {
 
   signOut(){
     sessionStorage.clear();
+    this.openSnackBar('Logged out successfully','Ok');
     this.ngOnInit();
     this.router.navigate(['/home']);
-    this.openSnackBar('Logged out successfully','Ok');
-    this.router.navigate(['/login'])
+    // this.router.navigate(['/login'])
   }
 }

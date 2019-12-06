@@ -20,7 +20,7 @@
         <mat-icon>person</mat-icon>
     </button>
     <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
-    <button mat-button *ngIf="userName" (click)="signOut()"  class="nav-link">SIGN OUT</button>
+    <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button>
 </mat-toolbar>
 <div class="flex-wrapper">
     <br>
