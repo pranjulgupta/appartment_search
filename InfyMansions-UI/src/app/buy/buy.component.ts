@@ -42,12 +42,9 @@ export class BuyComponent implements OnInit {
 
 
 
- 
 
 
-
-
-  constructor(private gpService: GetpropertyService,private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
+  constructor(private gd:SharedServService,private gpService: GetpropertyService,private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
   // public dialog:MatDialog, privateServ:DialogService
 
  
@@ -70,18 +67,7 @@ export class BuyComponent implements OnInit {
         })
     }
 
-//     buyFilter(data) {
-//           this.buyArr = []
-//           for (let i of this.tempArr) {
-//             if (data == i.propertyType) {
-//               this.buyArr.push(i)
-//             }
-//           }
-//           if(this.buyArr){
-//             this.propertyDb=this.buyArr
-//           }
-//           else return null;
-// }
+
 filter(){
   this.filtered = this.propertyDb;
   if (this.areaFilter) {
@@ -185,7 +171,8 @@ popup(data){
 }
 
 reroute(property){
-  this.router.navigate(['/view',property.propertyId])
+  this.gd.getDescription(property);
+  this.router.navigate(['/view'])
 }
 
 }

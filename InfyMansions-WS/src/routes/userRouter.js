@@ -130,9 +130,9 @@ router.get('/properties/:userId',(req,res,next)=>{
         next(err))
 })
 
-router.get('/view/:id',(req,res,next)=>{
+router.get('/view',(req,res,next)=>{
     const id=req.params.id;
-    console.log(id);
+    console.log(id,11);
     
     userService.getViewDetails(id).then(result=>{
         res.json(result)

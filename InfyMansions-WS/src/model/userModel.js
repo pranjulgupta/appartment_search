@@ -38,7 +38,6 @@ userModel.searchUser = (userId) => {
     })
 }
 
-<<<<<<< HEAD
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -49,8 +48,12 @@ userModel.viewDetails = (id) => {
             } else {
                 let err = Error("Property not found");
                 err.status = 404;
-                throw err;
-=======
+                throw err;  
+             }
+            })
+        })
+    }
+
 
 userModel.addUser= (UserObj)=>{
     return dbModel.getUserCollection().then(model=>{
@@ -60,17 +63,14 @@ userModel.addUser= (UserObj)=>{
             }else{
                 return userData;
                 
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
             }
         })
     })
 }
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);

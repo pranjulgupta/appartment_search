@@ -15,16 +15,25 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchView(){
-    this.service.serachLoc().subscribe(
-      resp=>{
-        this.successData=resp
-      },
-      err=>{
-        this.errorMessage=err.error.message
-      }
-    )
+  // searchView(){
+  //   this.service.serachLoc().subscribe(
+  //     resp=>{
+  //       this.successData=resp
+  //     },
+  //     err=>{
+  //       this.errorMessage=err.error.message
+  //     }
+  //   )
+  // }
+
+  down(event,value:string){
+    if(event.key==="Enter"){
+      sessionStorage.setItem("PreviousUrl","/home");
+      sessionStorage.setItem("search",value.toString());
+      this.router.navigate(['/buy']);
+    }
   }
+
   buy(){
     this.router.navigate(['/buy'])
   }
