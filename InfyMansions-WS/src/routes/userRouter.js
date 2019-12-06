@@ -19,14 +19,28 @@ router.post('/login', function (req, res, next) {
     }).catch(err => next(err));
 })
 
+
 router.post('/register', function (req, res, next) {
     const userObj= req.body;
     userService.addDetails(userObj).then((data)=>{
-
         console.log(data)
         res.json({"message":"Registered successfully with User Id: "+data.userId});
     }).catch((err)=>next(err))
 })
+
+
+//To get user properties
+router.get('/profile/:emailId',(req,res,next)=>{
+    const emailid=req.params.emailId;
+    console.log(emailid,3);
+    userService.getProfile(emailid).then(data=>{
+        console.log(data)
+        res.json(data)
+    }).catch(err=>{
+        next(err)
+    })
+})
+
 //buy
 // router.get('/properties', function (req, res, next) {
 //     propertyService.getProperty().then((data)=>{
@@ -60,6 +74,7 @@ router.get('/buy', function(req,res,next){
         res.send(data)
     }).catch(err => next(err));
 })
+
 
 router.get('/admin',function(req,res,next){
     userService.registeredUser().then((data)=>{
@@ -103,6 +118,16 @@ router.get('/search',function(req,res,next){
     userService.locationProp().then((data)=>{
         res.json(data)
     }).catch((err)=>next(err))
+})
+
+router.get('/properties/:userId',(req,res,next)=>{
+    const userid=req.params.userId
+    console.log(userid);
+    
+    userService.getProperty(userid).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
 })
 
 

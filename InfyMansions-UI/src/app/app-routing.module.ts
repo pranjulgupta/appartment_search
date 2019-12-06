@@ -6,8 +6,10 @@ import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
+ 
 {
   path:"login",
   component:LoginComponent
@@ -33,6 +35,10 @@ const routes: Routes = [
 {
   path:"buy",
   component:BuyComponent
+},
+{
+  path:"profile",
+  component: ProfileComponent
 },
 {
   path:"**", 

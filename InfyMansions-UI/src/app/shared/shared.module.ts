@@ -7,7 +7,9 @@ import { MaterialModule } from './material/material.module';
 
 import { LoginComponent } from './login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule } from '../../../node_modules/@angular/material';
+
+
 
 let tobeShared =[MaterialModule]
 

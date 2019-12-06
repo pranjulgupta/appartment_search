@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -20,12 +21,12 @@ import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent
-   
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent
   ],
+  
   imports: [
     AppRoutingModule,
-    BrowserModule,
+    //BrowserModule,
     MaterialModule,
     // NgModule,
     BrowserAnimationsModule,

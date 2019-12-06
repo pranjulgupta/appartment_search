@@ -3,7 +3,7 @@ const Mongoose = require("mongoose")
 Mongoose.Promise = global.Promise;
 Mongoose.set('useCreateIndex', true)
 const url = "mongodb://localhost:27017/InfyMansions_DB";
-collection = {}
+collection={}
 const userSchema = Schema({
     userId:{
         required: [true, 'This field is Required'],
@@ -47,16 +47,11 @@ const userSchema = Schema({
 }, { collection: "User" });
 
 const roleSchema = Schema({
-    registeredUsers: {
-        type: []
-    },
-    buyers: {
-        type: []
-    },
-    sellers: {
-        type: []
-    }
-}, { collection: "Role" });
+    registeredUsers: [],
+        buyers: [],
+        sellers: []
+}, { collection: "Role"});
+
 
 const featuresSchema = Schema({
     propertyIds:{
@@ -119,6 +114,41 @@ const propertySchema = Schema({
         type: Number,
         validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
     },
+    propertyType:{
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyType)=>(propertyType=='Sale'|| propertyType=='Rent'),"Property Type must be either 'Sale' or 'Rent'"]
+    }, 
+    propertyOwnership: {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyOwnership)=>(propertyOwnership=='Owner'|| propertyOwnership=='Broker'|| propertyOwnership=='Dealer'),"Ownership must be 'Owner' or 'Dealer' or 'Broker'"]
+    }, 
+    buildingType:  {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(buildingType)=>(buildingType=='House'|| buildingType=='Apartment'),"Building Type must be either 'House' or 'Apartment'"]
+    }, 
+    noOfBathrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBedrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBalconies:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    furnishing: {
+        type:String,
+        validate:[(furnishing)=>(furnishing=='Fully Furnished'|| furnishing=='Semi Furnished'|| furnishing=='Unfurnished'),"Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'"]
+    }, 
+    availability:  {
+        type:String,
+        validate:[(availability)=>(availability=='Ready to move'|| availability=='Under construction'),"Availability must be either 'Ready to move' or 'Under construction'"]
+    }, 
     lifts:{
         type: Boolean
     },
@@ -135,31 +165,11 @@ const propertySchema = Schema({
         type: Boolean
         //
     },
-    propertyId: String,
-    sellerId: String,
-    buyerId: String,
-    pincode: Number,
-    // features
-    propertyType: String,
-    propertyOwnership: String,
-    buildingType: String,
-    noOfBathrooms: Number,
-    noOfBedrooms: Number,
-    noOfBalconies: Number,
-    furnishing: String,
-    availability: String,
-    // amenities
-    lifts: Boolean,
-    ac: Boolean,
-    heater: Boolean,
-    maintenenceStaff: Boolean,
-    visitorParking: Boolean,
     IntercomFacility: Boolean,
     wifi: Boolean,
     fireAlarm: Boolean,
     WaterPurifier: Boolean,
     PowerBackup: Boolean,
-    // highlights
     WaterSupplyFor24Hours: Boolean,
     CloseToSchool: Boolean,
     CloseToHospital: Boolean,
@@ -168,8 +178,7 @@ const propertySchema = Schema({
     CloseToAirport: Boolean,
     CloseToBank: Boolean,
     CloseToPark: Boolean,
-    // other details
-    status: String,
+    status: String, 
     Address: {
         type: String,
         required: [true, 'This field is Required'],
@@ -229,6 +238,11 @@ const locationSchema = Schema({
     }
 }, { collection: "Location" });
 
+        
+    
+    
+
+
 
 collection.getUserCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {
@@ -239,6 +253,7 @@ collection.getUserCollection = () => {
         throw err;
     })
 }
+console.log(collection.getUserCollection())
 
 collection.getLocationCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {

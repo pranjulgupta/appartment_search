@@ -24,6 +24,7 @@ export class AppComponent {
   }
   onActivate(event) {
   }
+
   buy(){
     this.router.navigate(['/buy'])
   }
@@ -45,5 +46,4 @@ export class AppComponent {
     this.openSnackBar('Logged out successfully','Ok');
     this.router.navigate(['/login'])
   }
-  
 }
