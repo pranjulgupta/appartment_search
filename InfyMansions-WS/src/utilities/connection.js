@@ -34,7 +34,6 @@ const userSchema = Schema({
         match:[/^.{3,}$/,'Area must have atleast 3 chars']
     },
     pincode: {
-        required: [true, 'This field is Required'],
         type: Number,
         validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
     },
@@ -102,9 +101,7 @@ const featuresSchema = Schema({
 
 
 const propertySchema = Schema({
-
     // ids
-
     propertyId: {
         type:String,
         required: [true, 'This field is Required'],
@@ -138,7 +135,6 @@ const propertySchema = Schema({
         type: Boolean
         //
     },
-
     propertyId: String,
     sellerId: String,
     buyerId: String,

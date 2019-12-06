@@ -8,29 +8,61 @@ import { AdminService } from './admin.service';
 })
 export class AdminComponent implements OnInit {
   errorMessage:String;
-  successMessage:String[];
+  regData:String[];
+  propData:String[];
+  buyerData:String[];
+  sellerData:String[];
   constructor(private service:AdminService) { }
 
   ngOnInit() {
-    this.regView();
+    this.adminView();
   }
 
-  regView(){
+  adminView(){
+
     this.service.regUser().subscribe(
       resp=>{
-        this.successMessage=resp
+        this.regData=resp
       },
       err=>{
         this.errorMessage=err.error.message
       }
     )
+
+    this.service.propData().subscribe(
+      resp=>{
+        this.propData=resp
+      },
+      err=>{
+        this.errorMessage=err.error.message
+      }
+    )
+
+    this.service.buyer().subscribe(
+      resp=>{
+        this.buyerData=resp
+      },
+      err=>{
+        this.errorMessage=err.error.message
+      }
+    )
+
+    this.service.seller().subscribe(
+      resp=>{
+        this.sellerData=resp
+      },
+      err=>{
+        this.errorMessage=err.error.message
+      }
+    )
+
   }
 
   deleteReg(userId){
     this.service.delUser(userId).subscribe(
       resp=>{
-        this.successMessage=resp
-        this.regView();
+        // this.successMessage=resp
+        this.adminView();
       },
       err=>{
         this.errorMessage=err.error.message
@@ -38,6 +70,19 @@ export class AdminComponent implements OnInit {
     )
   }
 
+  deleteProp(propId){
+    this.service.delProp(propId).subscribe(
+      resp=>{
+        // this.successMessage=resp
+        this.adminView();
+      },
+      err=>{
+        this.errorMessage=err.error.message
+      }
+    )
+  }
+
+  
 
 
 }

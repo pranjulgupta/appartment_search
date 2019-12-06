@@ -17,7 +17,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor='let r of successMessage'>
+                                <tr *ngFor='let r of regData'>
                                     <td>{{r.userId}}</td>
                                     <td>{{r.name}}</td>
                                     <td>{{r.contactNo}}</td>
@@ -45,17 +45,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr *ngFor="let b of buyerData">
+                                    <td>{{b.userId}}</td>
+                                    <td>{{b.name}}</td>
+                                    <td>{{b.contactNo}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </mat-tab>
-            <mat-tab label="Sellers">
+            <mat-tab label="Sellers" >
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <br>
@@ -69,10 +69,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr *ngFor="let s of sellerData">
+                                    <td>{{s.userId}}</td>
+                                    <td>{{s.name}}</td>
+                                    <td>{{s.contactNo}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -94,31 +94,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                    <tr *ngFor='let p of propData'>
+                                        <td>{{p.propertyId}}</td>
+                                        <td>{{p.sellerId}}</td>
+                                        <td>{{p.buyerId}}</td>
+                                        <td>
+                                            <button type="button"  class="btn btn-danger" (click)='deleteProp(p.propertyId)' >Delete</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </mat-tab>
-
-
-
-
-
-
-          </mat-tab-group>
-          
-    
-
-
-
-
-
-
-
+    </mat-tab-group>
 </div>

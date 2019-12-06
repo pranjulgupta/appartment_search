@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0, 0)
     this.registerForm = this.fb.group({
-      myName:['',[Validators.required, Validators.pattern(/[^ ][a-zA-Z]{1,}$/)]],
+      name:['',[Validators.required, Validators.pattern(/[^ ][a-zA-Z]{1,}$/)]],
       emailId: ['', [Validators.required, Validators.pattern(/^([a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?)|[7-9][0-9]{9}$/)]],
       contactNo:['',[Validators.required,Validators.pattern(/[1-9]{1}[0-9]{9}/)]],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{7,20}$/)]]
@@ -48,19 +48,12 @@ export class RegisterComponent implements OnInit {
   register() {
     this.registerService.register(this.registerForm.value).subscribe(  
       (response) => {
-        sessionStorage.setItem("contactNo", response.contactNo);
-        sessionStorage.setItem("userId", response.userId);
-        sessionStorage.setItem("emailId", response.emailId);
-        sessionStorage.setItem("name", response.name);
-        this.openSnackBar('Registered successfully', 'Ok');
-        this.router.navigate(['/home'])
-        this.errorMessage = null;
-        this.app.reload()
+        this.openSnackBar(response.message, 'Ok');
+        this.router.navigate(['/home']);
       },
       (errorResponse) => {
        //console.log(errorResponse);
-        this.errorMessage = errorResponse.error.message;
-        sessionStorage.clear();
+       this.openSnackBar(errorResponse.error.message,'Ok');
       }
     )
   };

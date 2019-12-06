@@ -20,10 +20,12 @@ router.post('/login', function (req, res, next) {
 })
 
 router.post('/register', function (req, res, next) {
-    const userObj= new User(req.body);
+    const userObj= req.body;
     userService.addDetails(userObj).then((data)=>{
-        res.json({"message":"Registered successfully "+data});
-    }).catch((err)=>next(err))  
+
+        console.log(data)
+        res.json({"message":"Registered successfully with User Id: "+data.userId});
+    }).catch((err)=>next(err))
 })
 //buy
 // router.get('/properties', function (req, res, next) {
@@ -65,9 +67,40 @@ router.get('/admin',function(req,res,next){
     }).catch((err)=>next(err))
 })
 
-router.delete('admin/:id',function(req,res,next){
-    const Id=req.params.id;
+router.delete('/deleteuser/:id',function(req,res,next){
+    const Id=parseInt(req.params.id);
     userService.deleteUser(Id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/buyer',function(req,res,next){
+    userService.buyerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/seller',function(req,res,next){
+    userService.sellerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/property',function(req,res,next){
+    userService.propDetails().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.delete('deleteprop/:id',function(req,res,next){
+    const id=parseInt(req.params.id);
+    userService.deleteProperty(id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/search',function(req,res,next){
+    userService.locationProp().then((data)=>{
         res.json(data)
     }).catch((err)=>next(err))
 })
