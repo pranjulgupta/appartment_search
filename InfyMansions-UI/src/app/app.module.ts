@@ -19,7 +19,6 @@ import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
     AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, ViewDetailsComponent
    
 =======
