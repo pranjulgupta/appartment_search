@@ -103,11 +103,11 @@ const propertySchema = Schema({
     },
     sellerId: {
         type:String,
-        required: [true, 'This field is Required'],
+        // required: [true, 'This field is Required'],
     }, 
     buyerId:  {
         type:String,
-        required: [true, 'This field is Required'],
+        // required: [true, 'This field is Required'],
     },
     pincode:  {
         required: [true, 'This field is Required'],
@@ -127,7 +127,7 @@ const propertySchema = Schema({
     buildingType:  {
         type:String,
         required: [true, 'This field is Required'],
-        validate:[(buildingType)=>(buildingType=='House'|| buildingType=='Apartment'),"Building Type must be either 'House' or 'Apartment'"]
+        // validate:[(buildingType)=>(buildingType=='House'|| buildingType=='Apartment'),"Building Type must be either 'House' or 'Apartment'"]
     }, 
     noOfBathrooms:  {
         type:Number,
@@ -143,7 +143,7 @@ const propertySchema = Schema({
     }, 
     furnishing: {
         type:String,
-        validate:[(furnishing)=>(furnishing=='Fully Furnished'|| furnishing=='Semi Furnished'|| furnishing=='Unfurnished'),"Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'"]
+        // validate:[(furnishing)=>(furnishing=='Fully Furnished'|| furnishing=='Semi Furnished'|| furnishing=='Unfurnished'),"Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'"]
     }, 
     availability:  {
         type:String,
@@ -181,7 +181,7 @@ const propertySchema = Schema({
     status: String, 
     Address: {
         type: String,
-        required: [true, 'This field is Required'],
+        
         match:[/^.{3,}$/,'Address must have atleast 3 chars']
     },
     price:  {
@@ -191,7 +191,7 @@ const propertySchema = Schema({
     Advance: Number,
     transactionType: {
         type:String,
-        validate:[(transactionType)=>(transactionType=='New'||transactionType=='Old'),"Transaction Type must be 'New' or 'Old'"]
+        // validate:[(transactionType)=>(transactionType=='New'||transactionType=='Old'),"Transaction Type must be 'New' or 'Old'"]
     },
     ageOfProperty: {
         type:String,
@@ -201,7 +201,7 @@ const propertySchema = Schema({
     PropertyFloor: Number,
     propertyArea:{
         type: Number,
-        required:[true, 'This is required']
+        // required:[true, 'This is required']
     },
     poojaRoom: Boolean,
     servantRoonm: Boolean,
@@ -210,7 +210,7 @@ const propertySchema = Schema({
     description: String,
     imageUrls:  {
         type:String,
-        required: [true, 'This field is Required'],
+        // required: [true, 'This field is Required'],
     },
     extras: String
 }, { collection: "Property" });

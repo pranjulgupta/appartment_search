@@ -53,6 +53,17 @@ hUserService.addDetails = (UserObj) => {
         }
     })
 }
+<<<<<<< HEAD
+
+
+//admin
+hUserService.registeredUser=()=>{
+    return userdb.regUser().then(regData=>{
+        if(regData){
+            return regData
+        }else{
+            let err = new Error("User cannot be fetched");
+=======
 
 
 //admin
@@ -101,6 +112,7 @@ hUserService.sellerUser=()=>{
             return sellData;
         }else{
             let err = new Error("SellerData cannot be fetched");
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
             err.status = 404;
             throw err;
         }
@@ -108,6 +120,48 @@ hUserService.sellerUser=()=>{
 }
 
 //admin
+<<<<<<< HEAD
+hUserService.deleteUser=(Id)=>{
+    return userdb.delUser(Id).then(delData=>{
+        if(delData==null){
+            let err = new Error("User cannot be deleted");
+            err.status = 404;
+            throw err;
+        }else{
+            return delData;
+        }
+    })
+}
+
+//admin
+hUserService.buyerUser=()=>{
+    return userdb.buyerView().then(buyData=>{
+        if(buyData){
+            return buyData;
+        }else{
+            let err = new Error("BuyerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.sellerUser=()=>{
+    return userdb.sellerView().then(sellData=>{
+        if(sellData){
+            return sellData;
+        }else{
+            let err = new Error("SellerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+=======
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
 hUserService.propDetails=()=>{
     return userdb.propertyView().then(propData=>{
         if(propData==null){
@@ -191,6 +245,32 @@ hUserService.getPropertyDetails=()=>{
     })
 }
 
+<<<<<<< HEAD
+hUserService.addProperty = (dataObj) => {
+    console.log('g')
+    return userdb.generatePropertyId().then(id => {
+        if (id) {
+            console.log('h')
+            dataObj.propertyId = id;
+            return userdb.addProperty(dataObj).then(modelRes => {
+                if (modelRes) {
+                    return modelRes
+                } else {
+                    let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+                }
+            })
+        }else{
+            console.log('v')
+            let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+        }
+    })
+}
+=======
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
 
 
 

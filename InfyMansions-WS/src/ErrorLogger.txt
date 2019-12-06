@@ -1,3 +1,67 @@
+<<<<<<< HEAD
+ValidationError: Property validation failed: imageUrls: This field is Required, buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required, Address: This field is Required
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: imageUrls: This field is Required, buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required, Address: This field is Required
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: buildingType: Building Type must be either 'House' or 'Apartment', transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at p.doValidate.skipSchemaValidators (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2262:17)
+    at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\schematype.js:1058:9
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+Error: Password is Incorrect
+    at userdb.findUser.then.userData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:16:31)
+=======
 TypeError: userService.getProfile is not a function
     at router.get (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:36:17)
     at Layer.handle [as handle_request] (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
@@ -113,6 +177,7 @@ Error: Property not found
 Error: User cannot be deleted
     at userdb.delUser.then.delData (C:\Users\preeti.mohapatra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:75:23)
 >>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
     at process.internalTickCallback (internal/process/next_tick.js:77:7)
 TypeError: userService.getProfile is not a function
     at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:36:17)

@@ -38,6 +38,12 @@ userModel.searchUser = (userId) => {
     })
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7a0595a798337af44595709cffa82a2623ef90b3
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -48,12 +54,18 @@ userModel.viewDetails = (id) => {
             } else {
                 let err = Error("Property not found");
                 err.status = 404;
+<<<<<<< HEAD
                 throw err;  
              }
             })
         })
     }
 
+=======
+                throw err;
+=======
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+>>>>>>> 7a0595a798337af44595709cffa82a2623ef90b3
 
 userModel.addUser= (UserObj)=>{
     return dbModel.getUserCollection().then(model=>{
@@ -63,14 +75,36 @@ userModel.addUser= (UserObj)=>{
             }else{
                 return userData;
                 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+>>>>>>> 7a0595a798337af44595709cffa82a2623ef90b3
             }
         })
     })
 }
+<<<<<<< HEAD
 
 
 
 
+=======
+<<<<<<< HEAD
+
+
+
+=======
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+>>>>>>> 7a0595a798337af44595709cffa82a2623ef90b3
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);
@@ -166,6 +200,17 @@ userModel.sellerView=()=>{
         })
     })
 }
+<<<<<<< HEAD
+
+//admin
+userModel.propertyView=()=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({},{_id:0,propertyId:1,sellerId:1,buyerId:1}).then(propdata=>{
+            if(propdata.length==0){
+                return null;
+            }else{
+                return propdata;
+=======
 
 //admin
 userModel.propertyView=()=>{
@@ -188,11 +233,66 @@ userModel.delProp=(propId)=>{
                 return propId;
             }else{
                 return null;
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
             }
         })
     })
 }
 
+<<<<<<< HEAD
+userModel.generatePropertyId = () => {
+    return dbModel.getPropertyCollection().then((userModel) => {
+        return userModel.distinct("propertyId").then((ids) => {
+            let idarr = ids.map((data) => { 
+            return Number(data.slice(1)) })
+            let bId = Math.max(...idarr);
+            return "P" + (bId + 1);
+        })
+    })
+}
+
+
+//admin
+userModel.delProp=(propId)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.deleteOne({propertyId:propId}).then(delData=>{
+            if(delData.deletedCount>0){
+                return propId;
+            }else{
+                return null;
+=======
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+            }
+        })
+    })
+}
+
+userModel.addProperty = (data) => {
+    console.log('k')
+    return dbModel.getPropertyCollection().then( model => {
+        console.log('l')
+        console.log(data)
+        return model.create(data).then(response => {
+            console.log('w')
+            if(response){
+                return response
+            }else{
+                return null
+            }
+        })
+    })
+}
+
+     
 //search
 userModel.loc=()=>{
     return dbModel.getLocationCollection().then(model=>{
@@ -206,6 +306,7 @@ userModel.loc=()=>{
         })
     })
 }
-
+       
+            
 
 module.exports = userModel;

@@ -4,9 +4,13 @@
     <button mat-button class="nav-link" [routerLink]="['/buy']">
         BUY
     </button>
-    <button mat-button class="nav-link" [routerLink]="['/sell']">
+    <button mat-button class="nav-link" [routerLink]="['/sell']" *ngIf="userName">
         SELL
     </button>
+    <button mat-button class="nav-link" [routerLink]="['/home']" *ngIf="!userName" (click)="loginSell()">
+        SELL
+    </button>
+
     <span class="spacing"></span>
     <!-- This fills the remaining space of the current row -->
     <span class="spacing"></span>
@@ -54,5 +58,6 @@
         </div>
     </mat-toolbar>
 </div>
-    
+   
+
 

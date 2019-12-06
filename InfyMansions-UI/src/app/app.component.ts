@@ -24,19 +24,24 @@ export class AppComponent {
   }
   onActivate(event) {
   }
+ 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      verticalPosition: 'top',
+      panelClass: ['snackbar-position'],
+      horizontalPosition:"center"
+    });
+  }
+
+  loginSell(){
+    this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');}
 
   buy(){
     this.router.navigate(['/buy'])
   }
 
-  openSnackBar(message:string, action:string){
-    this._snackBar.open(message,action,{
-      duration:5000,
-      verticalPosition: 'top',
-      panelClass:['snackbar-position'],
-      horizontalPosition:'center'
-    });
-  }
+  
 
 
   signOut(){

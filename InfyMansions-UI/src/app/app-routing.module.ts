@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
-import { HomeComponent } from './home/home.component';
+
 import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './viewDetails/view-details.component';
+
 
 const routes: Routes = [
  

@@ -8,6 +8,55 @@ Thu Dec 05 2019 12:32:10 GMT+0530 (India Standard Time) GET /user/profile/user@g
 Thu Dec 05 2019 12:32:10 GMT+0530 (India Standard Time) GET /user/properties/U1002
 Thu Dec 05 2019 12:32:32 GMT+0530 (India Standard Time) GET /user/profile/user@gmail.com
 Thu Dec 05 2019 12:32:32 GMT+0530 (India Standard Time) GET /user/properties/U1002
+<<<<<<< HEAD
+Thu Dec 05 2019 12:45:46 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 13:01:57 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 13:03:25 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 14:33:06 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 14:33:50 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 14:34:08 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 14:58:58 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 15:00:48 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 16:21:15 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 19:06:50 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:08:46 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:09:46 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:11:30 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:12:38 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:15:35 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:19:05 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:19:15 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:19:19 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:19:21 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:25:23 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:25:25 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:34:02 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:34:42 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 19:37:01 GMT+0530 (India Standard Time) POST /user/sell
+Thu Dec 05 2019 20:05:40 GMT+0530 (India Standard Time) GET /getProperty
+Thu Dec 05 2019 20:06:52 GMT+0530 (India Standard Time) GET /buy
+Thu Dec 05 2019 21:08:39 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:25:19 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:25:22 GMT+0530 (India Standard Time) GET /user/search
+Thu Dec 05 2019 21:25:22 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:25:26 GMT+0530 (India Standard Time) GET /user/search
+Thu Dec 05 2019 21:25:28 GMT+0530 (India Standard Time) GET /user/search
+Thu Dec 05 2019 21:25:28 GMT+0530 (India Standard Time) GET /user/search
+Thu Dec 05 2019 21:25:28 GMT+0530 (India Standard Time) GET /user/search
+Thu Dec 05 2019 21:25:29 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:25:34 GMT+0530 (India Standard Time) GET /user/profile/user@gmail.com
+Thu Dec 05 2019 21:25:34 GMT+0530 (India Standard Time) GET /user/properties/U1002
+Thu Dec 05 2019 21:31:14 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:31:33 GMT+0530 (India Standard Time) GET /user/buy
+Thu Dec 05 2019 21:31:48 GMT+0530 (India Standard Time) GET /user/properties/U1002
+Thu Dec 05 2019 21:31:48 GMT+0530 (India Standard Time) GET /user/profile/user@gmail.com
+Thu Dec 05 2019 22:24:26 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 10:49:36 GMT+0530 (India Standard Time) GET /favicon.ico
+Fri Dec 06 2019 10:49:43 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 10:52:02 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 10:53:10 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 10:55:39 GMT+0530 (India Standard Time) POST /user/login
+=======
 Thu Dec 05 2019 20:03:14 GMT+0530 (India Standard Time) GET /user/buy
 Thu Dec 05 2019 20:32:11 GMT+0530 (India Standard Time) GET /user/buy
 Thu Dec 05 2019 20:32:39 GMT+0530 (India Standard Time) GET /user/buy
@@ -158,6 +207,7 @@ Fri Dec 06 2019 15:39:55 GMT+0530 (India Standard Time) GET /user/viewP1004
 Fri Dec 06 2019 15:40:25 GMT+0530 (India Standard Time) GET /user/viewP1004
 Fri Dec 06 2019 15:41:08 GMT+0530 (India Standard Time) GET /user/viewP1004
 Fri Dec 06 2019 15:41:52 GMT+0530 (India Standard Time) GET /user/viewP1004
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
 =======
 Fri Dec 06 2019 10:05:40 GMT+0530 (India Standard Time) GET /user/profile/null
 Fri Dec 06 2019 10:05:40 GMT+0530 (India Standard Time) GET /user/properties/null
@@ -264,6 +314,7 @@ Fri Dec 06 2019 11:34:33 GMT+0530 (India Standard Time) GET /user/admin
 Fri Dec 06 2019 11:34:33 GMT+0530 (India Standard Time) GET /user/admin/buyer
 Fri Dec 06 2019 11:34:34 GMT+0530 (India Standard Time) GET /user/admin/seller
 >>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+<<<<<<< HEAD
 Fri Dec 06 2019 16:53:41 GMT+0530 (India Standard Time) GET /user/buy
 Fri Dec 06 2019 16:53:54 GMT+0530 (India Standard Time) GET /user/viewP1004
 Fri Dec 06 2019 17:02:23 GMT+0530 (India Standard Time) GET /user/viewP1004
@@ -399,3 +450,81 @@ Fri Dec 06 2019 22:21:57 GMT+0530 (India Standard Time) GET /user/buy
 Fri Dec 06 2019 22:24:34 GMT+0530 (India Standard Time) GET /user/buy
 Fri Dec 06 2019 22:28:43 GMT+0530 (India Standard Time) GET /user/buy
 Fri Dec 06 2019 22:53:40 GMT+0530 (India Standard Time) GET /user/buy
+=======
+<<<<<<< HEAD
+Fri Dec 06 2019 11:54:47 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 11:55:08 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 12:36:40 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 12:36:52 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:40:31 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:40:32 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:40:33 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:40:39 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:40:47 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:40:57 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:41:16 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:41:28 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:41:30 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:42:27 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:28 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:31 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:32 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:33 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:36 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:38 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:42:38 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:54:18 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:54:20 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:54:23 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 14:54:28 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 14:59:13 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 14:59:57 GMT+0530 (India Standard Time) POST /user/register
+Fri Dec 06 2019 15:00:23 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 15:01:41 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:01:55 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:25 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:30 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:31 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:32 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:32 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:03:32 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 15:19:53 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 18:24:22 GMT+0530 (India Standard Time) GET /user/buy
+Fri Dec 06 2019 18:25:04 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 18:25:39 GMT+0530 (India Standard Time) POST /user/register
+Fri Dec 06 2019 18:26:10 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 18:26:51 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:54 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:54 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:54 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:55 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:55 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:55 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:56 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:56 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:26:57 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:27:37 GMT+0530 (India Standard Time) GET /user/profile/user@gmail.com
+Fri Dec 06 2019 18:27:37 GMT+0530 (India Standard Time) GET /user/properties/U1002
+Fri Dec 06 2019 18:35:03 GMT+0530 (India Standard Time) GET /user/profile/user@gmail.com
+Fri Dec 06 2019 18:35:03 GMT+0530 (India Standard Time) GET /user/properties/U1002
+Fri Dec 06 2019 18:35:48 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:41:22 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:45:21 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:49:05 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:49:10 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:51:15 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:54:56 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 18:59:54 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 19:05:21 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 19:06:39 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 19:07:38 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 19:08:49 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 20:22:33 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 20:22:42 GMT+0530 (India Standard Time) POST /user/login
+Fri Dec 06 2019 21:40:33 GMT+0530 (India Standard Time) POST /user/sell
+Fri Dec 06 2019 21:40:54 GMT+0530 (India Standard Time) GET /user/search
+Fri Dec 06 2019 21:40:56 GMT+0530 (India Standard Time) GET /user/search
+=======
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+Fri Dec 06 2019 22:53:15 GMT+0530 (India Standard Time) POST /user/sell
+>>>>>>> 7a0595a798337af44595709cffa82a2623ef90b3
