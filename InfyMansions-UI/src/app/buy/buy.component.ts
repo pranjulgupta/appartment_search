@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { GetpropertyService } from './getproperty.service';
 import { Router } from '@angular/router'
 import {User} from './user'
+import { ViewService } from '../viewDetails/view.service';
+import { SharedServService } from '../shared-serv.service';
+import { MatSnackBar } from '../../../node_modules/@angular/material';
+
+// import { DialogComponent } from '../dialog/dialog.component';
+// import { DialogService } from '../dialog/dialog.service';
 
 
 @Component({
@@ -29,7 +35,11 @@ export class BuyComponent implements OnInit {
   noContent:boolean=false;
   wishlist:Array<String>;
   userId:String;
-  OwnerDetail:User;
+  OwnerDetails:User;
+  viewDet;
+  userName:string;
+ 
+
 
 
  
@@ -37,16 +47,16 @@ export class BuyComponent implements OnInit {
 
 
 
-
-
-
-
-  constructor(private gpService: GetpropertyService,private router:Router) { }
+  constructor(private gpService: GetpropertyService,private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
+  // public dialog:MatDialog, privateServ:DialogService
 
  
   
   ngOnInit() {
-       this.gpService.getPropertyDetail().subscribe(
+    this.userName = sessionStorage.getItem('name');
+
+
+     this.gpService.getPropertyDetail().subscribe(
         (good)=>{
           console.log(1)
           console.log(good);
@@ -132,31 +142,52 @@ filter(){
   }
 
 }
-viewDetails(){
-  this.router.navigate(['/viewDetails'])
-}
+// viewDetails(id){
+//   this.viewServ.getView(id).subscribe(data => {
+//           this.viewDet = data;
+//           SharedServService.viewdetpara=data;
+// })}
 clear(){
   this.propertyDb=this.tempArr;
 }
+//   contactOwner(sellerId: String): void {
+//     this.dialogServ.getUserById(sellerId).subscribe(data => {
+//       this.ownerDetails = success;
+//       const dialogRef = this.dialog.open(DialogueBoxComponent, {
+//         width: '600px', 
+//         height: "125px",
+//         data: this.ownerDetails,
+//         position: {
+//           left: '400px',
+//           top: '250px'
+//         }
+//       });
+//       dialogRef.afterCLosed().subscribe(result=>{
+//         console.log("The dialogue box has closed")
+//       })
+//     })
+//   }
+  
+
+
+
+openSnackBar(message:string,action:string){
+  this._snackBar.open(message,action,{
+    duration:5000,
+  verticalPosition:"top",
+panelClass:['snackbar-position'],
+horizontalPosition:"center"});
 }
 
-// openSnackBar(message:string,action:string){
-//   this._snackBar.open(Message,action,{duration:2000,
-//   verticalPosition:"top",
-// panelClass:['snackbar-position'],
-// horizontalPosition:"center"})
-// }
+popup(data){
+  this.openSnackBar(data,"Ok");
+  console.log(data,4544)
+}
 
-// openDialog(sellerId:String):void{
-//   this.guService.getUserbyId(sellerId).subscribe(success=>{
-//     this.ownerDetail=success;
-//     const dialogRef= this.dialog.open(DialogueBoxComponent,{
-//       width:'600px',height:"125px",
-//       data:this.ownerDetail,
-//       position:{
-//         left:'400px',
-//         top:'250px'
-//       }
-//     })
-//   })
-// }
+reroute(property){
+  this.router.navigate(['/view',property.propertyId])
+}
+
+}
+
+

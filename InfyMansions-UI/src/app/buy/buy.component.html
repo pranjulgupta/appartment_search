@@ -81,33 +81,38 @@
         </mat-sidenav-container>
     </div> -->
 
-    <div *ngIf="!noContent">
+    <!-- <div *ngIf="!noContent">
             <div *ngIf="filtered.length==0">
-            <mat-sidenav-container>
-                <mat-sidenav-content>
-                    <mat-grid-list cols="3" rowHeight="3:3">
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile>
-                                <mat-spinner></mat-spinner>
-                        </mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                        <mat-grid-tile></mat-grid-tile>
-                    </mat-grid-list>
-                </mat-sidenav-content>
-            </mat-sidenav-container>
+            
         </div>
-    </div>
+    </div> -->
 
 <!-- <div *ngIf="filtered.length!=0"> -->
-    <mat-sidenav-content class="container-fluid">
-        <div class="row">
-            <mat-card *ngFor="let p of propertyDb" class="col-md-3 card">
 
+     <mat-sidenav-content class="container-fluid">
+        <div class="row">
+                <!-- <div *ngIf="propertDb;else spinn">
+                    <ng-template #spinn>
+                            <mat-sidenav-container>
+                                    <mat-sidenav-content>
+                                        <mat-grid-list cols="3" rowHeight="3:3">
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile>
+                                                    <mat-spinner></mat-spinner>
+                                            </mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                        </mat-grid-list>
+                                    </mat-sidenav-content>
+                                </mat-sidenav-container>
+                    </ng-template> -->
+            <mat-card *ngFor="let p of propertyDb" class="col-md-3 card">
+               
                 <mat-card-title style="display:flex">
                     <div style="flex:1">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
                     <div style="flex:2"></div>
@@ -125,7 +130,7 @@
                 <br>
                 <mat-card-content>
                     <div class="d">
-                        <img class="container-fluid cardimg" mat-card-image src="{{p.imageUrls}}" alt="A house">
+                        <img class="container-fluid cardimg" *ngIf="p" mat-card-image src="{{p.imageUrls}}" alt="A house">
                         <br>
                     </div>
                     <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -136,66 +141,119 @@
                     <span align="align-right">{{p.availability}}</span>
                 </mat-card-content>
 
-                <mat-card-actions>
-                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" >Contact Owner</button>
-                    <!-- (click)="contactOwner(p.sellerId)" -->
+                <mat-card-actions class="card-button-container">
+                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                    
                     <br>
-                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary">viewDetails</button>
-                    <!-- (click)="viewDetails(p)"  -->
-                    <br><br>
+                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary"  (click)="reroute(p)">View Details</button>  
+                     <ng-template #view>
+                        <button mat-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                    </ng-template> 
+                     <br><br>
                 </mat-card-actions>
+                <!-- *ngIf="userName;else view" -->
 
             </mat-card>
         </div>
-    </mat-sidenav-content>
+        <!-- </div> -->
+    </mat-sidenav-content>  
 <!-- </div> -->
 
-    <!-- <mat-sidenav-content>
-            <mat-grid-list cols="3" rowHeight="1:1.55" gutterSize="36px">
-              <div *ngFor="let property of propertyDb">
-              <mat-grid-tile  [class.mat-elevation-z4]="!isActive">
-                <mat-card class="my-card">
-                  <mat-card-header class="card-flex row">
-                    <div class="row-1">
-                      <mat-card-title>
-                        {{property.price|currency:"INR"}}&nbsp;&nbsp;
-                        <button mat-icon-button aria-label="Example icon-button with a heart icon" class="heart" (click)="change(property)">
-                          <mat-icon matSuffix [id]="property.propertyId" >favorite_border</mat-icon>
-                        </button>
-                      </mat-card-title>
-                    </div>
-                  </mat-card-header>
-        
-                  <mat-card-header>
-                    <mat-card-subtitle>For: {{property.propertyType}}</mat-card-subtitle>
-                  </mat-card-header>
-        
-                  <div class="card-img-div">
-                    <img src="../../../assets/house.jpg" class="card-img" mat-card-image alt="House photo">
-                  </div>
-        
-                  <mat-card-content>
-                    <mat-grid-list cols="2" rowHeight="5:1" gutterSize="2px">
-                      <mat-grid-tile>{{property.propertyArea}} sq. Ft</mat-grid-tile>
-                      <mat-grid-tile>{{property.noOfBedrooms}} BHK House </mat-grid-tile>
-                      <mat-grid-tile>{{property.furnishing}}</mat-grid-tile>
-                      <mat-grid-tile>{{property.availability}} </mat-grid-tile>
-                    </mat-grid-list>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <div class="card-btn-container">
-                    <button class="c-button" mat-stroked-button color="primary">Contact Owner</button>
-                    </div>
-                    <br>
-                    <div class="card-btn-container">
-                    <button class="c-button" mat-raised-button color="primary">View Deatils</button>
-                    </div>
-                  </mat-card-actions>
-                </mat-card>
-              </mat-grid-tile>
+    <!-- <mat-sidenav-content> -->
+          
+<div class="row" style="border:solid">
+    <div class="col-md-4" style="border:solid">
+        <img src="{{viewDet.imageUrls}}" class="img-fluid" height="100%">
+    </div>
+    <div class="col-md-8" style="border:solid">
+        <div class="row mat-title" style="border:solid">Description</div>
+        <div class="row" style="border:solid">111{{viewDet.description}}</div>
+        <div class="row" style="border:solid">
+            <div class="col-md-4" style="border:solid">
+                <div class="row">AREA :{{viewDet.area}} sq Ft</div>
+                <div class="row">Transaction Type : {{viewDet.transactionType}}</div>
+                <div class="row">BEDROOMS :</div>
+                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
             </div>
-            </mat-grid-list>
-          </mat-sidenav-content> -->
+            <div class="col-md-4" style="border:solid">
+                <div class="row">PRICE :{{viewDet.price}}</div>
+                <div class="row">AGE : {{viewDet.ageOfProperty}}</div>
+                <div class="row">BATHROOMS : </div>
+                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
+            </div>
+            <div class="col-md-4" style="border:solid">
+                <div class="row">SECURITY DEPOSIT : {{viewDet.Advance}}</div>
+                <div class="row">AVAILABILITY :{{viewDet.availability}}</div>
+                <div class="row">BALCONIES :</div>
+                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
+            </div>
+        </div>
+        <div class="row" style="border:solid">
+            <button class="btn btn-block">Contact Owner</button>
+        </div>
+
+    </div>
+
+</div>
+<div class="row" style="border:solid">
+    <div class="col-md-4" style="border:solid">
+        <mat-card>
+            <mat-card-title>Features</mat-card-title>
+            <mat-card-content>
+                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Property Type {{viewDet.propertyType}}</button>
+                <br>
+                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Ownwership {{viewDet.propertyOwnership}}</button>
+                <br>
+                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Building Type {{viewDet.buildingType}}</button>
+                <br>
+                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Furnishing {{viewDet.furnishing}}</button>
+                <br>
+                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">availability {{viewDet.availability}}</button>
+                <br>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-md-4" style="border:solid">
+        <mat-card>
+            <mat-card-title>Highlights</mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <mat-icon>favorite_border</mat-icon>
+                        </div>
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-md-4" style="border:solid">
+        <mat-card>
+            <mat-card-title>Amenities</mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <mat-icon>favorite_border</mat-icon>
+                        </div>
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
+
+
+          <!-- </mat-sidenav-content> -->
 
 </mat-sidenav-container>
 

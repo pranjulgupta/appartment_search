@@ -128,6 +128,16 @@ router.get('/properties/:userId',(req,res,next)=>{
         next(err))
 })
 
+router.get('/view/:id',(req,res,next)=>{
+    const id=req.params.id;
+    console.log(id);
+    
+    userService.getViewDetails(id).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
+
 
 //To Sell
 router.post('/sell', function(req, res, next){

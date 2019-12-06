@@ -17,11 +17,12 @@ import { HomeComponent } from './home/home.component';
 
 
 
+import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent
+    AppComponent,HomeComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent, ViewDetailsComponent
   ],
   
   imports: [

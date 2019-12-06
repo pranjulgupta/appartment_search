@@ -94,6 +94,7 @@ const featuresSchema = Schema({
     }, 
 }, { collection: "Features" });
 
+
 const propertySchema = Schema({
     // ids
     propertyId: {

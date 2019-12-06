@@ -57,6 +57,10 @@ gulp.task('coverage', gulp.series('pre-coverage', async function () {
             }
         }))
         // Enforce a coverage of at least 60%
+<<<<<<< HEAD
         .pipe(istanbul.enforceThresholds({ thresholds: { global: 70 } }))
+=======
+        .pipe(istanbul.enforceThresholds({ thresholds: { global : 70} }))
+>>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
         .pipe(exit());
 }))
