@@ -74,6 +74,32 @@ userModel.propertyDetails = () => {
     })
 }
 
+userModel.generatePropertyId = () => {
+    return dbModel.getPropertyCollection().then((userModel) => {
+        return userModel.distinct("propertyId").then((ids) => {
+            let idarr = ids.map((data) => { 
+            return Number(data.slice(1)) })
+            let bId = Math.max(...idarr);
+            return "P" + (bId + 1);
+        })
+    })
+}
+
+userModel.addProperty = (data) => {
+    console.log('k')
+    return dbModel.getPropertyCollection().then( model => {
+        console.log('l')
+        console.log(data)
+        return model.create(data).then(response => {
+            console.log('w')
+            if(response){
+                return response
+            }else{
+                return null
+            }
+        })
+    })
+}
 
 
 module.exports = userModel;

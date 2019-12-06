@@ -10,19 +10,33 @@
                
             
         </mat-sidenav>
-        <mat-sidenav opened mode="side" position="end">End content</mat-sidenav>
+        <mat-sidenav opened mode="side" position="end">
+            <br/><br/><br/>
+            <div class="container-fluid">
+                    <h4>Completion Meter</h4>
+                    <div>It shows how much you fill the form..!</div>
+                    <mat-progress-spinner
+                    class="example-margin"
+                    [color]="color"
+                    [mode]="mode"
+                    [value]="value">
+                </mat-progress-spinner>
+
+            </div>
+            
+        </mat-sidenav>
         <mat-sidenav-content>
 
             <br/>
             <h2 class="text-center">Post your Property Here!</h2>
 
-            <form [formGroup]="sellForm" (submit)="sell()">
-                <mat-tab-group>
+            <form [formGroup]="sellForm" (submit)="sell()" id="mainContent">
+                <mat-tab-group #matgroup>
                     <mat-tab label="First Step">
                         <div class="example-container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <mat-form-field>
+                                    <mat-form-field >
                                         <mat-label>Please mention area</mat-label>
                                         <mat-select formControlName="area">
                                             <mat-option *ngFor="let i of area" [value]="i">{{i}}</mat-option>
@@ -118,22 +132,23 @@
                             <!-- ############################################################################### -->
 
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-9">
                                     <br/> Price:
-                                    <mat-slider formControlName="price"></mat-slider>
+                                    <mat-slider formControlName="price" #propPrice min="20000" max="1000000"></mat-slider> {{propPrice.value}}
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
 
                             <div class="row">
+                                  
                                 <div class="col-md-1">
-                                    <button mat-raised-button color="primary" [disabled]="sellForm.invalid">Post</button>
+                                    <button type="submit" mat-raised-button color="primary"  [disabled]="sellForm.invalid">Post</button>
                                 </div>
 
                                 <div class="col-md-6 offset-1">If you want to add more details, go to step 2</div>
 
                                 <div class="col-md-1">
-                                    <button mat-raised-button color="accent" [disabled]="sellForm.invalid">Primary</button>
+                                    <button type="button" mat-raised-button color="accent"  [disabled]="sellForm.invalid" (click)="matgroup.selectedIndex=1" >Next</button>
                                 </div>
 
                             </div>
@@ -162,7 +177,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <br/> Age of Property:
-                                <mat-slider id="ageSlider" formControlName="ageOfProperty"></mat-slider> Years
+                                <mat-slider id="ageSlider" formControlName="ageOfProperty" min="1" max="20" #propAge></mat-slider> {{propAge.value}} Years
                             </div>
                         </div>
                         <!-- ############################################################################### -->
@@ -205,7 +220,11 @@
                         <!-- ############################################################################### -->
                         <div class="row">
                             <div class="col-md-2">
-                                <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="visitorParking">Parking</mat-slide-toggle>
+                                <mat-slide-toggle id="slideToggler" #park class="example-margin" >Parking</mat-slide-toggle>
+                                <div *ngIf="park.checked">
+                                    <mat-slide-toggle formControlName="noOfOpenParking" value="1">Open Parking</mat-slide-toggle>
+                                    <mat-slide-toggle formControlName="noOfCoveredParking" value="1">Covered Parking</mat-slide-toggle>
+                                </div>
 
 
                             </div>
@@ -243,6 +262,22 @@
                         </div>
 
                         <!-- ############################################################################### -->
+                        <div class="row">
+                            <div class="example-button-row">
+                                <div class="col-md-2">
+                                    <button type="submit" class="example-button-row" mat-raised-button color="primary">Post</button>
+                                </div>
+
+                                <div class="col-md-2">
+                                        <button type="button" id="btnPrev" (click)="matgroup.selectedIndex=0" mat-raised-button color="accent">Previous</button>
+                                </div>
+                                
+                                
+                                
+                            </div>
+
+                            <div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
+                        </div>
 
                     </mat-tab>
 

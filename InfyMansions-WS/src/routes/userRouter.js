@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const userService = require('../service/userService');
-// const propertyService=require('./service/propertyService')
-// const Property=require('model/propertyModel')
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
-const propService = require('../service/propertyService')
+
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
@@ -79,9 +77,11 @@ router.get('/properties/:userId',(req,res,next)=>{
 
 //To Sell
 router.post('/sell', function(req, res, next){
+    console.log('z')
     let data=req.body;
-    propService.addNewProperty(data).then( response => {
-        res.json(response)
+    userService.addProperty(data).then( propdata => {
+
+        res.json(propdata)
     }).catch( err => next(err))
 
 })

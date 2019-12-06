@@ -82,4 +82,29 @@ hUserService.getPropertyDetails=()=>{
         }
     })
 }
+
+hUserService.addProperty = (dataObj) => {
+    console.log('g')
+    return userdb.generatePropertyId().then(id => {
+        if (id) {
+            console.log('h')
+            dataObj.propertyId = id;
+            return userdb.addProperty(dataObj).then(modelRes => {
+                if (modelRes) {
+                    return modelRes
+                } else {
+                    let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+                }
+            })
+        }else{
+            console.log('v')
+            let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+        }
+    })
+}
+
 module.exports = hUserService;
