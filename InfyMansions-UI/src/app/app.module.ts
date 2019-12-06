@@ -19,11 +19,7 @@ import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, ViewDetailsComponent
-   
-=======
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
+    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, AdminComponent,ProfileComponent, ViewDetailsComponent
   ],
   
   imports: [
