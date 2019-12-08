@@ -11,27 +11,21 @@
   #btnPrev{
     margin-left:50px;
   }
-
   .example-h2 {
     margin: 10px;
   }
-  
   .example-section {
     display: flex;
     align-content: center;
     align-items: center;
     height: 60px;
   }
-  
   .example-margin {
     margin: 0 10px;
   }
-  
-
   .slideToggler{
     margin-left: 16px;
   }
-
   .example-container {
     display: flex;
     flex-direction: column;
@@ -42,35 +36,26 @@
     margin:10px;
     padding:20px;
   }
-
   #imgSidenav{
     height: 120px;
     width: 150px;
-    
-
   }
-  
-
-
   .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
     height: auto;
   }
-  
   .example-full-width {
     width: 100%;
   }
   mat-slider {
     width: 300px;
   }  
-
   #ageSlider{
     width: 150px;
 
   }
-
   mat-progress-spinner{
     margin-left: 10px;
   }

@@ -17,7 +17,11 @@
     <span *ngIf="userName">
         Welcome {{userName}}
     </span>
-    <button mat-button matTooltip="wishlist" class="nav-link" [routerLink]="['/starWish']">
+    <button mat-button matTooltip="wishlist" class="nav-link" *ngIf="userName" [routerLink]="['/starWish']">
+        <mat-icon>grade</mat-icon>
+    </button>&nbsp;&nbsp;&nbsp;
+
+    <button mat-button matTooltip="wishlist" class="nav-link" *ngIf="!userName" (click)="popup('Please Sign in to View Wishlist')" [routerLink]="['/home']">
         <mat-icon>grade</mat-icon>
     </button>&nbsp;&nbsp;&nbsp;
 
