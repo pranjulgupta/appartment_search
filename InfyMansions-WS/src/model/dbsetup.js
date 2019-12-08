@@ -515,6 +515,8 @@ const propertyDb = [
     heater: true,
     maintenenceStaff: true,
     visitorParking: true,
+    imageUrls:"../../../assets/house2.jpg"
+
 },{
     propertyId:"P1002",
     sellerId: "U1002",
@@ -531,10 +533,11 @@ const propertyDb = [
     heater: true,
     maintenenceStaff: true,
     visitorParking: true,
+    imageUrls:"../../../assets/house3.jpg"
 },
 {
     propertyId:"P1003",
-    sellerId: "U1004",
+    sellerId: "U1001",
     buyerId: "U1005",
     pincode: 686694,
     noOfBedrooms: 2,
@@ -547,7 +550,8 @@ const propertyDb = [
     ac: true,
     heater: true,
     maintenenceStaff: true,
-    visitorParking: true
+    visitorParking: true,
+    imageUrls:"../../../assets/house4.jpg"
 }]
 
 

@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
  
@@ -33,6 +34,10 @@ const routes: Routes = [
 {
   path:"profile",
   component: ProfileComponent
+},
+{
+  path:"starWish",
+  component:WishlistComponent
 },
 {
   path:"**", 

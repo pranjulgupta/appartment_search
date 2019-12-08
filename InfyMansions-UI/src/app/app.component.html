@@ -13,7 +13,7 @@
     <span *ngIf="userName">
         Welcome {{userName}}
     </span>
-    <button mat-button matTooltip="wishlist" class="nav-link">
+    <button mat-button matTooltip="wishlist" class="nav-link" [routerLink]="['/starWish']">
         <mat-icon>grade</mat-icon>
     </button>&nbsp;&nbsp;&nbsp;
     <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">

@@ -48,6 +48,7 @@ const propertySchema = Schema({
     propertyType: String,
     furnishing: String,
     availability: String,
+    
         ac: Boolean,
         heater: Boolean,
         maintenenceStaff: Boolean,

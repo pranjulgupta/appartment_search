@@ -59,6 +59,74 @@ userModel.viewProfile = (emailid) => {
     })
 }
 
+userModel.postedProperty=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"sellerId":userid}).then((data)=>{
+            console.log(userid,"sur")
+            if(data){
+                console.log(data,"sur");
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+//starwishlist
+userModel.wishlistProperty=(userid)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"wish")
+            if(data){
+                console.log(data,"wish");
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+userModel.getOwnerDetails=(userid)=>{
+    console.log(userid,"dana")
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"danr")
+            if(data){
+                console.log(data,"dan");
+                return data
+                
+            }else{
+                let err = Error("Owner not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+
+userModel.Propertywish=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"propertyId":propertyId}).then((data)=>{
+            
+            if(data){
+                
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+
 
 userModel.propertyDetails = () => {
     return dbModel.getPropertyCollection().then(model => {
@@ -73,6 +141,20 @@ userModel.propertyDetails = () => {
         })
     })
 }
+
+
+//wishlist
+userModel.searchUser=(userId=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.findOne({"userId":userId},{wishlist:1,_id:0}).then(user=>{
+            if(user){
+                return user.wishlist;
+            }else{
+                return null
+            }
+        })
+    })
+})
 
 
 

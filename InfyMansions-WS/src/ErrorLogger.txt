@@ -519,3 +519,155 @@ TypeError: userService.getProperty is not a function
     at C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
     at Function.process_params (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
     at next (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:27:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:73:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:27:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:73:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:27:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:73:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\routes\userRouter.js:73:17)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+ReferenceError: sur is not defined
+    at model.find.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:65:32)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: User not found
+    at data.findOne.then (C:\Users\suramyamol.ks\Desktop\fa4new\infymansions\InfyMansions-WS\src\model\userModel.js:53:27)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)

@@ -18,20 +18,7 @@ router.post('/login', function (req, res, next) {
         res.json(result);
     }).catch(err => next(err));
 })
-//To get user properties
-router.get('/profile/:emailId',(req,res,next)=>{
-    
-    const emailid=req.params.emailId;
-    console.log(emailid,3);
-    
-    userService.getProfile(emailid).then(data=>{
-        console.log(data)
-        res.json(data)
-    }).catch(err=>{
-        next(err)
-    })
-    
-})
+
 //buy
 // router.get('/properties', function (req, res, next) {
 //     propertyService.getProperty().then((data)=>{
@@ -61,20 +48,98 @@ router.get('/location', function (req, res, next) {
 router.get('/buy', function(req,res,next){
     userService.getPropertyDetails().then(data=>{
         // console.log(3)
-        console.log(data,3);
+        // console.log(data,3);
         res.send(data)
     }).catch(err => next(err));
 })
 
+
+//To get user properties
+router.get('/profile/:emailId',(req,res,next)=>{
+    
+    const emailid=req.params.emailId;
+    console.log(emailid,3);
+    
+    userService.getProfile(emailid).then(data=>{
+        console.log(data)
+        res.json(data)
+    }).catch(err=>{
+        next(err)
+    })
+    
+})
+
 router.get('/properties/:userId',(req,res,next)=>{
     const userid=req.params.userId
-    console.log(userid);
+    console.log(userid,7889);
     
     userService.getProperty(userid).then(result=>{
         res.json(result)
     }).catch(err=>
         next(err))
 })
+
+//star wishlist
+router.get('/wishlistProperties/:userId',(req,res,next)=>{
+    const userid=req.params.userId
+    console.log(userid,7889);
+    
+    userService.getwishlistProperty(userid).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
+router.get('/wishlistProperties/:propertyId',(req,res,next)=>{
+    const propertyId=req.params.propertyId
+    console.log(propertyId,7889);
+    
+    userService.getPropertywish(propertyId).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
+
+//to get propdb for wishlist
+router.get('/wishProp', function(req,res,next){
+    userService.getPropertyDetails().then(data=>{
+        // console.log(3)
+        console.log(data,"wishproplist");
+        res.send(data)
+    }).catch(err => next(err));
+})
+
+
+
+
+
+
+
+
+
+
+
+router.get('/find/:userId',(req,res,next)=>{
+    const userid=req.params.userId
+    console.log(userid,7889);
+    
+    userService.getOwner(userid).then(result=>{
+                res.json(result)
+            }).catch(err=>
+                next(err))
+    
+
+    
+})
+
+// router.get('/find/:userId'),(req,res,next)=>{
+//     console.log("dksjafjdhj");
+//     const userid=req.params.userId
+//     console.log(userid,"shdfjsjf");
+//     userService.getOwner(userid).then(result=>{
+//         res.json(result)
+//     }).catch(err=>
+//         next(err))
+// }
 
 
 //To Sell
@@ -84,6 +149,14 @@ router.post('/sell', function(req, res, next){
         res.json(response)
     }).catch( err => next(err))
 
+})
+
+//wishlist
+router.get('/wishList/:userId',(req,res,next)=>{
+    let userId=req.params.userId;
+    userService.getWishList(userId).then(data=>{
+        res.json(data)
+    }).catch( err => next(err))
 })
 
 module.exports = router;

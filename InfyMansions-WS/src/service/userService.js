@@ -69,7 +69,7 @@ hUserService.addDetails = (UserObj) => {
 
 hUserService.getPropertyDetails=()=>{
     return userdb.propertyDetails().then(data=>{
-        console.log(data,33);
+        // console.log(data,33);
         if(data.length==0){
             console.log(44);
             let err = new Error("Error in fetching Properties");
@@ -77,9 +77,96 @@ hUserService.getPropertyDetails=()=>{
                 throw err;
         }
         else{
-            console.log(data,55);
+            // console.log(data,55);
             return data
         }
     })
 }
+
+
+hUserService.getOwner = (userid)=>{
+    return userdb.getOwnerDetails(userid).then((data)=>{
+        if(data){
+            return data
+        }{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+}
 module.exports = hUserService;
+
+///Profile component
+hUserService.getProfile=(emailId)=>{
+    return userdb.viewProfile(emailId).then((data)=>{
+        if(data){
+            return data
+        }{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+}
+
+hUserService.getProperty=(userid)=>{
+    return userdb.postedProperty(userid).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+//starwishlist
+hUserService.getwishlistProperty=(userid)=>{
+    return userdb.wishlistProperty(userid).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+
+
+
+
+hUserService.getPropertywish=(propertyId)=>{
+    return userdb.Propertywish(propertyId).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+//wishlist
+hUserService.getWishList=(userId)=>{
+    return userdb.searchUser(userId).then(wishlist=>{
+        if(wishlist){
+            return wishlist
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+
+        }
+    })
+}
