@@ -51,4 +51,15 @@ export class AppComponent {
     this.router.navigate(['/home']);
     // this.router.navigate(['/login'])
   }
+
+  popup(data){
+    this.openSnackBar(data,"Ok");
+    console.log(data,454)
+  }
+  
+  reroute(){
+    this.router.navigate(['/profile'])
+  }
+  
+
 }

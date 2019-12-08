@@ -49,11 +49,12 @@ userModel.viewDetails = (id) => {
             } else {
                 let err = Error("Property not found");
                 err.status = 404;
-                throw err;
-            }
+                throw err;  
+             }
+            })
         })
-    })
-}
+    }
+
 
 
 userModel.addUser= (UserObj)=>{
@@ -77,6 +78,7 @@ userModel.insertWishList = (userId,propertyId) => {
             } else {
                 console.log(data, 99);
                 return null
+
             }
         })
     })
@@ -99,6 +101,8 @@ userModel.deleteFromWishList = (userId,propertyId) => {
 
 
 
+
+
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);
@@ -115,6 +119,74 @@ userModel.viewProfile = (emailid) => {
                 err.status = 404;
                 throw err;
 
+            }
+        })
+    })
+}
+
+userModel.postedProperty=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"sellerId":userid}).then((data)=>{
+            console.log(userid,"sur")
+            if(data){
+                console.log(data,"sur");
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+//starwishlist
+userModel.wishlistProperty=(userid)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"wish")
+            if(data){
+                console.log(data,"wish");
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+userModel.getOwnerDetails=(userid)=>{
+    console.log(userid,"dana")
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"danr")
+            if(data){
+                console.log(data,"dan");
+                return data
+                
+            }else{
+                let err = Error("Owner not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+
+userModel.Propertywish=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"propertyId":propertyId}).then((data)=>{
+            
+            if(data){
+                
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
             }
         })
     })
@@ -281,18 +353,74 @@ userModel.propertyView=()=>{
     })
 }
 
+
+userModel.generatePropertyId = () => {
+    return dbModel.getPropertyCollection().then((userModel) => {
+        return userModel.distinct("propertyId").then((ids) => {
+            let idarr = ids.map((data) => { 
+            return Number(data.slice(1)) })
+            let bId = Math.max(...idarr);
+            return "P" + (bId + 1);
+        })
+    })
+}
+
+
+//wishlist
+userModel.searchUser=(userId=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.findOne({"userId":userId},{wishlist:1,_id:0}).then(user=>{
+            if(user){
+                return user.wishlist;
+            }else{
+                return null
+            }
+        })
+    })
+})
+
+
 //admin
 userModel.delProp=(propId)=>{
     return dbModel.getPropertyCollection().then(model=>{
-        // console.log("f")
-        return model.deleteOne({"propertyId":propId}).then(delData=>{
-            // console.log("g")
+        return model.deleteOne({propertyId:propId}).then(delData=>{
             if(delData.deletedCount>0){
                 // console.log("h")
                 return delData;
             }else{
                 // console.log("i")
                 return null;
+            }
+        })
+    })
+}
+
+userModel.addProperty = (data) => {
+    console.log('k')
+    return dbModel.getPropertyCollection().then( model => {
+        console.log('l')
+        console.log(data)
+        return model.create(data).then(response => {
+            console.log('w')
+            if(response){
+                return response
+            }else{
+                return null
+            }
+        })
+    })
+}
+
+     
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
             }
         })
     })

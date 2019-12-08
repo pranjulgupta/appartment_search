@@ -1,7 +1,7 @@
 
 
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened class="scrollable">
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav  mode="side" opened class="scrollable">
 
         <mat-form-field color="primary" class="example-full-width" appearance="legacy">
             <mat-label>Enter Area</mat-label>
@@ -88,10 +88,11 @@
     </div> -->
 
 <!-- <div *ngIf="filtered.length!=0"> -->
-
-     <mat-sidenav-content class="container-fluid">
+        <mat-sidenav-content>
+<div class="container-fluid">
+    
         <div class="row">
-                <!-- <div *ngIf="propertDb;else spinn">
+            <!-- <div *ngIf="propertDb;else spinn">
                     <ng-template #spinn>
                             <mat-sidenav-container>
                                     <mat-sidenav-content>
@@ -112,7 +113,7 @@
                                 </mat-sidenav-container>
                     </ng-template> -->
             <mat-card *ngFor="let p of propertyDb" class="col-md-3 card">
-               
+
                 <mat-card-title style="display:flex">
                     <div style="flex:1">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
                     <div style="flex:2"></div>
@@ -126,6 +127,14 @@
                                         </ng-template>
                                     </mat-icon>
                                 </button>
+                        <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>  
+                            <ng-template #vi>
+                               <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
+                           </ng-template>
+                         -->
+                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi">
+                            <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                        </button>
                     </div>
                 </mat-card-title>
 
@@ -148,22 +157,32 @@
                 </mat-card-content>
 
                 <mat-card-actions class="card-button-container">
-                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button>
-                    
+
+                        <button  mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                        <ng-template #iew>
+                            <button mat-raised-button class="c-button" mat-raised-button  (click)="popup('Please login to proceed')">Contact Owner</button>
+                        </ng-template>
+                        <br>
+
+                    <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
+
                     <br>
-                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary"  (click)="reroute(p)">View Details</button>  
-                     <ng-template #view>
-                        <button mat-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
-                    </ng-template> 
-                     <br><br>
+                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view" (click)="reroute(p)">View Details</button>
+                    <ng-template #view>
+                        <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                    </ng-template>
+                    <br>
+                    <br>
                 </mat-card-actions>
-                
+
 
             </mat-card>
         </div>
-       
-    </mat-sidenav-content> 
+    </div>
+    </mat-sidenav-content>
+
 
 </mat-sidenav-container>
 
-
+<!-- </div> -->
+<!-- </div> -->

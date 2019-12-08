@@ -7,6 +7,7 @@ import { SellComponent } from './sell/sell.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './viewDetails/view-details.component';
 
@@ -31,7 +32,7 @@ const routes: Routes = [
   component:HomeComponent
 },
 {
-  path:"view/:query",
+  path:"view",
   component:ViewDetailsComponent
 },
 {
@@ -46,6 +47,10 @@ const routes: Routes = [
 {
   path:"profile",
   component: ProfileComponent
+},
+{
+  path:"starWish",
+  component:WishlistComponent
 },
 {
   path:"**", 

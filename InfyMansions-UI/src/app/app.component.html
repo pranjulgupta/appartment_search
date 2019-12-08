@@ -17,12 +17,18 @@
     <span *ngIf="userName">
         Welcome {{userName}}
     </span>
-    <button mat-button matTooltip="wishlist" class="nav-link">
+    <button mat-button matTooltip="wishlist" class="nav-link" [routerLink]="['/starWish']">
         <mat-icon>grade</mat-icon>
     </button>&nbsp;&nbsp;&nbsp;
-    <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
+
+    <button mat-button matTooltip="profile" class="nav-link" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button>  
+    <ng-template #view>
+        <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
+    </ng-template> 
+
+    <!-- <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
         <mat-icon>person</mat-icon>
-    </button>
+    </button> -->
     <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
     <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button>
 </mat-toolbar>

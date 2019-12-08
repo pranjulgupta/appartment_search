@@ -9,18 +9,21 @@
 
                 <mat-card class="example-card">
 
-                    <table class="table">
-                        <tr>
-                            <td>Name :</td>
-                            <td>{{details.name}}</td>
+                    <table class="table table-bordered table-striped border-table"  style="background-color:paleturquoise">
+                        <tr >
+                               
+                            <td class="mat-subheading-2">Name :</td>
+                            <td class="mat-subheading-2">{{details.name}}</td>
                         </tr>
                         <tr>
-                            <td>Email Id :</td>
-                            <td>{{details.emailId}}</td>
+                                
+                            <td class="mat-subheading-2">Email Id :</td>
+                            <td class="mat-subheading-2">{{details.emailId}}</td>
                         </tr>
                         <tr>
-                            <td>Contact No:</td>
-                            <td>{{details.contactNo}}</td>
+                               
+                            <td class="mat-subheading-2">Contact No:</td>
+                            <td class="mat-subheading-2">{{details.contactNo}}</td>
                         </tr>
                     </table>
 
@@ -39,15 +42,20 @@
      <mat-tab label="Posted Properties">
         <div class="container-fluid">
             <div class="row">
-                <div class="cardStyle col-md-3 offset-1"*ngFor= "let e of property">
+                <div class="cardStyle col-md-3 "*ngFor= "let e of property">
                     <br>
                     <mat-card class="cardp">
                         <mat-card-header>
                              <mat-card-title>{{e.price | currency:"INR" : 'symbol'}}</mat-card-title>
-                            <mat-card-subtitle>For {{e.propertyType}}</mat-card-subtitle> 
+                            <mat-card-subtitle>{{e.propertyType}}</mat-card-subtitle> 
+                            <div style="flex:1">
+                            <button align="align-left" (click)="wishlist(e.propertyId)" mat-icon-button aria-label="example icon button with a heart icon" class="heart">
+                                <mat-icon matSuffix [id]="e.propertyId">favorite_border</mat-icon>
+                            </button>
+                        </div>
                         </mat-card-header>
                         <div class="text-center">
-                            <img class="img-thumbnail" mat-card-image src="../../assets/house.jpg" alt="A house">
+                            <img class="img-thumbnail img-fluid img-rounded card-img" mat-card-image src="{{e.imageUrls}}" alt="A house">
                         </div>
                         <mat-card-content>
                             <table class="text-center" width="250px">
@@ -64,11 +72,12 @@
                         </mat-card-content>
                         <mat-card-actions>
                             <div class="text-center text-primary">
-                                <button mat-stroked-button (click)="contactOwner(property)">Contact Owner</button>
+                                <button mat-stroked-button (click)="contactOwner(e.sellerId)">Contact Owner</button>
                             </div>
                             <br>
                             <div class="text-center text-primary">
                                 <button mat-raised-button color="primary" (click)="viewDetails(property)">viewDetails</button>
+                                
                             </div>
 
                         </mat-card-actions>

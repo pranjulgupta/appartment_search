@@ -1,0 +1,11 @@
+.imgS{
+    border:solid yellow;
+    border-radius: 10px 10px 10px 10px;
+}
+/* .padding{
+    mpadding:100px;
+} */
+
+.customSize{
+    font-size: 8px;
+}

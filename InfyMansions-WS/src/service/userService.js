@@ -55,6 +55,8 @@ hUserService.addDetails = (UserObj) => {
 }
 
 
+//admin
+
 
 
 
@@ -186,7 +188,8 @@ hUserService.registeredUser=()=>{
         if(regData){
             return regData
         }else{
-            let err = new Error("User cannot be fetched");
+            
+            let err = new Error("SellerData cannot be fetched");
             err.status = 404;
             throw err;
         }
@@ -258,6 +261,179 @@ hUserService.deleteProperty=(propId)=>{
     })
 }
 
+//admin
+hUserService.locationProp=()=>{
+    return userdb.loc().then(data=>{
+        if(data){
+            return data;
+        }else{
+            let err = new Error("Location cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+
+// hUserService.showProperty=()=>{
+//     return userdb.findProperty().then(object=>{
+//         if(object==null){
+//             let err= new Error("");
+//             err.status=404;
+//             throw err;
+//         }else{
+//             return object
+//         }
+//     })
+// }
+
+hUserService.getViewDetails=(id)=>{
+    return userdb.viewDetails(id).then((data)=>{
+        if(data){
+            console.log(data,2222)
+            return data;
+        }
+        else{
+            let err = new Error("Error in fetching View Details");
+                err.status = 404;
+                throw err;
+
+        }
+    })
+}
+
+
+hUserService.getPropertyDetails=()=>{
+    return userdb.propertyDetails().then(data=>{
+        // console.log(data,33);
+        if(data.length==0){
+            console.log(44);
+            let err = new Error("Error in fetching Properties");
+                err.status = 404;
+                throw err;
+        }
+        else{
+            // console.log(data,55);
+            return data
+        }
+    })
+}
+
+
+
+hUserService.getOwner = (userid)=>{
+    return userdb.getOwnerDetails(userid).then((data)=>{
+        if(data){
+            return data
+        }{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+}
+module.exports = hUserService;
+
+///Profile component
+hUserService.getProfile=(emailId)=>{
+    return userdb.viewProfile(emailId).then((data)=>{
+        if(data){
+            return data
+        }{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+}
+
+hUserService.getProperty=(userid)=>{
+    return userdb.postedProperty(userid).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+//starwishlist
+hUserService.getwishlistProperty=(userid)=>{
+    return userdb.wishlistProperty(userid).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+
+
+
+
+hUserService.getPropertywish=(propertyId)=>{
+    return userdb.Propertywish(propertyId).then((data)=>{
+        if(data){
+            return data
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+        }
+    })
+
+    
+   
+}
+//wishlist
+hUserService.getWishList=(userId)=>{
+    return userdb.searchUser(userId).then(wishlist=>{
+        if(wishlist){
+            return wishlist
+        }else{
+            let err= Error("No user found")
+            err.status=404;
+            throw err;
+
+        }
+    })
+}
+
+hUserService.addProperty = (dataObj) => {
+    console.log('g')
+    return userdb.generatePropertyId().then(id => {
+        if (id) {
+            console.log('h')
+            dataObj.propertyId = id;
+            return userdb.addProperty(dataObj).then(modelRes => {
+                if (modelRes) {
+                    return modelRes
+                } else {
+                    let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+                }
+            })
+        }else{
+            console.log('v')
+            let err = new Error("Property cannot be added! Try Again.")
+                    err.status = 404;
+                    throw err;
+        }
+    })
+}
+
+        
 
 
 module.exports = hUserService;
+        
