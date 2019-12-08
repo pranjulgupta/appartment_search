@@ -5,36 +5,95 @@ Mongoose.set('useCreateIndex', true)
 const url = "mongodb://localhost:27017/InfyMansions_DB";
 collection={}
 const userSchema = Schema({
-    userId: String,
-    name: String,
-    emailId: String,
-    contactNo: Number,
-    city: String,
-    area: String,
-    pincode: Number,
-    password: String,
-    wishlist: []
+    userId:{
+        required: [true, 'This field is Required'],
+        type: String,
+        unique:true
+    },
+    name:{
+        required: [true, 'This field is Required'],
+        type: String
+    },
+    emailId:{
+        required: [true, 'This field is Required'],
+        type: String,
+        unique:true,
+        match:[/^[A-Za-z].+@[A-Za-z]{2,}[.][a-zA-Z]{2,}$/,"Enter a valid Email Id"]
+    },
+    contactNo:{
+        required: [true, 'This field is Required'],
+        type: Number,
+        validate:[(contactNo)=>String(contactNo).length==10,'Contact No should have 10 digits only']
+    },
+    city: {
+        type: String,
+        match:[/^[A-Za-z]{3,}$/,'City must have only characters and must have atleast 3 chars']
+    },
+    area:{
+        type: String,
+        match:[/^.{3,}$/,'Area must have atleast 3 chars']
+    },
+    pincode: {
+        type: Number,
+        validate:[(pincode=>String(pincode).length==6),'Pincode must have 6 digits']
+    },
+    password: {
+        required: [true, 'This field is Required'],
+        type: String
+    },
+    wishlist:{
+        type: []
+    }
 }, { collection: "User" });
 
 const roleSchema = Schema({
-    
-        registeredUsers: [],
+    registeredUsers: [],
         buyers: [],
         sellers: []
-    }, { collection: "Role"});
+}, { collection: "Role"});
+
 
 const featuresSchema = Schema({
+    propertyIds:{
+        type:[]
+    },
+    propertyType:{
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyType)=>(propertyType=='Sale'|| propertyType=='Rent'),"Property Type must be either 'Sale' or 'Rent'"]
+    }, 
+    propertyOwnership: {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(propertyOwnership)=>(propertyOwnership=='Owner'|| propertyOwnership=='Broker'|| propertyOwnership=='Dealer'),"Ownership must be 'Owner' or 'Dealer' or 'Broker'"]
+    }, 
+    buildingType:  {
+        type:String,
+        required: [true, 'This field is Required'],
+        validate:[(buildingType)=>(buildingType=='House'|| buildingType=='Apartment'),"Building Type must be either 'House' or 'Apartment'"]
+    }, 
+    noOfBathrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBedrooms:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    noOfBalconies:  {
+        type:Number,
+        required: [true, 'This field is Required'],
+    }, 
+    furnishing: {
+        type:String,
+        validate:[(furnishing)=>(furnishing=='Fully Furnished'|| furnishing=='Semi Furnished'|| furnishing=='Unfurnished'),"Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished'"]
+    }, 
+    availability:  {
+        type:String,
+        validate:[(availability)=>(availability=='Ready to move'|| availability=='Under construction'),"Availability must be either 'Ready to move' or 'Under construction'"]
+    }, 
+}, { collection: "Features" });
 
-    propertyType: String,
-    propertyOwnership: String,
-    buildingType: String,
-    noOfBathrooms: Number,
-    noOfBedrooms: Number,
-    noOfBalconies:Number,
-    furnishingType: String,
-    availability: String,
-    
-}, { collection: "Features"});
 
 const propertySchema = Schema({
     propertyId: String,
@@ -87,13 +146,8 @@ const propertySchema = Schema({
         extras: String
     }, { collection: "Property"});
     const locationSchema = Schema({
+    })
 
-        "propertyIds": [],
-        "pincode": Number,
-        "area": String,
-        "city": String,
-        "state": String
-    }, { collection: "Location"});
 
 
 collection.getUserCollection = () => {
@@ -105,7 +159,7 @@ collection.getUserCollection = () => {
         throw err;
     })
 }
-console.log(collection.getUserCollection())
+
 
 collection.getLocationCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {
@@ -146,5 +200,6 @@ collection.getPropertyCollection = () => {
         throw err;
     })
 }
+    
 
 module.exports = collection;

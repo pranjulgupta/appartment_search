@@ -1,13 +1,12 @@
-<br>
-<br>
-<br>
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened class="scrollable">
+
+
+<mat-sidenav-container class="example-container" >
+    <mat-sidenav  mode="side" opened class="scrollable">
 
         <mat-form-field color="primary" class="example-full-width" appearance="legacy">
             <mat-label>Enter Area</mat-label>
-            <input autofocus [(ngModel)]="areaFilter" (change)="filter()" type="text" matInput>
-            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <input autofocus  #ar  type="text" matInput>
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="areaFiltr=ar.value;filter();">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-form-field>
@@ -16,47 +15,42 @@
 
         <mat-label>Property for :</mat-label>
         <br>
-        <mat-radio-group>
-            <mat-radio-button value="buy" (click)="buyFilter(b.value)" #b color="accent">Buy</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="rent" (click)="buyFilter(r.value)" #r color="accent">Rent</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="both" (click)="buyFilter(bo1.value)" #bo1 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-group [(ngModel)]="propForFilter" (change)="filter()"> 
+            <mat-radio-button value="buy" #b color="accent">Buy</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="rent" #r color="accent">Rent</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="both" #bo1 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
         </mat-radio-group>
         <br>
         <br>
 
         <mat-label>Property type :</mat-label>
         <br>
-        <mat-radio-group aria-label="Property for:">
-            <mat-radio-button value="house" (click)="buyFilter(h.value)" #h color="accent">House</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="apartments" (click)="buyFilter(a.value)" #a color="accent">Apartments</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="both" (click)="buyFilter(bo2.value)" #bo2 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-group [(ngModel)]="propTypeFilter" (change)="filter()">
+            <mat-radio-button value="house"  #h color="accent">House</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="apartments" #a color="accent">Apartments</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="both"  #bo2 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
         </mat-radio-group>
         <br>
 
         <mat-form-field color="primary" class="example-full-width">
             <label class="form-check-label">Bedrooms:&nbsp;
-                <input matInput type="number" class="form-check-input">
+                <input matInput type="number" class="form-check-input"  [(ngModel)]="bedFilter" (change)="filter()">
                 <mat-icon class="button-side" matSuffix>king_bed</mat-icon>
             </label>
         </mat-form-field>
 
         <mat-form-field color="primary" class="example-full-width">
                 <label class="form-check-label">Bathrooms:&nbsp;
-                    <input matInput type="number" class="form-check-input">
+                    <input matInput type="number" class="form-check-input"  [(ngModel)]="bathFilter" (change)="filter()">
                     <mat-icon class="button-side" matSuffix>bathtub</mat-icon>
                 </label>
             </mat-form-field>
         <br>
         <br>
 
-        
-        
-        <br>
-        <br>
-
         <mat-form-field color="primary" class="example-full-width">
             <label class="form-check-label">Min Amount :&nbsp;
-                <input matInput type="number">
+                <input matInput type="number" [(ngModel)]="minFilter" (change)="filter()">
             </label>
         </mat-form-field>
         <br>
@@ -64,94 +58,122 @@
 
         <mat-form-field color="primary" class="example-full-width">
             <label class="form-check-label">Max Amount :&nbsp;
-                <input matInput type="number">
+                <input matInput type="number" [(ngModel)]="maxFilter" (change)="filter()">
             </label>
         </mat-form-field>
         <br>
         <br>
-        <button mat-raised-button matSuffix layout-align="center" (click)="clear()">Clear Field</button>
-        <br>
-        <br>
-        <br>
+        <button mat-raised-button matSuffix layout-align="center" (click)="ar.value='';clear()">Clear Field</button>
+        <br> <br>
+       
     </mat-sidenav>
-    <!-- (click)="change(p) -->
+   
+    
+    <!-- <div *ngIf="noContent">
+        <mat-sidenav-container>
+            <mat-sidenav-content>
+                <mat-grid-list cols="1" rowHeight="1:0.5">
+                    <mat-grid-tile>
+                        <h1 class="no-content">No property available for applied filters </h1>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div> -->
 
-    <mat-sidenav-content class="container-fluid">
+    <!-- <div *ngIf="!noContent">
+            <div *ngIf="filtered.length==0">
+            
+        </div>
+    </div> -->
+
+<!-- <div *ngIf="filtered.length!=0"> -->
+        <mat-sidenav-content>
+<div class="container-fluid">
+    
         <div class="row">
+            <!-- <div *ngIf="propertDb;else spinn">
+                    <ng-template #spinn>
+                            <mat-sidenav-container>
+                                    <mat-sidenav-content>
+                                        <mat-grid-list cols="3" rowHeight="3:3">
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile>
+                                                    <mat-spinner></mat-spinner>
+                                            </mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                            <mat-grid-tile></mat-grid-tile>
+                                        </mat-grid-list>
+                                    </mat-sidenav-content>
+                                </mat-sidenav-container>
+                    </ng-template> -->
             <mat-card *ngFor="let p of propertyDb" class="col-md-3 card">
-               
-                    <mat-card-title>
-                        &nbsp;{{p.price | currency:"INR" : 'symbol'}}<br>&nbsp;
-                        <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart">
-                            <span><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></span>
-                        </button><br>
-                        <span style="color:darkgrey">For {{p.propertyType}}</span>
-                    </mat-card-title>
-                    <br>
-                    <mat-card-content>
-                        <img class="container-fluid" mat-card-image src="{{p.imageUrls}}" alt="A house"><br>
-                        <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span align="end">{{p.noOfBedrooms}} BHK {{p.buildingType}}</span><br>
-                        <span align="align-left">{{p.furnishing}} </span>&nbsp;&nbsp;&nbsp;
-                        <span align="align-right">{{p.availibility}}</span>
-                    </mat-card-content>
 
-                    <mat-card-actions>
-                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p)">Contact Owner</button><br>
-                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="viewDetails(p)" color="primary">viewDetails</button>
-                    </mat-card-actions>
+                <mat-card-title style="display:flex">
+                    <div style="flex:1">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
+                    <div style="flex:2"></div>
+                    <div style="flex:1">
+                        <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>  
+                            <ng-template #vi>
+                               <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
+                           </ng-template>
+                         -->
+                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi">
+                            <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                        </button>
+                    </div>
+                </mat-card-title>
+
+                <mat-card-content>
+                    <span style="color:darkgrey">For {{p.propertyType}}</span>
+                </mat-card-content>
+
+                <br>
+                <mat-card-content>
+                    <div class="d">
+                        <img class="container-fluid cardimg" *ngIf="p" mat-card-image src="{{p.imageUrls}}" alt="A house">
+                        <br>
+                    </div>
+                    <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;
+                    <span align="end">{{p.noOfBedrooms}} BHK {{p.buildingType}}</span>
+                    <br>
+                    <span align="align-left">{{p.furnishing}} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span align="align-right">{{p.availability}}</span>
+                </mat-card-content>
+
+                <mat-card-actions class="card-button-container">
+
+                        <button  mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                        <ng-template #iew>
+                            <button mat-raised-button class="c-button" mat-raised-button  (click)="popup('Please login to proceed')">Contact Owner</button>
+                        </ng-template>
+                        <br>
+
+                    <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
+
+                    <br>
+                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view" (click)="reroute(p)">View Details</button>
+                    <ng-template #view>
+                        <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                    </ng-template>
+                    <br>
+                    <br>
+                </mat-card-actions>
+
 
             </mat-card>
         </div>
+    </div>
     </mat-sidenav-content>
 
-    <!-- <mat-sidenav-content>
-            <mat-grid-list cols="3" rowHeight="1:1.55" gutterSize="36px">
-              <div *ngFor="let property of propertyDb">
-              <mat-grid-tile  [class.mat-elevation-z4]="!isActive">
-                <mat-card class="my-card">
-                  <mat-card-header class="card-flex row">
-                    <div class="row-1">
-                      <mat-card-title>
-                        {{property.price|currency:"INR"}}&nbsp;&nbsp;
-                        <button mat-icon-button aria-label="Example icon-button with a heart icon" class="heart" (click)="change(property)">
-                          <mat-icon matSuffix [id]="property.propertyId" >favorite_border</mat-icon>
-                        </button>
-                      </mat-card-title>
-                    </div>
-                  </mat-card-header>
-        
-                  <mat-card-header>
-                    <mat-card-subtitle>For: {{property.propertyType}}</mat-card-subtitle>
-                  </mat-card-header>
-        
-                  <div class="card-img-div">
-                    <img src="../../../assets/house.jpg" class="card-img" mat-card-image alt="House photo">
-                  </div>
-        
-                  <mat-card-content>
-                    <mat-grid-list cols="2" rowHeight="5:1" gutterSize="2px">
-                      <mat-grid-tile>{{property.propertyArea}} sq. Ft</mat-grid-tile>
-                      <mat-grid-tile>{{property.noOfBedrooms}} BHK House </mat-grid-tile>
-                      <mat-grid-tile>{{property.furnishing}}</mat-grid-tile>
-                      <mat-grid-tile>{{property.availability}} </mat-grid-tile>
-                    </mat-grid-list>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <div class="card-btn-container">
-                    <button class="c-button" mat-stroked-button color="primary">Contact Owner</button>
-                    </div>
-                    <br>
-                    <div class="card-btn-container">
-                    <button class="c-button" mat-raised-button color="primary">View Deatils</button>
-                    </div>
-                  </mat-card-actions>
-                </mat-card>
-              </mat-grid-tile>
-            </div>
-            </mat-grid-list>
-          </mat-sidenav-content> -->
 
 </mat-sidenav-container>
 
-
+<!-- </div> -->
+<!-- </div> -->

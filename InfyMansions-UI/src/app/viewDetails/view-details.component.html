@@ -1,0 +1,223 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 ">
+            <img src="{{data.imageUrls}}" class="img-fluid imgS" width="100%" height="100%">
+        </div>
+        <div class="col-md-8">
+            <div class="row mat-title text-primary">Description</div>
+            <div class="row" class="mat-body-2">{{data.description}}</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row" class="mat-subheading-2">AREA :{{data.propertyArea}} sq Ft</div>
+                    <div class="row" class="mat-subheading-2">TRANSACTION TYPE : {{data.transactionType}}</div>
+                    <div class="row" class="mat-subheading-2">BEDROOMS :{{data.noOfBedrooms}}
+                        <mat-icon class="button-side" matSuffix>king_bed</mat-icon>&nbsp;
+                        <!-- <mat-icon  class="button-side" matSuffix>king_bed</mat-icon>&nbsp;
+                        <mat-icon *ngIf="data.noOfBedrooms==2" class="button-side" matSuffix>king_bed</mat-icon>
+                        <mat-icon *ngIf="data.noOfBedrooms==3" class="button-side" matSuffix>king_bed</mat-icon> -->
+
+                        <!-- <span *ngIf="data.noOfBedrooms>4; else bedicons">{{data.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(data.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template>  -->
+
+                    </div>
+                    <br>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="row" class="mat-subheading-2">PRICE :{{data.price}}</div>
+                    <div class="row" class="mat-subheading-2">AGE : {{data.ageOfProperty}}</div>
+                    <!-- <mat-icon class="button-side" matSuffix>bathtub</mat-icon> -->
+                    <div class="row" class="mat-subheading-2">BATHROOMS :{{data.noOfBathrooms}}
+                        <mat-icon color="red" class="button-side" matSuffix>bathtub</mat-icon>
+                    </div>
+                    <!-- <span *ngIf="prop.noOfBedrooms>4; else bedicons">{{prop.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(prop.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
+                </div>
+                <div class="col-md-4">
+                    <div class="row" class="mat-subheading-2">SECURITY DEPOSIT : {{data.Advance}}</div>
+                    <div class="row" class="mat-subheading-2">AVAILABILITY :{{data.availability}}</div>
+                    <div class="row" class="mat-subheading-2">BALCONIES :{{data.noOfBalconies}}
+                        <mat-icon color="red" class="button-side" matSuffix>store_front</mat-icon>
+                    </div>
+                    <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
+                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
+                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
+                </div>
+            </div>
+
+            <div class="row">
+                <button class="btn btn-block btn-light btn rounded text-success mat-display-4">Contact Owner</button>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-card>
+                <mat-card-title class="text-danger text-center">Features</mat-card-title>
+                 <br>
+                <mat-card-content>
+                    <button mat-raised-button style="border-radius:30px" class="btn btn btn-block" color="accent">Property Type : {{data.propertyType}}</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button style="border-radius:30px" class="mat-warn btn btn-block">Ownwership :{{data.propertyOwnership}}</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button style="border-radius:30px" class="btn btn btn-block" color="primary">Building Type :{{data.buildingType}}</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button style="border-radius:30px" class="mat-warn btn btn-block">Furnishing :{{data.furnishing}}</button>
+                    <br>
+                    <br>
+                    <button mat-raised-button style="border-radius:30px" class="btn btn-block" color="accent">Availability : {{data.availability}}</button>
+                    <br>
+                    <br>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card>
+                <mat-card-title class="text-danger text-center">Highlights</mat-card-title>
+                <br>
+                <br>
+                <br>
+                <mat-card-content>
+                    <div class="row">
+                            <!-- *ngIf="CloseToRailwayStation" -->
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>view_headline</mat-icon>
+                            
+                            <div class="customSize">Water</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>home_work</mat-icon>
+                            <br>
+                            <div class="customSize">School</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>directions_bus</mat-icon>
+                            <br>
+                            <div class="customSize">Train</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>departure_board</mat-icon>
+                            <br>
+                            <div class="customSize">Bustand</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>business</mat-icon>
+                            <br>
+                            <div class="customSize">Bank</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card>
+                <mat-card-title class="text-danger text-center">Amenities</mat-card-title>
+                <br>
+                <br>
+                <br>
+                <mat-card-content>
+                    <div class="row">
+                        <!-- *ngIf="CloseToRailwayStation" -->
+
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>view_headline</mat-icon>
+                            <br>
+                            <div class="customSize">LIFTS</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>home_work</mat-icon>
+                            <br>
+                            <div class="customSize">AC</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>directions_bus</mat-icon>
+                            <br>
+                            <div class="customSize">MAINTAINENCE</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>departure_board</mat-icon>
+                            <br>
+                            <div class="customSize">PARKING</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                            <mat-icon>wifi</mat-icon>
+                            <br>
+                            <div class="customSize">WIFI</div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</div>
+
+<br>

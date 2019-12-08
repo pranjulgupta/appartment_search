@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const userService = require('../service/userService');
-// const propertyService=require('./service/propertyService')
-// const Property=require('model/propertyModel')
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
-const propService = require('../service/propertyService')
+
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
@@ -17,6 +15,30 @@ router.post('/login', function (req, res, next) {
     userService.checkUser(emailId, password).then(result => {
         res.json(result);
     }).catch(err => next(err));
+})
+
+
+router.post('/register', function (req, res, next) {
+    const userObj= req.body;
+    userService.addDetails(userObj).then((data)=>{
+        console.log(data)
+        res.json({"message":"Registered successfully with User Id: "+data.userId});
+    }).catch((err)=>
+    next(err)
+)
+})
+
+
+//To get user properties
+router.get('/profile/:emailId',(req,res,next)=>{
+    const emailid=req.params.emailId;
+    console.log(emailid,3);
+    userService.getProfile(emailid).then(data=>{
+        console.log(data)
+        res.json(data)
+    }).catch(err=>{
+        next(err)
+    })
 })
 
 //buy
@@ -66,7 +88,50 @@ router.get('/profile/:emailId',(req,res,next)=>{
     }).catch(err=>{
         next(err)
     })
+})
     
+router.get('/admin',function(req,res,next){
+    userService.registeredUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.delete('/deleteuser/:id',function(req,res,next){
+    const Id=parseInt(req.params.id);
+    userService.deleteUser(Id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/buyer',function(req,res,next){
+    userService.buyerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/seller',function(req,res,next){
+    userService.sellerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/property',function(req,res,next){
+    userService.propDetails().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.delete('deleteprop/:id',function(req,res,next){
+    const id=parseInt(req.params.id);
+    userService.deleteProperty(id).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/search',function(req,res,next){
+    userService.locationProp().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
 })
 
 router.get('/properties/:userId',(req,res,next)=>{
@@ -89,6 +154,18 @@ router.get('/wishlistProperties/:userId',(req,res,next)=>{
     }).catch(err=>
         next(err))
 })
+
+
+
+router.get('/view',(req,res,next)=>{
+    const id=req.params.id;
+    console.log(id,11);
+    
+    userService.getViewDetails(id).then(result=>{
+        res.json(result)
+    }).catch(err=>
+        next(err))
+})
 router.get('/wishlistProperties/:propertyId',(req,res,next)=>{
     const propertyId=req.params.propertyId
     console.log(propertyId,7889);
@@ -107,14 +184,6 @@ router.get('/wishProp', function(req,res,next){
         res.send(data)
     }).catch(err => next(err));
 })
-
-
-
-
-
-
-
-
 
 
 
@@ -144,9 +213,11 @@ router.get('/find/:userId',(req,res,next)=>{
 
 //To Sell
 router.post('/sell', function(req, res, next){
+    console.log('z')
     let data=req.body;
-    propService.addNewProperty(data).then( response => {
-        res.json(response)
+    userService.addProperty(data).then( propdata => {
+
+        res.json(propdata)
     }).catch( err => next(err))
 
 })
@@ -158,5 +229,5 @@ router.get('/wishList/:userId',(req,res,next)=>{
         res.json(data)
     }).catch( err => next(err))
 })
-
+    
 module.exports = router;

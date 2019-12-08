@@ -9,8 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule, MatDialogModule } from '../../node_modules/@angular/material';
+
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DialogComponent } from './dialog/dialog.component';
@@ -19,12 +21,17 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 
+import { ViewDetailsComponent } from './viewDetails/view-details.component'
+
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, SellComponent, RegisterComponent, BuyComponent, ProfileComponent, DialogComponent, WishlistComponent 
+    DialogComponent, WishlistComponent ,
    
+    AppComponent,HomeComponent, 
+    RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent, ViewDetailsComponent
   ],
+  
   imports: [
     AppRoutingModule,
     //BrowserModule,

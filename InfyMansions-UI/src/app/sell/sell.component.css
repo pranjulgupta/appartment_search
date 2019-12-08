@@ -3,7 +3,32 @@
     margin-left: 16px;
   }  
 
-  #slideToggler{
+  #mainContent{
+    margin-left: 10px;
+
+  }
+
+  #btnPrev{
+    margin-left:50px;
+  }
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  
+
+  .slideToggler{
     margin-left: 16px;
   }
 
