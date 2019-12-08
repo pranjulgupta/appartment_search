@@ -61,8 +61,6 @@ export class BuyComponent implements OnInit {
           console.log(1)
           console.log(good);
           this.propertyDb=good
-          this.tempArr=good;
-          console.log(good.availability)
         },
         (bad)=>{
           console.log(2)
@@ -187,6 +185,36 @@ popup(data){
 reroute(property){
   this.router.navigate(['/view',property.propertyId])
 }
+
+
+wishChange(p){
+  if(this.userName){
+    let index=p.wishlist.indexOf(p.propertyId);
+    if(index==-1){
+      this.gpService.addToList({userId:p.userId,propertyId:p.propertyId}).subscribe(
+        (success)=>{
+          this.openSnackBar(p + "is added to your wishlist","")
+          this.wishlist.push(p)
+        },
+        (failure)=>{
+          this.openSnackBar("Something went wrong..!","")
+         
+        }
+      )
+    }else{
+      this.gpService.deleteFromList({userId:this.userId,propertyId:p}).subscribe(
+        (success)=>{
+          this.openSnackBar(p + "is removed from your wishlist.","")
+          this.wishlist.splice(index,1)
+        },
+        (failure)=>{
+          this.openSnackBar("Something went wrong..!","");
+        }
+      )
+    }
+  }
+}
+
 
 }
 

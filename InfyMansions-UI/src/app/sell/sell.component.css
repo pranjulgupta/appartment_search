@@ -70,3 +70,7 @@
     width: 150px;
 
   }
+
+  mat-progress-spinner{
+    margin-left: 10px;
+  }

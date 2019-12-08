@@ -253,7 +253,7 @@ collection.getUserCollection = () => {
         throw err;
     })
 }
-console.log(collection.getUserCollection())
+
 
 collection.getLocationCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {

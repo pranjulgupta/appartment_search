@@ -3,11 +3,10 @@
     <h3 class="text-center">Welcome Admin</h3>
     <mat-tab-group>
             <mat-tab label="Registered Users"> 
-                <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <br>
                         <br>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-hovered">
                             <thead>
                                 <tr>
                                     <th>User Id</th>
@@ -28,15 +27,13 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
             </mat-tab>
 
             <mat-tab label="Buyers">
-                <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <br>
                         <br>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-hovered">
                             <thead>
                                 <tr>
                                     <th>User Id</th>
@@ -53,14 +50,12 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
             </mat-tab>
             <mat-tab label="Sellers" >
-                <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <br>
                         <br>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-hovered">
                             <thead>
                                 <tr>
                                     <th>User Id</th>
@@ -77,14 +72,12 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
             </mat-tab>
             <mat-tab label="Properties"> 
-                    <div class="row">
                         <div class="col-md-4 offset-md-4">
                             <br>
                             <br>
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hovered">
                                 <thead>
                                     <tr>
                                         <th>Property Id</th>
@@ -95,17 +88,16 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor='let p of propData'>
-                                        <td>{{p.propertyId}}</td>
+                                        <td #pId>{{p.propertyId}}</td>
                                         <td>{{p.sellerId}}</td>
                                         <td>{{p.buyerId}}</td>
                                         <td>
-                                            <button type="button"  class="btn btn-danger" (click)='deleteProp(p.propertyId)' >Delete</button>
+                                            <button type="button"  class="btn btn-danger" (click)='deleteProp(pId.innerText)'>Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
                 </mat-tab>
     </mat-tab-group>
 </div>

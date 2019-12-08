@@ -38,9 +38,7 @@ userModel.searchUser = (userId) => {
     })
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -52,8 +50,11 @@ userModel.viewDetails = (id) => {
                 let err = Error("Property not found");
                 err.status = 404;
                 throw err;
-=======
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+            }
+        })
+    })
+}
+
 
 userModel.addUser= (UserObj)=>{
     return dbModel.getUserCollection().then(model=>{
@@ -62,27 +63,42 @@ userModel.addUser= (UserObj)=>{
                 return null;
             }else{
                 return userData;
-                
-<<<<<<< HEAD
-=======
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
             }
         })
     })
 }
-<<<<<<< HEAD
+                
+//to insert values in wishlist
+userModel.insertWishList = (userId,propertyId) => {
+    return dbModel.getUserCollection().then(model => {
+        return model.updateOne({userId:userid},{$push:{wishlist:propertyId}}).then(updatedData => {
+            if (updatedData.nModified == 1) {
+                return propertyId;
+            } else {
+                console.log(data, 99);
+                return null
+            }
+        })
+    })
+}
+
+
+//to valuest values from user's wishlist
+userModel.deleteFromWishList = (userId,propertyId) => {
+    return dbModel.getUserCollection().then(model => {
+        return model.updateOne({userId:userid},{$pull:{wishlist:propertyId}}).then(updatedData => {
+            if (updatedData.nModified == 1) {
+                return propertyId;
+            } else {
+                console.log(data, 91);
+                return null
+            }
+        })
+    })
+}
 
 
 
-=======
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
 //profile comp
 userModel.viewProfile = (emailid) => {
     console.log(emailid, 11);
@@ -105,6 +121,82 @@ userModel.viewProfile = (emailid) => {
 }
 
 
+userModel.propertyDetails = () => {
+    return dbModel.getPropertyCollection().then(model => {
+        return model.find().then(data => {
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+            }
+        })
+    })
+}
+
+
+
+
+
+userModel.generatePropertyId = () => {
+    return dbModel.getPropertyCollection().then((userModel) => {
+        return userModel.distinct("propertyId").then((ids) => {
+            let idarr = ids.map((data) => { 
+            return Number(data.slice(1)) })
+            let bId = Math.max(...idarr);
+            return "P" + (bId + 1);
+        })
+    })
+}
+
+
+
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+            }
+        })
+    })
+}
+
+userModel.addProperty = (data) => {
+    console.log('k')
+    return dbModel.getPropertyCollection().then( model => {
+        console.log('l')
+        console.log(data)
+        return model.create(data).then(response => {
+            console.log('w')
+            if(response){
+                return response
+            }else{
+                return null
+            }
+        })
+    })
+}
+
+     
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+            }
+        })
+    })
+}
+
+// #############################################################################
 //admin
 userModel.regUser=()=>{
     return dbModel.getUserCollection().then(model=>{
@@ -119,32 +211,29 @@ userModel.regUser=()=>{
 }
 
 //admin
-userModel.delUser=(Id)=>{
-    return dbModel.getUserCollection().then(model=>{
-        return model.deleteOne({userId:Id}).then(delData=>{
-            if(delData.deletedCount>0){
-                return Id;
+userModel.delUser=(userId)=>{
+    return dbModel.getUserCollection().then(umodel=>{
+        return umodel.deleteOne({userId:userId}).then(delData=>{
+            if(delData.deletedCount==1){
+                return dbModel.getRoleCollection().then(rmodel=>{
+                    return rmodel.updateOne({$pull:{registeredUsers:userId}}).then(delRole=>{
+                        if(delRole.nModified==1){
+                            return dbModel.getPropertyCollection().then(pmodel=>{
+                                return pmodel.deleteMany({sellerId:userId}).then(delprop=>{
+                                    return userId;
+                                })
+                            })
+                        }else{
+                            return null;
+                        }
+                    })
+                })
             }else{
                 return null;
             }
         })
     })
 }
-
-            
-userModel.propertyDetails = () => {
-    return dbModel.getPropertyCollection().then(model => {
-        return model.find().then(data => {
-            if (data.length == 0) {
-                return null
-            } else {
-                console.log(data, 99);
-                return data
-            }
-        })
-    })
-}
-
 //admin
 userModel.buyerView=()=>{
     return dbModel.getRoleCollection().then(model=>{
@@ -178,17 +267,6 @@ userModel.sellerView=()=>{
         })
     })
 }
-<<<<<<< HEAD
-
-//admin
-userModel.propertyView=()=>{
-    return dbModel.getPropertyCollection().then(model=>{
-        return model.find({},{_id:0,propertyId:1,sellerId:1,buyerId:1}).then(propdata=>{
-            if(propdata.length==0){
-                return null;
-            }else{
-                return propdata;
-=======
 
 //admin
 userModel.propertyView=()=>{
@@ -206,80 +284,15 @@ userModel.propertyView=()=>{
 //admin
 userModel.delProp=(propId)=>{
     return dbModel.getPropertyCollection().then(model=>{
-        return model.deleteOne({propertyId:propId}).then(delData=>{
+        // console.log("f")
+        return model.deleteOne({"propertyId":propId}).then(delData=>{
+            // console.log("g")
             if(delData.deletedCount>0){
-                return propId;
+                // console.log("h")
+                return delData;
             }else{
+                // console.log("i")
                 return null;
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
-            }
-        })
-    })
-}
-
-<<<<<<< HEAD
-userModel.generatePropertyId = () => {
-    return dbModel.getPropertyCollection().then((userModel) => {
-        return userModel.distinct("propertyId").then((ids) => {
-            let idarr = ids.map((data) => { 
-            return Number(data.slice(1)) })
-            let bId = Math.max(...idarr);
-            return "P" + (bId + 1);
-        })
-    })
-}
-
-
-//admin
-userModel.delProp=(propId)=>{
-    return dbModel.getPropertyCollection().then(model=>{
-        return model.deleteOne({propertyId:propId}).then(delData=>{
-            if(delData.deletedCount>0){
-                return propId;
-            }else{
-                return null;
-=======
-//search
-userModel.loc=()=>{
-    return dbModel.getLocationCollection().then(model=>{
-        return model.find().then(data=>{
-            if (data.length == 0) {
-                return null
-            } else {
-                console.log(data, 99);
-                return data
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
-            }
-        })
-    })
-}
-
-userModel.addProperty = (data) => {
-    console.log('k')
-    return dbModel.getPropertyCollection().then( model => {
-        console.log('l')
-        console.log(data)
-        return model.create(data).then(response => {
-            console.log('w')
-            if(response){
-                return response
-            }else{
-                return null
-            }
-        })
-    })
-}
-
-     
-//search
-userModel.loc=()=>{
-    return dbModel.getLocationCollection().then(model=>{
-        return model.find().then(data=>{
-            if (data.length == 0) {
-                return null
-            } else {
-                console.log(data, 99);
-                return data
             }
         })
     })

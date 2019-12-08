@@ -19,9 +19,13 @@ export class AdminComponent implements OnInit {
   }
 
   adminView(){
-
     this.service.regUser().subscribe(
       resp=>{
+        for(let i=0;i<resp.length;i++){
+          if(resp[i].name=='admin'){
+            resp.splice(i,1)
+          }
+        }
         this.regData=resp
       },
       err=>{
@@ -61,8 +65,8 @@ export class AdminComponent implements OnInit {
   deleteReg(userId){
     this.service.delUser(userId).subscribe(
       resp=>{
-        // this.successMessage=resp
-        this.adminView();
+        // this.openSnackBar("User"+resp+" has been removed. ","Ok");
+        this.ngOnInit();
       },
       err=>{
         this.errorMessage=err.error.message
@@ -73,8 +77,8 @@ export class AdminComponent implements OnInit {
   deleteProp(propId){
     this.service.delProp(propId).subscribe(
       resp=>{
-        // this.successMessage=resp
-        this.adminView();
+        // this.openSnackBar("Property"+resp+" has been removed. ","Ok");
+        this.ngOnInit();
       },
       err=>{
         this.errorMessage=err.error.message

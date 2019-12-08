@@ -117,9 +117,15 @@
                     <div style="flex:1">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
                     <div style="flex:2"></div>
                     <div style="flex:1">
-                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart">
-                            <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
-                        </button>
+                        {{p.propertyId}}78
+                            <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="wishChange(p)">
+                                    <mat-icon matSuffix [id]="p.propertyId" color="accent">
+                                        <span *ngIf="p.wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                        <ng-template #liked>
+                                            <span>favorite</span>
+                                        </ng-template>
+                                    </mat-icon>
+                                </button>
                     </div>
                 </mat-card-title>
 
@@ -151,109 +157,12 @@
                     </ng-template> 
                      <br><br>
                 </mat-card-actions>
-                <!-- *ngIf="userName;else view" -->
+                
 
             </mat-card>
         </div>
-        <!-- </div> -->
-    </mat-sidenav-content>  
-<!-- </div> -->
-
-    <!-- <mat-sidenav-content> -->
-          
-<div class="row" style="border:solid">
-    <div class="col-md-4" style="border:solid">
-        <img src="{{viewDet.imageUrls}}" class="img-fluid" height="100%">
-    </div>
-    <div class="col-md-8" style="border:solid">
-        <div class="row mat-title" style="border:solid">Description</div>
-        <div class="row" style="border:solid">111{{viewDet.description}}</div>
-        <div class="row" style="border:solid">
-            <div class="col-md-4" style="border:solid">
-                <div class="row">AREA :{{viewDet.area}} sq Ft</div>
-                <div class="row">Transaction Type : {{viewDet.transactionType}}</div>
-                <div class="row">BEDROOMS :</div>
-                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
-                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
-                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
-            </div>
-            <div class="col-md-4" style="border:solid">
-                <div class="row">PRICE :{{viewDet.price}}</div>
-                <div class="row">AGE : {{viewDet.ageOfProperty}}</div>
-                <div class="row">BATHROOMS : </div>
-                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
-                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
-                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
-            </div>
-            <div class="col-md-4" style="border:solid">
-                <div class="row">SECURITY DEPOSIT : {{viewDet.Advance}}</div>
-                <div class="row">AVAILABILITY :{{viewDet.availability}}</div>
-                <div class="row">BALCONIES :</div>
-                <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
-                    <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
-                    <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
-            </div>
-        </div>
-        <div class="row" style="border:solid">
-            <button class="btn btn-block">Contact Owner</button>
-        </div>
-
-    </div>
-
-</div>
-<div class="row" style="border:solid">
-    <div class="col-md-4" style="border:solid">
-        <mat-card>
-            <mat-card-title>Features</mat-card-title>
-            <mat-card-content>
-                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Property Type {{viewDet.propertyType}}</button>
-                <br>
-                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Ownwership {{viewDet.propertyOwnership}}</button>
-                <br>
-                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Building Type {{viewDet.buildingType}}</button>
-                <br>
-                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">Furnishing {{viewDet.furnishing}}</button>
-                <br>
-                <button mat-raised-button style="border-radius:30px" class="btn" color="primary">availability {{viewDet.availability}}</button>
-                <br>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="col-md-4" style="border:solid">
-        <mat-card>
-            <mat-card-title>Highlights</mat-card-title>
-            <mat-card-content>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <mat-icon>favorite_border</mat-icon>
-                        </div>
-                        <div class="row"></div>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="col-md-4" style="border:solid">
-        <mat-card>
-            <mat-card-title>Amenities</mat-card-title>
-            <mat-card-content>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <mat-icon>favorite_border</mat-icon>
-                        </div>
-                        <div class="row"></div>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-</div>
-
-
-          <!-- </mat-sidenav-content> -->
+       
+    </mat-sidenav-content> 
 
 </mat-sidenav-container>
 

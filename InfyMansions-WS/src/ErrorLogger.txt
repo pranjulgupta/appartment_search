@@ -179,3 +179,55 @@ Error: User cannot be deleted
 >>>>>>> 6e0ddb98d3fd2e039341dd7e50a1ab5495456d60
 >>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
     at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: BuyerData cannot be fetched
+    at userdb.buyerView.then.buyData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:215:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: BuyerData cannot be fetched
+    at userdb.buyerView.then.buyData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:215:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: BuyerData cannot be fetched
+    at userdb.buyerView.then.buyData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:215:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: BuyerData cannot be fetched
+    at userdb.buyerView.then.buyData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:215:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Property Details cannot be fetched
+    at userdb.propertyView.then.propData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:239:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: BuyerData cannot be fetched
+    at userdb.buyerView.then.buyData (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:215:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ValidationError: Property validation failed: IntercomFacility: Cast to Boolean failed for value "" at path "IntercomFacility", WaterSupplyFor24Hours: Cast to Boolean failed for value "" at path "WaterSupplyFor24Hours", CloseToSchool: Cast to Boolean failed for value "" at path "CloseToSchool", CloseToAirport: Cast to Boolean failed for value "" at path "CloseToAirport", CloseToBank: Cast to Boolean failed for value "" at path "CloseToBank"
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at toExecute.push.callback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3023:22)
+    at toExecute.forEach (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3059:7)
+    at Array.forEach (<anonymous>)
+    at utils.promiseOrCallback.$wrapCallback.cb (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3058:15)
+    at Promise (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:283:5)
+    at new Promise (<anonymous>)
+    at Object.promiseOrCallback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:282:10)
+    at Function.create (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:2994:16)
+ValidationError: Property validation failed: WaterSupplyFor24Hours: Cast to Boolean failed for value "" at path "WaterSupplyFor24Hours", CloseToSchool: Cast to Boolean failed for value "" at path "CloseToSchool", CloseToAirport: Cast to Boolean failed for value "" at path "CloseToAirport", CloseToBank: Cast to Boolean failed for value "" at path "CloseToBank", poojaRoom: Cast to Boolean failed for value "" at path "poojaRoom"
+    at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at toExecute.push.callback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3023:22)
+    at toExecute.forEach (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3059:7)
+    at Array.forEach (<anonymous>)
+    at utils.promiseOrCallback.$wrapCallback.cb (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3058:15)
+    at Promise (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:283:5)
+    at new Promise (<anonymous>)
+    at Object.promiseOrCallback (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\utils.js:282:10)
+    at Function.create (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:2994:16)

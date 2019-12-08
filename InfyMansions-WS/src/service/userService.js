@@ -53,141 +53,11 @@ hUserService.addDetails = (UserObj) => {
         }
     })
 }
-<<<<<<< HEAD
 
 
-//admin
-hUserService.registeredUser=()=>{
-    return userdb.regUser().then(regData=>{
-        if(regData){
-            return regData
-        }else{
-            let err = new Error("User cannot be fetched");
-=======
 
 
-//admin
-hUserService.registeredUser=()=>{
-    return userdb.regUser().then(regData=>{
-        if(regData){
-            return regData
-        }else{
-            let err = new Error("User cannot be fetched");
-            err.status = 404;
-            throw err;
-        }
-    })
-}
 
-//admin
-hUserService.deleteUser=(Id)=>{
-    return userdb.delUser(Id).then(delData=>{
-        if(delData==null){
-            let err = new Error("User cannot be deleted");
-            err.status = 404;
-            throw err;
-        }else{
-            return delData;
-        }
-    })
-}
-
-//admin
-hUserService.buyerUser=()=>{
-    return userdb.buyerView().then(buyData=>{
-        if(buyData){
-            return buyData;
-        }else{
-            let err = new Error("BuyerData cannot be fetched");
-            err.status = 404;
-            throw err;
-        }
-    })
-}
-
-//admin
-hUserService.sellerUser=()=>{
-    return userdb.sellerView().then(sellData=>{
-        if(sellData){
-            return sellData;
-        }else{
-            let err = new Error("SellerData cannot be fetched");
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
-            err.status = 404;
-            throw err;
-        }
-    })
-}
-
-//admin
-<<<<<<< HEAD
-hUserService.deleteUser=(Id)=>{
-    return userdb.delUser(Id).then(delData=>{
-        if(delData==null){
-            let err = new Error("User cannot be deleted");
-            err.status = 404;
-            throw err;
-        }else{
-            return delData;
-        }
-    })
-}
-
-//admin
-hUserService.buyerUser=()=>{
-    return userdb.buyerView().then(buyData=>{
-        if(buyData){
-            return buyData;
-        }else{
-            let err = new Error("BuyerData cannot be fetched");
-            err.status = 404;
-            throw err;
-        }
-    })
-}
-
-//admin
-hUserService.sellerUser=()=>{
-    return userdb.sellerView().then(sellData=>{
-        if(sellData){
-            return sellData;
-        }else{
-            let err = new Error("SellerData cannot be fetched");
-            err.status = 404;
-            throw err;
-        }
-    })
-}
-
-//admin
-=======
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
-hUserService.propDetails=()=>{
-    return userdb.propertyView().then(propData=>{
-        if(propData==null){
-            let err = new Error("Property Details cannot be fetched");
-            err.status = 404;
-            throw err;
-        }else{
-            return propData;
-        }
-    })
-}
-
-//admin
-hUserService.deleteProperty=(propId)=>{
-    return userdb.delProp(propId).then(delData=>{
-        if(delData==null){
-            let err = new Error("Property cannot be deleted");
-            err.status = 404;
-            throw err;
-        }else{
-            return delData;
-        }
-    })
-}
-
-//admin
 hUserService.locationProp=()=>{
     return userdb.loc().then(data=>{
         if(data){
@@ -245,7 +115,6 @@ hUserService.getPropertyDetails=()=>{
     })
 }
 
-<<<<<<< HEAD
 hUserService.addProperty = (dataObj) => {
     console.log('g')
     return userdb.generatePropertyId().then(id => {
@@ -269,8 +138,125 @@ hUserService.addProperty = (dataObj) => {
         }
     })
 }
-=======
->>>>>>> d63ce707cc0d192d59209866ec8c6934c0b9bd08
+
+
+//to get the wishlist
+hUserService.getWishList=(userId)=>{
+    return userdb.searchUser(userId).then(data=>{
+        if(data){
+            return data;
+        }else{
+            let err = new Error("Your wishlist is empty.!!");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//to add the wishlist
+hUserService.addWishList=(userId,propertyId)=>{
+    return userdb.insertWishList(userId,propertyId).then(data=>{
+        if(data){
+            return data;
+        }else{
+            let err = new Error("Unable to add the data in wishlist.!!");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//to delete from the wishlist
+hUserService.deleteWishList=(userId,propertyId)=>{
+    return userdb.deleteFromWishList(userId,propertyId).then(data=>{
+        if(data){
+            return data;
+        }else{
+            let err = new Error("Unable to delete the data from wishlist.!!");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+
+//admin
+hUserService.registeredUser=()=>{
+    return userdb.regUser().then(regData=>{
+        if(regData){
+            return regData
+        }else{
+            let err = new Error("User cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.deleteUser=(Id)=>{
+    return userdb.delUser(Id).then(delData=>{
+        if(delData){
+            return delData;
+        }else{
+            let err = new Error("User cannot be deleted");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.buyerUser=()=>{
+    return userdb.buyerView().then(buyData=>{
+        if(buyData){
+            return buyData;
+        }else{
+            let err = new Error("BuyerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.sellerUser=()=>{
+    return userdb.sellerView().then(sellData=>{
+        if(sellData){
+            return sellData;
+        }else{
+            let err = new Error("SellerData cannot be fetched");
+            err.status = 404;
+            throw err;
+        }
+    })
+}
+
+//admin
+hUserService.propDetails=()=>{
+    return userdb.propertyView().then(propData=>{
+        if(propData==null){
+            let err = new Error("Property Details cannot be fetched");
+            err.status = 404;
+            throw err;
+        }else{
+            return propData;
+        }
+    })
+}
+
+//admin
+hUserService.deleteProperty=(propId)=>{
+    return userdb.delProp(propId).then(delData=>{
+        if(delData==null){
+            let err = new Error("Property cannot be deleted");
+            err.status = 500;
+            throw err;
+        }else{
+            return delData;
+        }
+    })
+}
 
 
 

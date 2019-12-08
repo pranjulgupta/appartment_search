@@ -74,43 +74,12 @@ router.get('/buy', function(req,res,next){
 })
 
 
-router.get('/admin',function(req,res,next){
-    userService.registeredUser().then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
+// router.get('/admin',function(req,res,next){
+//     userService.registeredUser().then((data)=>{
+//         res.json(data)
+//     }).catch((err)=>next(err))
+// })
 
-router.delete('/deleteuser/:id',function(req,res,next){
-    const Id=parseInt(req.params.id);
-    userService.deleteUser(Id).then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
-
-router.get('/admin/buyer',function(req,res,next){
-    userService.buyerUser().then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
-
-router.get('/admin/seller',function(req,res,next){
-    userService.sellerUser().then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
-
-router.get('/admin/property',function(req,res,next){
-    userService.propDetails().then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
-
-router.delete('deleteprop/:id',function(req,res,next){
-    const id=parseInt(req.params.id);
-    userService.deleteProperty(id).then((data)=>{
-        res.json(data)
-    }).catch((err)=>next(err))
-})
 
 router.get('/search',function(req,res,next){
     userService.locationProp().then((data)=>{
@@ -148,6 +117,77 @@ router.post('/sell', function(req, res, next){
         res.json(propdata)
     }).catch( err => next(err))
 
+})
+
+
+
+// to get from wishlist
+router.get('/wishlist/userId', function(req,res,next){
+    let userId=req.body.userId;
+    userService.getWishList(userId).then(data=>{
+        console.log(data,45);
+        res.json(data);
+    }).catch(err => next(err));
+})
+
+//to add data to wishlist
+router.put('/add/wishlist', function(req,res,next){
+    let userId=req.body.userId;
+    let propertyId=req.body.propertyId;
+    userService.addWishList(userId,propertyId).then(data=>{
+        console.log(data,75);
+        res.json({message:"Property " + data + " has been added successfully to wishlist"});
+    }).catch(err => next(err));
+})
+
+//to delete from wishlist
+router.put('/remove/wishlist',function(req,res,next){
+    let userId=req.body.userId;
+    let propertyId=req.body.propertyId;
+    userService.deleteWishList(userId,propertyId).then(data=>{
+        console.log(data,15);
+        res.json({message:"Property " + data + " has been removed successfully from wishlist"});
+    }).catch(err => next(err));
+})
+
+
+//admin
+router.get('/admin',function(req,res,next){
+    userService.registeredUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.delete('/deleteuser/:userId',function(req,res,next){
+    let userId=(req.params.userId);
+    userService.deleteUser(userId).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/buyer',function(req,res,next){
+    userService.buyerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/seller',function(req,res,next){
+    userService.sellerUser().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.get('/admin/property',function(req,res,next){
+    userService.propDetails().then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
+})
+
+router.delete('/deleteprop/:propertyId',function(req,res,next){
+    let propertyId=(req.params.propertyId);
+    userService.deleteProperty(propertyId).then((data)=>{
+        res.json(data)
+    }).catch((err)=>next(err))
 })
 
 module.exports = router;
