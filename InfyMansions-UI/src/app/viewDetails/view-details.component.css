@@ -2,10 +2,22 @@
     border:solid yellow;
     border-radius: 10px 10px 10px 10px;
 }
+img:hover{
+    transform:scale(1.08)
+;}
 /* .padding{
     mpadding:100px;
 } */
 
 .customSize{
-    font-size: 8px;
+    font-size: 6px;
 }
+
+.fontChange{
+    font-size:15px;
+}
+
+button:hover{
+    transform:scale(1.02)
+  }
+

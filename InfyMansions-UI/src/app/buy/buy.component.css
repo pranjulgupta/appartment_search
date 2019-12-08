@@ -41,9 +41,16 @@ mat-sidenav{
     flex:5;
     text-align:center;
 }
+img:hover{
+  transform:scale(1.08)
+;}
+button:hover{
+  transform:scale(1.08)
+}
 .card{
     margin:20px 20px 20px 20px;
 }
+
 .img{
     margin-left:4px;
     margin-right:4px;
@@ -76,7 +83,7 @@ mat-sidenav{
   .card-img:hover{
     border:solid;
     border-color:green;
-    /* scale: 1.5%; */
+    transform:scale(2);
   }
   
   .my-card{
@@ -96,7 +103,19 @@ mat-sidenav{
   .row-2{
     flex: 2;
   }
-  
+  .example-radio-group{
+    display:flex;
+    flex-direction:column;
+    margin:5px;
+  }
+
+  .example-radio-button{
+    margin:5px;
+  }
+
+  .example-header-image{
+    background-size:cover;
+  }
   .heart{
     position: absolute;
     float: right;
@@ -109,8 +128,12 @@ mat-sidenav{
     margin-left:2%;
     margin-right:2.5%;
     border-radius: 10px;
-    /* border: 2px solid #73AD21; */
+    border: 2px solid #73AD21;
   }
   .d{
     border-radius: 10px;
   }
+.currFont{
+  font-size: 15px;
+  color:violet;
+}

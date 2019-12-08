@@ -1,188 +1,169 @@
-
-
-<mat-sidenav-container class="example-container" >
-    <mat-sidenav  mode="side" opened class="scrollable">
-
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened class="scrollable"> 
+        <div style="color:royalblue" class="ft">Use the below filters to find your desired  property</div>
+        <br><br><br>
         <mat-form-field color="primary" class="example-full-width" appearance="legacy">
             <mat-label>Enter Area</mat-label>
-            <input autofocus  #ar  type="text" matInput>
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="areaFiltr=ar.value;filter();">
+            <input autofocus #ar id="area" type="text" matInput [(ngModel)]="areaFilter" (change)="filter()" #selectI (keydown)="down($event,selectI.value)">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="filter()">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-form-field>
-        <br>       
+        <br>
+        <br>
         <br>
 
-        <mat-label>Property for :</mat-label>
+        <label>Property for :</label>
         <br>
-        <mat-radio-group [(ngModel)]="propForFilter" (change)="filter()"> 
-            <mat-radio-button value="buy" #b color="accent">Buy</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="rent" #r color="accent">Rent</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="both" #bo1 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-group [(ngModel)]="propForFilter" (change)="filter()">
+            <mat-radio-button value="Sale" color="accent">Sale</mat-radio-button>
+            <br>
+            <mat-radio-button value="Rent" color="accent">Rent</mat-radio-button>&nbsp;&nbsp;
+            <br>
+            <mat-radio-button value="Both" color="accent">Both</mat-radio-button>&nbsp;&nbsp;
         </mat-radio-group>
         <br>
         <br>
 
-        <mat-label>Property type :</mat-label>
+        <label>Property type :</label>
         <br>
         <mat-radio-group [(ngModel)]="propTypeFilter" (change)="filter()">
-            <mat-radio-button value="house"  #h color="accent">House</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="apartments" #a color="accent">Apartments</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="both"  #bo2 color="accent">Both</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="House" color="accent">House</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="Apartments" color="accent">Apartments</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="Both" color="accent">Both</mat-radio-button>&nbsp;&nbsp;
         </mat-radio-group>
         <br>
 
         <mat-form-field color="primary" class="example-full-width">
-            <label class="form-check-label">Bedrooms:&nbsp;
-                <input matInput type="number" class="form-check-input"  [(ngModel)]="bedFilter" (change)="filter()">
-                <mat-icon class="button-side" matSuffix>king_bed</mat-icon>
-            </label>
+
+            <input matInput type="number" min="1" #bed [(ngModel)]="bedFilter" (change)="filter()" placeholder="Bedrooms:">
+            <mat-icon matSuffix class="sidenav-btn">king_bed</mat-icon>
         </mat-form-field>
+        <div *ngIf="bed.value<0 && bed.value.touched"> Minimum number of bedrooms should be 1</div>
 
         <mat-form-field color="primary" class="example-full-width">
-                <label class="form-check-label">Bathrooms:&nbsp;
-                    <input matInput type="number" class="form-check-input"  [(ngModel)]="bathFilter" (change)="filter()">
-                    <mat-icon class="button-side" matSuffix>bathtub</mat-icon>
-                </label>
-            </mat-form-field>
+            <input matInput min="1" type="number" #bath [(ngModel)]="bathFilter" (change)="filter()" placeholder="Bathrooms:">
+            <mat-icon matSuffix class="sidenav-btn">bathtub</mat-icon>
+        </mat-form-field>
+        <div *ngIf="bath.value<0  && bath.value.touched"> Minimum number of bedrooms should be 1</div>
         <br>
         <br>
 
         <mat-form-field color="primary" class="example-full-width">
-            <label class="form-check-label">Min Amount :&nbsp;
-                <input matInput type="number" [(ngModel)]="minFilter" (change)="filter()">
-            </label>
+            <input matInput type="number" [(ngModel)]="minFilter" (change)="filter()" placeholder="Min Amount :">
         </mat-form-field>
         <br>
         <br>
 
         <mat-form-field color="primary" class="example-full-width">
-            <label class="form-check-label">Max Amount :&nbsp;
-                <input matInput type="number" [(ngModel)]="maxFilter" (change)="filter()">
-            </label>
+            <input matInput type="number" [(ngModel)]="maxFilter" (change)="filter()" placeholder="Max Amount :">
         </mat-form-field>
         <br>
         <br>
-        <button mat-raised-button matSuffix layout-align="center" (click)="ar.value='';clear()">Clear Field</button>
-        <br> <br>
-       
+        <button mat-raised-button layout-align="center" class="btn-block" color="accent" (click)="ar.value='';clear()">&nbsp;&nbsp;Clear Field</button>
+        <br>
+        <br>
+        <br>
+        <br>
     </mat-sidenav>
-   
-    
-    <!-- <div *ngIf="noContent">
-        <mat-sidenav-container>
-            <mat-sidenav-content>
-                <mat-grid-list cols="1" rowHeight="1:0.5">
-                    <mat-grid-tile>
-                        <h1 class="no-content">No property available for applied filters </h1>
-                    </mat-grid-tile>
-                </mat-grid-list>
-            </mat-sidenav-content>
-        </mat-sidenav-container>
-    </div> -->
 
-    <!-- <div *ngIf="!noContent">
-            <div *ngIf="filtered.length==0">
-            
-        </div>
-    </div> -->
+    <mat-sidenav-content class="out-card">
+        <div class="container-fluid">
+            <div class="row">
 
-<!-- <div *ngIf="filtered.length!=0"> -->
-        <mat-sidenav-content>
-<div class="container-fluid">
-    
-        <div class="row">
-            <!-- <div *ngIf="propertDb;else spinn">
-                    <ng-template #spinn>
-                            <mat-sidenav-container>
-                                    <mat-sidenav-content>
-                                        <mat-grid-list cols="3" rowHeight="3:3">
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile>
-                                                    <mat-spinner></mat-spinner>
-                                            </mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                            <mat-grid-tile></mat-grid-tile>
-                                        </mat-grid-list>
-                                    </mat-sidenav-content>
-                                </mat-sidenav-container>
-                    </ng-template> -->
-            <mat-card *ngFor="let p of propertyDb" class="col-md-3 card">
+                <mat-card *ngFor="let p of filtered" class="col-md-3 card">
+                    <mat-card-title style="display:flex">
+                        <div style="flex:1" class="currFont">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
+                        <div style="flex:2"></div>
+                        <div style="flex:1" class="container">
+                            <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)==-1" >
+                                <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                            </button>
 
-                <mat-card-title style="display:flex">
-                    <div style="flex:1">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
-                    <div style="flex:2"></div>
-                    <div style="flex:1">
-                        {{p.propertyId}}78
-                            <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="wishChange(p)">
-                                    <mat-icon matSuffix [id]="p.propertyId" color="accent">
-                                        <span *ngIf="p.wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
-                                        <ng-template #liked>
-                                            <span>favorite</span>
-                                        </ng-template>
-                                    </mat-icon>
-                                </button>
-                        <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>  
-                            <ng-template #vi>
-                               <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
-                           </ng-template>
-                         -->
-                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="userName;else vi">
-                            <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-title>
+                            <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)!=-1">
+                                    <mat-icon matSuffix [id]="p.propertyId" color="accent">favorite_border</mat-icon>
+                            </button>
+                            <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="!userName"(click)="popup('Please login to proceed')">
+                                <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                            </button> -->
+                                        
+                             <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" color="accent" class="heart" (click)="wishChange(p.propertyId)">
+                                <mat-icon matSuffix [id]="p.propertyId">
+                                    <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                <ng-template #liked>
+                                    <span  color="accent">favorite</span>
+                                </ng-template>
+                                </mat-icon>  
+                            </button>
+                             <!-- <ng-template #vi>
+                                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
+                                    </ng-template> -->
+                             <!-- *ngIf="userName;else vi"  -->
+                            <!-- <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="wishChange(p.propertyId)">
+                                <mat-icon matSuffix [id]="p.propertyId" color="accent">
+                                    <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                    <ng-template #liked>
+                                        <span>favorite</span>
+                                    </ng-template>
+                                </mat-icon>
+                            </button>
+                            -->
+                        </div>
+                    </mat-card-title>
 
-                <mat-card-content>
-                    <span style="color:darkgrey">For {{p.propertyType}}</span>
-                </mat-card-content>
+                    <mat-card-content>
+                        <span style="color:brown" class="mat-subheading-2">For {{p.propertyType}}</span>
+                    </mat-card-content>
 
-                <br>
-                <mat-card-content>
-                    <div class="d">
-                        <img class="container-fluid cardimg" *ngIf="p" mat-card-image src="{{p.imageUrls}}" alt="A house">
-                        <br>
-                    </div>
-                    <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;
-                    <span align="end">{{p.noOfBedrooms}} BHK {{p.buildingType}}</span>
                     <br>
-                    <span align="align-left">{{p.furnishing}} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span align="align-right">{{p.availability}}</span>
-                </mat-card-content>
+                    <mat-card-content>
+                        <div class="d">
+                            <img class="container-fluid cardimg" *ngIf="p" mat-card-image src="{{p.imageUrls}}" alt="A house">
+                            <br>
+                        </div>
+                        <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                        <span align="end">{{p.noOfBedrooms}} BHK {{p.buildingType}}</span>
+                        <br>
+                        <span align="align-left">{{p.furnishing}} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span align="align-right">{{p.availability}}</span>
+                    </mat-card-content>
 
-                <mat-card-actions class="card-button-container">
+                    <mat-card-actions class="card-button-container">
 
-                        <button  mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
                         <ng-template #iew>
-                            <button mat-raised-button class="c-button" mat-raised-button  (click)="popup('Please login to proceed')">Contact Owner</button>
+                            <button mat-raised-button color="warn" (click)="popup('Please login to proceed')">Contact Owner</button>
                         </ng-template>
                         <br>
 
-                    <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
+                        <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
 
-                    <br>
-                    <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view" (click)="reroute(p)">View Details</button>
-                    <ng-template #view>
-                        <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
-                    </ng-template>
-                    <br>
-                    <br>
-                </mat-card-actions>
+                        
+                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view"
+                            (click)="reroute(p)">View Details</button>
+                        <ng-template #view>
+                            <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                        </ng-template>
+                        
+                    
+                    </mat-card-actions>
+                </mat-card>
 
-
-            </mat-card>
+                <div class="container-fluid" *ngIf="noContent" style="width:1000px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <h3 style="padding:20px" class="no-content text-danger text-center">No property available for applied filters </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     </mat-sidenav-content>
-
-
 </mat-sidenav-container>
-
-<!-- </div> -->
-<!-- </div> -->

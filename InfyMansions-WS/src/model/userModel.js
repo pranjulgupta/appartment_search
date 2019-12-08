@@ -38,7 +38,7 @@ userModel.searchUser = (userId) => {
     })
 }
 
-
+//View
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -69,21 +69,6 @@ userModel.addUser= (UserObj)=>{
     })
 }
                 
-//to insert values in wishlist
-userModel.insertWishList = (userId,propertyId) => {
-    return dbModel.getUserCollection().then(model => {
-        return model.updateOne({userId:userid},{$push:{wishlist:propertyId}}).then(updatedData => {
-            if (updatedData.nModified == 1) {
-                return propertyId;
-            } else {
-                console.log(data, 99);
-                return null
-
-            }
-        })
-    })
-}
-
 
 //to valuest values from user's wishlist
 userModel.deleteFromWishList = (userId,propertyId) => {
@@ -105,12 +90,12 @@ userModel.deleteFromWishList = (userId,propertyId) => {
 
 //profile comp
 userModel.viewProfile = (emailid) => {
-    console.log(emailid, 11);
+    // console.log(emailid, 11);
 
     return dbModel.getUserCollection().then((data) => {
-        console.log(data)
+        // console.log(data)
         return data.findOne({ "emailId": emailid }, { _id: 0, name: 1, emailId: 1, contactNo: 1 }).then((data1) => {
-            console.log(data1);
+            // console.log(data1);
 
             if (data1) {
                 return data1;
@@ -175,6 +160,7 @@ userModel.getOwnerDetails=(userid)=>{
     })
 }
 
+//buy            
 userModel.Propertywish=(userid)=>{
     return dbModel.getPropertyCollection().then(model=>{
         return model.find({"propertyId":propertyId}).then((data)=>{
@@ -199,7 +185,7 @@ userModel.propertyDetails = () => {
             if (data.length == 0) {
                 return null
             } else {
-                console.log(data, 99);
+                // console.log(data, 9);
                 return data
             }
         })
@@ -207,7 +193,18 @@ userModel.propertyDetails = () => {
 }
 
 
-
+//to insert values in wishlist
+userModel.insertWishList = (userId,propertyId) => {
+    return dbModel.getUserCollection().then(model => {
+        return model.updateOne({userId:userId},{$push:{wishlist:propertyId}}).then(updatedData => {
+            if (updatedData.nModified == 1) {
+                return propertyId;
+            } else {
+                return null;
+            }
+        })
+    })
+}
 
 
 userModel.generatePropertyId = () => {
@@ -236,6 +233,22 @@ userModel.loc=()=>{
         })
     })
 }
+
+
+//to valuest values from user's wishlist
+                userModel.deleteFromWishList = (userId, propertyId) => {
+                    return dbModel.getUserCollection().then(model => {
+                        return model.updateOne({ userId: userId }, { $pull: { wishlist: propertyId } }).then(updatedData => {
+                            if (updatedData.nModified == 1) {
+                                return propertyId;
+                            }
+                            else {
+                                console.log(data, 91);
+                                return null
+                            }
+                        })
+                    })
+                }
 
 userModel.addProperty = (data) => {
     console.log('k')
@@ -366,18 +379,7 @@ userModel.generatePropertyId = () => {
 }
 
 
-//wishlist
-userModel.searchUser=(userId=>{
-    return dbModel.getUserCollection().then(model=>{
-        return model.findOne({"userId":userId},{wishlist:1,_id:0}).then(user=>{
-            if(user){
-                return user.wishlist;
-            }else{
-                return null
-            }
-        })
-    })
-})
+
 
 
 //admin
@@ -396,10 +398,10 @@ userModel.delProp=(propId)=>{
 }
 
 userModel.addProperty = (data) => {
-    console.log('k')
+    // console.log('k')
     return dbModel.getPropertyCollection().then( model => {
-        console.log('l')
-        console.log(data)
+        // console.log('l')
+        // console.log(data)
         return model.create(data).then(response => {
             console.log('w')
             if(response){
@@ -419,7 +421,7 @@ userModel.loc=()=>{
             if (data.length == 0) {
                 return null
             } else {
-                console.log(data, 99);
+                // console.log(data, 99);
                 return data
             }
         })

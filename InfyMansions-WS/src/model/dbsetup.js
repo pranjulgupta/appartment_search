@@ -57,10 +57,11 @@ const propertyDb = [
         sellerId: "U1001",
         buyerId: "U1002",
         pincode: 570001,
-        // features
+        // 
+        area: "Vani Vilas Mohalla",
         propertyType: "Rent",
         propertyOwnership: "Owner",
-        buildingType: "House",
+        buildingType: "Apartments",
         noOfBathrooms: 2,
         noOfBedrooms: 2,
         noOfBalconies: 1,
@@ -112,6 +113,7 @@ const propertyDb = [
         buyerId: "U1001",
         pincode: 570016,
         // features
+        area: "Mysore",
         propertyType: "Sale",
         propertyOwnership: "Owner",
         buildingType: "House",
@@ -156,7 +158,7 @@ const propertyDb = [
         noofCoveredParking: false,
         noOfOpenParking: true,
         description: "Recently renovated and restored. Upper Unit - 2 Bedrooms 2 Full Bathroom - New kitchen, appliances, bathroom and flooring - Kitchen appliances included: Refrigerator, Gas Oven/ Range, Dishwasher, Over the Range Microwave - Private Washer and Dryer - 2 driveway parking spaces - All Bedrooms have large closets - 2 minute walk from village center: Restaurants, cafes, shops, bars, festivals, farmers market - Tenant pays Gas and Electricity - Available Immediately - Sorry, no pets Tenant pays gas and electricity",
-        imageUrls: "../../../../assets/house7.jpg",
+        imageUrls: "../../../../assets/house2.jpg",
         extras: "Pets are not allowed"
     },
     {
@@ -166,9 +168,10 @@ const propertyDb = [
         buyerId: "U1002",
         pincode: 570016,
         // features
+        area: "Mysore",
         propertyType: "Sale",
         propertyOwnership: "Owner",
-        buildingType: "House",
+        buildingType: "Apartments",
         noOfBathrooms: 2,
         noOfBedrooms: 2,
         noOfBalconies: 1,
@@ -220,9 +223,10 @@ const propertyDb = [
         buyerId: "U1001",
         pincode: 570017,
         // features
+        area: "Mandimohalla",
         propertyType: "Rent",
         propertyOwnership: "Owner",
-        buildingType: "House",
+        buildingType: "Apartments",
         noOfBathrooms: 2,
         noOfBedrooms: 2,
         noOfBalconies: 1,
@@ -264,7 +268,7 @@ const propertyDb = [
         noofCoveredParking: true,
         noOfOpenParking: false,
         description: "Recently renovated and restored. Upper Unit - 2 Bedrooms 2 Full Bathroom - New kitchen, appliances, bathroom and flooring - Kitchen appliances included: Refrigerator, Gas Oven/ Range, Dishwasher, Over the Range Microwave - Private Washer and Dryer - 2 driveway parking spaces - All Bedrooms have large closets - 2 minute walk from village center: Restaurants, cafes, shops, bars, festivals, farmers market - Tenant pays Gas and Electricity - Available Immediately - Sorry, no pets Tenant pays gas and electricity",
-        imageUrls: "../../../assets/house2.jpg",
+        imageUrls: "../../../assets/house4.jpg",
         extras: "Pets are not allowed"
     },
     {
@@ -274,6 +278,7 @@ const propertyDb = [
         buyerId: "U1002",
         pincode: 570017,
         // features
+        area: "Mandimohalla",
         propertyType: "Rent",
         propertyOwnership: "Owner",
         buildingType: "House",
@@ -328,6 +333,7 @@ const propertyDb = [
         buyerId: "U1001",
         pincode: 570017,
         // features
+        area: "Mandimohalla",
         propertyType: "Sale",
         propertyOwnership: "Owner",
         buildingType: "House",

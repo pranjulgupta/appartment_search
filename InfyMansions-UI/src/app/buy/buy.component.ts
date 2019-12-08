@@ -4,10 +4,10 @@ import { Router } from '@angular/router'
 import {User} from './user'
 import { ViewService } from '../viewDetails/view.service';
 import { SharedServService } from '../shared-serv.service';
-import { MatSnackBar } from '../../../node_modules/@angular/material';
+import { MatSnackBar, MatDialog } from '../../../node_modules/@angular/material';
 
-// import { DialogComponent } from '../dialog/dialog.component';
-// import { DialogService } from '../dialog/dialog.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { DialogService } from '../dialog/dialog.service';
 
 
 @Component({
@@ -33,125 +33,150 @@ export class BuyComponent implements OnInit {
   minFilter:Number=null;
   maxFilter:Number=null;
   noContent:boolean=false;
-  wishlist:Array<String>;
-  userId:String;
-  OwnerDetails:User;
-  viewDet;
+  wishlist=[];
+
+  userId:string;
+  ownerDetails:User;
   userName:string;
  
 
-
-
-
-
-  constructor(private gd:SharedServService,private gpService: GetpropertyService,private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
-  // public dialog:MatDialog, privateServ:DialogService
+  constructor( public dialog:MatDialog, private dialogServ:DialogService, 
+    private gd:SharedServService,private gpService: GetpropertyService,
+    private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
+ 
 
  
   
   ngOnInit() {
     this.userName = sessionStorage.getItem('name');
+    this.userId = sessionStorage.getItem('userId');
+    this.gpService.getList(this.userId).subscribe(
+      (good)=>{
+        this.gpService.getPropertyDetail().subscribe(
+          (propDb)=>{          
+            this.propertyDb=propDb;
+            this.filtered=propDb;
+          },
+          (error)=>{
+            this.errorMessage=error.error.message
+          })
+        this.wishlist = good;
+  
+      },
+      (bad)=>{
+        this.errorMessage=bad.error.message;
+      })
+    }
 
+    down(event,value:string){
+      if(event.key==="Enter"){
+        sessionStorage.setItem("PreviousUrl","/home");
+        sessionStorage.setItem("search",value.toString());
+        this.router.navigate(['/buy']);
+      }
+    }
 
-     this.gpService.getPropertyDetail().subscribe(
-        (good)=>{
-          console.log(1)
-          console.log(good);
-          this.propertyDb=good
-        },
-        (bad)=>{
-          console.log(2)
-          this.errorMessage=bad.error.message
-        })
+  filter() {
+    this.filtered = this.propertyDb;
+    if (this.areaFilter) {
+      this.filtered = this.filtered.filter(_ => {
+        
+       return (_.area.toLowerCase().indexOf(this.areaFilter.toLowerCase())!= -1)
+      })
+      
+    }
+    if (this.propForFilter && this.propForFilter != "Both") {
+      let favor1: String;
+      if (this.propForFilter == "Rent") {
+        
+        favor1 = this.propForFilter;
+      }
+      else {
+        
+        favor1 = "Sale"
+      }
+      this.filtered = this.filtered.filter(_ => {
+        return _.propertyType == favor1;
+      });
+     
+    }
+    if (this.propTypeFilter && this.propTypeFilter != "Both") {
+
+      this.filtered = this.filtered.filter(_ => {
+        return _.buildingType == this.propTypeFilter;
+      });
+    }
+
+    if (this.bedFilter) {
+      if (this.bedFilter < 0) {
+        this.bedFilter = null;
+      }
+      else {
+        this.filtered = this.filtered.filter(_ => {
+          return _.noOfBedrooms == this.bedFilter;
+        });
+      }
     }
 
 
-filter(){
-  this.filtered = this.propertyDb;
-  if (this.areaFilter) {
-    this.filtered = this.filtered.filter(_ => {
-      _.area.toLowerCase() == this.areaFilter.toLowerCase()
-    });
-  }
-  if (this.propForFilter && this.propForFilter != "Both") {
-    let favor: String;
-    if (this.propForFilter == "rent") {
-      favor = this.propForFilter;
+    if (this.bathFilter) {
+      if (this.bathFilter < 0) {
+        this.bathFilter = null;
+      }
+      else {
+        this.filtered = this.filtered.filter(_ => {
+          return _.noOfBathrooms == this.bathFilter;
+        });
+      }
+    }
+
+
+    if (this.minFilter) {
+      if (this.minFilter < 0) {
+        this.minFilter = null;
+      }
+      else {
+        this.filtered = this.filtered.filter(_ => {
+          return _.price >= this.minFilter;
+        });
+      }
+    }
+
+
+    if (this.maxFilter) {
+      if (this.maxFilter < 0) {
+        this.maxFilter = null;
+      }
+      else {
+        this.filtered = this.filtered.filter(_ => {
+          return _.price <= this.maxFilter;
+        });
+      }
+    }
+
+
+    if (this.filtered.length == 0) {
+      
+      this.noContent = true;
     }
     else {
-      favor = "sale"
+      this.noContent = false;
     }
-    this.filtered = this.filtered.filter(_ => {
-      console.log(_.propertype);
-      console.log(favor);
-      console.log(_.propertyType == favor);
-      return _.propertyType == favor;
-    });
-  }
-  if (this.propTypeFilter && this.propTypeFilter != "both") {
-    this.filtered = this.filtered.filter(_ => {
-      return _.buildingType == this.propTypeFilter;
-    });
+    
   }
 
-  if (this.bedFilter) {
-    this.filtered = this.filtered.filter(_ => {
-      return _.noOfBedrooms == this.bedFilter;
-    });
-  }
-
-  if (this.bathFilter) {
-    this.filtered = this.filtered.filter(_ => {
-      return _.noOfBathrooms == this.bathFilter;
-    });
-  }
-
-  if (this.minFilter) {
-    this.filtered = this.filtered.filter(_ => {
-      return _.price >= this.minFilter;
-    });
-  }
-
-  if (this.maxFilter) {
-    this.filtered = this.filtered.filter(_ => {
-      return _.price <= this.maxFilter;
-    });
-  }
-
-  if (this.filtered.length == 0) {
-    this.noContent = true;
-  }
-  else {
-    this.noContent = false;
-  }
-
-}
-// viewDetails(id){
-//   this.viewServ.getView(id).subscribe(data => {
-//           this.viewDet = data;
-//           SharedServService.viewdetpara=data;
-// })}
 clear(){
-  this.propertyDb=this.tempArr;
+  this.filtered=this.propertyDb;
+  this.areaFilter="";
+  this.propTypeFilter=null;
+  this.propForFilter=null;
+  this.bedFilter=null;
+  this.bathFilter=null;
+  this.minFilter=null;
+  this.maxFilter=null;
+ 
 }
-//   contactOwner(sellerId: String): void {
-//     this.dialogServ.getUserById(sellerId).subscribe(data => {
-//       this.ownerDetails = success;
-//       const dialogRef = this.dialog.open(DialogueBoxComponent, {
-//         width: '600px', 
-//         height: "125px",
-//         data: this.ownerDetails,
-//         position: {
-//           left: '400px',
-//           top: '250px'
-//         }
-//       });
-//       dialogRef.afterCLosed().subscribe(result=>{
-//         console.log("The dialogue box has closed")
-//       })
-//     })
-//   }
-  
+
 
 
 
@@ -165,9 +190,26 @@ horizontalPosition:"center"});
 
 popup(data){
   this.openSnackBar(data,"Ok");
-  console.log(data,4544)
 }
 
+  contactOwner(sellerId: String): void {
+    this.dialogServ.getUserById(sellerId).subscribe(data => {
+      this.ownerDetails = data;
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '600px', 
+        height: "125px",
+        data: this.ownerDetails,
+        position: {
+          left: '400px',
+          top: '250px'
+        }
+      });
+      dialogRef.afterClosed().subscribe(result=>{
+        console.log("The dialog box closed")
+      })
+    })
+  }
+  
 reroute(property){
   this.gd.getDescription(property);
   this.router.navigate(['/view'])
@@ -176,33 +218,32 @@ reroute(property){
 
 wishChange(p){
   if(this.userName){
-    let index=p.wishlist.indexOf(p.propertyId);
+    let index=this.wishlist.indexOf(p);
+   
     if(index==-1){
-      this.gpService.addToList({userId:p.userId,propertyId:p.propertyId}).subscribe(
+      this.gpService.addToList({userId:this.userId,propertyId:p}).subscribe(
         (success)=>{
-          this.openSnackBar(p + "is added to your wishlist","")
+          this.openSnackBar(p + " is added to your wishlist","Ok")
           this.wishlist.push(p)
         },
         (failure)=>{
-          this.openSnackBar("Something went wrong..!","")
-         
+          this.openSnackBar(" Something went wrong..!","Ok")
+          
         }
       )
     }else{
       this.gpService.deleteFromList({userId:this.userId,propertyId:p}).subscribe(
         (success)=>{
-          this.openSnackBar(p + "is removed from your wishlist.","")
+          this.openSnackBar(p + " is removed from your wishlist.","Ok")
           this.wishlist.splice(index,1)
         },
         (failure)=>{
-          this.openSnackBar("Something went wrong..!","");
+          this.openSnackBar(" Something went wrong..!","Ok");
         }
       )
     }
   }
 }
 
-
 }
-
 
