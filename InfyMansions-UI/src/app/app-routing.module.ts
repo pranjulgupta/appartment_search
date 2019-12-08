@@ -49,8 +49,8 @@ const routes: Routes = [
   component: ProfileComponent,canActivate:[SharedServService]
 },
 {
-  path:"starWish",
-  component:WishlistComponent
+  path:"wishlist",
+  component:WishlistComponent,canActivate:[SharedServService]
 },
 {
   path:"**", 

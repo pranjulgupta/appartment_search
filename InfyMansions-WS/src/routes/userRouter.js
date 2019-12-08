@@ -65,11 +65,6 @@ router.get('/location', function (req, res, next) {
 
 router.get('/buy', function(req,res,next){
     userService.getPropertyDetails().then(data=>{
-<<<<<<< HEAD
-=======
-        // console.log(3)
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
-        // console.log(data,3);
         res.send(data)
     }).catch(err => next(err));
 })
@@ -104,15 +99,6 @@ router.put('/remove/wishlist',function(req,res,next){
 })
 
 
-
-<<<<<<< HEAD
-//admin
-=======
-// router.get('/admin',function(req,res,next){
-//     userService.registeredUser().then((data)=>{
-//         res.json(data)
-//     }).catch((err)=>next(err))
-// })
 //To get user properties
 router.get('/profile/:emailId',(req,res,next)=>{
     
@@ -127,7 +113,6 @@ router.get('/profile/:emailId',(req,res,next)=>{
     })
 })
     
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 router.get('/admin',function(req,res,next){
     userService.registeredUser().then((data)=>{
         res.json(data)
@@ -161,13 +146,7 @@ router.get('/search',function(req,res,next){
 })
 
 router.get('/properties/:userId',(req,res,next)=>{
-    const userid=req.params.userId
-<<<<<<< HEAD
-    // console.log(userid);
-=======
-    console.log(userid,7889);
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
-    
+    const userid=req.params.userId 
     userService.getProperty(userid).then(result=>{
         res.json(result)
     }).catch(err=>

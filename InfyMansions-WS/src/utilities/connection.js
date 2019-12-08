@@ -96,7 +96,6 @@ const featuresSchema = Schema({
 
 
 const propertySchema = Schema({
-<<<<<<< HEAD
     // ids
     area:{
         type: String,
@@ -295,61 +294,6 @@ const locationSchema = Schema({
 }, { collection: "Location" });
 
         
-    
-=======
-    propertyId: String,
-    sellerId: String,
-    buyerId: String,
-    pincode: Number,
-    area: String,
-    price: Number,
-    lifts: Boolean,
-    noOfBedrooms: Number,
-    propertyType: String,
-    furnishing: String,
-    availability: String,
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
-    
-        ac: Boolean,
-        heater: Boolean,
-        maintenenceStaff: Boolean,
-        visitorParking: Boolean,
-        IntercomFacility: Boolean,
-        wifi: Boolean,
-        fireAlarm: Boolean,
-        WaterPurifier: Boolean,
-        PowerBackup: Boolean,
-        // highlights
-        WaterSupplyFor24Hours: Boolean,
-        CloseToSchool: Boolean,
-        CloseToHospital: Boolean,
-        CloseToRailwayStation: Boolean,
-        CloseToBusStand: Boolean,
-        CloseToAirport: Boolean,
-        CloseToBank: Boolean,
-        CloseToPark: Boolean,
-        // other details
-        status: String,
-        Address: String,
-        price: Number,
-        Advance: Number,
-        transactionType: String,
-        ageOfProperty: String,
-        availabilityBy:String,
-        totalFloors: Number,
-        PropertyFloor: Number,
-        propertyArea: Number,
-        poojaRoom: Boolean,
-        servantRoonm: Boolean,
-        noofCoveredParking: Number,
-        noOfOpenParking: Number,
-        description: String,
-        imageUrls: String,
-        extras: String
-    }, { collection: "Property"});
-    const locationSchema = Schema({
-    })
-
 
 
 collection.getUserCollection = () => {
@@ -361,11 +305,6 @@ collection.getUserCollection = () => {
         throw err;
     })
 }
-<<<<<<< HEAD
-// console.log(collection.getUserCollection())
-=======
-
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 
 collection.getLocationCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {

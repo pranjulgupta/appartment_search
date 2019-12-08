@@ -4,10 +4,10 @@ import { Router } from '@angular/router'
 import {User} from './user'
 import { ViewService } from '../viewDetails/view.service';
 import { SharedServService } from '../shared-serv.service';
-import { MatSnackBar } from '../../../node_modules/@angular/material';
+import { MatSnackBar, MatDialog } from '../../../node_modules/@angular/material';
 
-// import { DialogComponent } from '../dialog/dialog.component';
-// import { DialogService } from '../dialog/dialog.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { DialogService } from '../dialog/dialog.service';
 
 
 @Component({
@@ -36,12 +36,14 @@ export class BuyComponent implements OnInit {
   wishlist=[];
 
   userId:string;
-  OwnerDetails:User;
+  ownerDetails:User;
   userName:string;
  
 
-  constructor(private gd:SharedServService,private gpService: GetpropertyService,private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
-  // public dialog:MatDialog, privateServ:DialogService
+  constructor( public dialog:MatDialog, private dialogServ:DialogService, 
+    private gd:SharedServService,private gpService: GetpropertyService,
+    private router:Router,private viewServ:ViewService,private _snackBar: MatSnackBar) { }
+ 
 
  
   
@@ -74,7 +76,6 @@ export class BuyComponent implements OnInit {
       }
     }
 
-<<<<<<< HEAD
   filter() {
     this.filtered = this.propertyDb;
     if (this.areaFilter) {
@@ -97,18 +98,7 @@ export class BuyComponent implements OnInit {
       this.filtered = this.filtered.filter(_ => {
         return _.propertyType == favor1;
       });
-=======
-     this.gpService.getPropertyDetail().subscribe(
-        (good)=>{
-          console.log(1)
-          console.log(good);
-          this.propertyDb=good
-        },
-        (bad)=>{
-          console.log(2)
-          this.errorMessage=bad.error.message
-        })
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
+     
     }
     if (this.propTypeFilter && this.propTypeFilter != "Both") {
 
@@ -188,6 +178,44 @@ clear(){
 }
 
 
+
+
+openSnackBar(message:string,action:string){
+  this._snackBar.open(message,action,{
+    duration:5000,
+  verticalPosition:"top",
+panelClass:['snackbar-position'],
+horizontalPosition:"center"});
+}
+
+popup(data){
+  this.openSnackBar(data,"Ok");
+}
+
+  contactOwner(sellerId: String): void {
+    this.dialogServ.getUserById(sellerId).subscribe(data => {
+      this.ownerDetails = data;
+      const dialogRef = this.dialog.open(DialogComponent, {
+        width: '600px', 
+        height: "125px",
+        data: this.ownerDetails,
+        position: {
+          left: '400px',
+          top: '250px'
+        }
+      });
+      dialogRef.afterClosed().subscribe(result=>{
+        console.log("The dialog box closed")
+      })
+    })
+  }
+  
+reroute(property){
+  this.gd.getDescription(property);
+  this.router.navigate(['/view'])
+}
+
+
 wishChange(p){
   if(this.userName){
     let index=this.wishlist.indexOf(p);
@@ -216,71 +244,6 @@ wishChange(p){
     }
   }
 }
-
-openSnackBar(message:string,action:string){
-  this._snackBar.open(message,action,{
-    duration:5000,
-  verticalPosition:"top",
-panelClass:['snackbar-position'],
-horizontalPosition:"center"});
-}
-
-popup(data){
-  this.openSnackBar(data,"Ok");
-}
-
-//   contactOwner(sellerId: String): void {
-//     this.dialogServ.getUserById(sellerId).subscribe(data => {
-//       this.ownerDetails = success;
-//       const dialogRef = this.dialog.open(DialogueBoxComponent, {
-//         width: '600px', 
-//         height: "125px",
-//         data: this.ownerDetails,
-//         position: {
-//           left: '400px',
-//           top: '250px'
-//         }
-//       });
-//       dialogRef.afterCLosed().subscribe(result=>{
-//         console.log("The dialogue box has closed")
-//       })
-//     })
-//   }
-  
-reroute(property){
-  this.gd.getDescription(property);
-  this.router.navigate(['/view'])
-}
-
-
-wishChange(p){
-  if(this.userName){
-    let index=p.wishlist.indexOf(p.propertyId);
-    if(index==-1){
-      this.gpService.addToList({userId:p.userId,propertyId:p.propertyId}).subscribe(
-        (success)=>{
-          this.openSnackBar(p + "is added to your wishlist","")
-          this.wishlist.push(p)
-        },
-        (failure)=>{
-          this.openSnackBar("Something went wrong..!","")
-         
-        }
-      )
-    }else{
-      this.gpService.deleteFromList({userId:this.userId,propertyId:p}).subscribe(
-        (success)=>{
-          this.openSnackBar(p + "is removed from your wishlist.","")
-          this.wishlist.splice(index,1)
-        },
-        (failure)=>{
-          this.openSnackBar("Something went wrong..!","");
-        }
-      )
-    }
-  }
-}
-
 
 }
 

@@ -50,7 +50,7 @@
 
             <div class="row">
                 <!-- <button class="btn btn-block btn-light btn rounded text-success mat-display-4">Contact Owner</button> -->
-                <button mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                <button mat-raised-button  color="warn" class="btn-block" *ngIf="userName;else iew" (click)="contactOwner(data.sellerId)">Contact Owner</button>
                 <ng-template #iew>
                     <button mat-raised-button color="warn" class="btn-block" (click)="popup('Please login to proceed')">Contact Owner</button>
                 </ng-template>

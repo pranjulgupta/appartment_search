@@ -38,11 +38,7 @@ userModel.searchUser = (userId) => {
     })
 }
 
-<<<<<<< HEAD
 //View
-=======
-
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -73,21 +69,6 @@ userModel.addUser= (UserObj)=>{
     })
 }
                 
-//to insert values in wishlist
-userModel.insertWishList = (userId,propertyId) => {
-    return dbModel.getUserCollection().then(model => {
-        return model.updateOne({userId:userid},{$push:{wishlist:propertyId}}).then(updatedData => {
-            if (updatedData.nModified == 1) {
-                return propertyId;
-            } else {
-                console.log(data, 99);
-                return null
-
-            }
-        })
-    })
-}
-
 
 //to valuest values from user's wishlist
 userModel.deleteFromWishList = (userId,propertyId) => {
@@ -179,9 +160,7 @@ userModel.getOwnerDetails=(userid)=>{
     })
 }
 
-<<<<<<< HEAD
 //buy            
-=======
 userModel.Propertywish=(userid)=>{
     return dbModel.getPropertyCollection().then(model=>{
         return model.find({"propertyId":propertyId}).then((data)=>{
@@ -200,7 +179,6 @@ userModel.Propertywish=(userid)=>{
 }
 
 
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 userModel.propertyDetails = () => {
     return dbModel.getPropertyCollection().then(model => {
         return model.find().then(data => {
@@ -215,7 +193,6 @@ userModel.propertyDetails = () => {
 }
 
 
-<<<<<<< HEAD
 //to insert values in wishlist
 userModel.insertWishList = (userId,propertyId) => {
     return dbModel.getUserCollection().then(model => {
@@ -223,10 +200,11 @@ userModel.insertWishList = (userId,propertyId) => {
             if (updatedData.nModified == 1) {
                 return propertyId;
             } else {
-                // console.log("nothing", 99);
-                return null
-=======
-
+                return null;
+            }
+        })
+    })
+}
 
 
 userModel.generatePropertyId = () => {
@@ -251,24 +229,27 @@ userModel.loc=()=>{
             } else {
                 console.log(data, 99);
                 return data
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
             }
         })
     })
 }
 
-<<<<<<< HEAD
 
 //to valuest values from user's wishlist
-userModel.deleteFromWishList = (userId,propertyId) => {
-    return dbModel.getUserCollection().then(model => {
-        return model.updateOne({userId:userId},{$pull:{wishlist:propertyId}}).then(updatedData => {
-            if (updatedData.nModified == 1) {
-                return propertyId;
-            } else {
-                console.log(data, 91);
-                return null
-=======
+                userModel.deleteFromWishList = (userId, propertyId) => {
+                    return dbModel.getUserCollection().then(model => {
+                        return model.updateOne({ userId: userId }, { $pull: { wishlist: propertyId } }).then(updatedData => {
+                            if (updatedData.nModified == 1) {
+                                return propertyId;
+                            }
+                            else {
+                                console.log(data, 91);
+                                return null
+                            }
+                        })
+                    })
+                }
+
 userModel.addProperty = (data) => {
     console.log('k')
     return dbModel.getPropertyCollection().then( model => {
@@ -295,14 +276,11 @@ userModel.loc=()=>{
             } else {
                 console.log(data, 99);
                 return data
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
             }
         })
     })
 }
 
-<<<<<<< HEAD
-=======
 // #############################################################################
 //admin
 userModel.regUser=()=>{
@@ -341,7 +319,6 @@ userModel.delUser=(userId)=>{
         })
     })
 }
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 //admin
 userModel.buyerView=()=>{
     return dbModel.getRoleCollection().then(model=>{
@@ -402,18 +379,7 @@ userModel.generatePropertyId = () => {
 }
 
 
-//wishlist
-userModel.searchUser=(userId=>{
-    return dbModel.getUserCollection().then(model=>{
-        return model.findOne({"userId":userId},{wishlist:1,_id:0}).then(user=>{
-            if(user){
-                return user.wishlist;
-            }else{
-                return null
-            }
-        })
-    })
-})
+
 
 
 //admin

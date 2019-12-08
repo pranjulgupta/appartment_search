@@ -49,12 +49,10 @@
         </li>
     </ul>
 </div>
-
-<<<<<<< HEAD
-=======
+<!-- 
     <span class="spacing"></span>
     <!-- This fills the remaining space of the current row -->
-    <span class="spacing"></span>
+    <!-- <span class="spacing"></span>
     <span *ngIf="userName">
         Welcome {{userName}}
     </span>
@@ -65,17 +63,16 @@
     <button mat-button matTooltip="profile" class="nav-link" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button>  
     <ng-template #view>
         <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
-    </ng-template> 
+    </ng-template>  -->
 
     <!-- <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
         <mat-icon>person</mat-icon>
     </button> -->
-    <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
-    <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button>
->>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
+    <!-- <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
+    <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button> -->
 </mat-toolbar>
 
-<br><br>
+<br><br> -->
 
     
 
@@ -117,9 +114,6 @@
         } 
 </script> 
 
-
-
-<!-- --------------------------------------------------------------------- -->
 
 
    
