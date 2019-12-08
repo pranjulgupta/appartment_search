@@ -74,6 +74,7 @@ export class BuyComponent implements OnInit {
       }
     }
 
+<<<<<<< HEAD
   filter() {
     this.filtered = this.propertyDb;
     if (this.areaFilter) {
@@ -96,6 +97,18 @@ export class BuyComponent implements OnInit {
       this.filtered = this.filtered.filter(_ => {
         return _.propertyType == favor1;
       });
+=======
+     this.gpService.getPropertyDetail().subscribe(
+        (good)=>{
+          console.log(1)
+          console.log(good);
+          this.propertyDb=good
+        },
+        (bad)=>{
+          console.log(2)
+          this.errorMessage=bad.error.message
+        })
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
     }
     if (this.propTypeFilter && this.propTypeFilter != "Both") {
 
@@ -238,6 +251,36 @@ reroute(property){
   this.gd.getDescription(property);
   this.router.navigate(['/view'])
 }
+
+
+wishChange(p){
+  if(this.userName){
+    let index=p.wishlist.indexOf(p.propertyId);
+    if(index==-1){
+      this.gpService.addToList({userId:p.userId,propertyId:p.propertyId}).subscribe(
+        (success)=>{
+          this.openSnackBar(p + "is added to your wishlist","")
+          this.wishlist.push(p)
+        },
+        (failure)=>{
+          this.openSnackBar("Something went wrong..!","")
+         
+        }
+      )
+    }else{
+      this.gpService.deleteFromList({userId:this.userId,propertyId:p}).subscribe(
+        (success)=>{
+          this.openSnackBar(p + "is removed from your wishlist.","")
+          this.wishlist.splice(index,1)
+        },
+        (failure)=>{
+          this.openSnackBar("Something went wrong..!","");
+        }
+      )
+    }
+  }
+}
+
 
 }
 

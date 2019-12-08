@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ValidationError: Property validation failed: imageUrls: This field is Required, buildingType: This field is Required, buyerId: This field is Required, sellerId: This field is Required, transactionType: Transaction Type must be 'New' or 'Old', furnishing: Furnishing must be 'Fully Furnished' or 'Semi Furnished' or 'Unfurnished', propertyArea: This is required, Address: This field is Required
     at new ValidationError (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
     at model.Document.invalidate (C:\Users\sheena.malhotra\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
@@ -1016,3 +1017,5 @@ TypeError: userService.getProperty is not a function
     at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
     at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
     at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+=======
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b

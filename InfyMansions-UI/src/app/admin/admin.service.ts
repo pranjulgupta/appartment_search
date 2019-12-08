@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
   adminURL = "http://localhost:3000/user/admin";
-  deleteURL= "http://localhost:3000/user/deleteuser/";
-  delURL= "http://localhost:3000/user/deleteprop/";
+  delUserURL= "http://localhost:3000/user/deleteuser/";
+  delPropURL= "http://localhost:3000/user/deleteprop/";
   adminPropURL= "http://localhost:3000/user/admin/property";
   buyerURL="http://localhost:3000/user/admin/buyer";
   sellerURL="http://localhost:3000/user/admin/seller";
@@ -17,24 +17,20 @@ export class AdminService {
   regUser(): Observable<any> {
     return <Observable<any>> this.http.get(this.adminURL);
   }
-
   delUser(userId): Observable<any> {
-    return <Observable<any>> this.http.delete(this.deleteURL+userId);
+    return <Observable<any>> this.http.delete(this.delUserURL+userId);
   }
-
   buyer(): Observable<any> {
     return <Observable<any>> this.http.get(this.buyerURL);
   }
-
   seller(): Observable<any> {
     return <Observable<any>> this.http.get(this.sellerURL);
   }
-
   propData(): Observable<any> {
     return <Observable<any>> this.http.get(this.adminPropURL);
   }
-
   delProp(propId): Observable<any> {
-    return <Observable<any>> this.http.delete(this.delURL+propId);
+    // console
+    return <Observable<any>> this.http.delete(this.delPropURL+propId);
   }
 }

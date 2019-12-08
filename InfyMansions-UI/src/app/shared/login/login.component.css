@@ -11,3 +11,17 @@
 .green-snackbar {
     background:green;
 }
+
+#bg{
+  background-image: url('../../../assets/brickwall.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  height: auto;
+}
+
+#card1{
+  width:200px;
+  height:200px;
+
+}

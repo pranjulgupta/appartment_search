@@ -16,6 +16,7 @@
                 <div class="container-fluid">
                         <h4>Completion Meter</h4>
                         <div>It shows how much you fill the form..!</div>
+                        <br/>
                         <mat-progress-spinner
                         class="example-margin"
                         [color]="color"
@@ -39,17 +40,17 @@
                                     <div class="col-md-3">
                                         <mat-form-field >
                                             <mat-label>Please mention area</mat-label>
-                                            <mat-select formControlName="area">
+                                            <mat-select formControlName="area" (click)="progress()">
                                                 <mat-option *ngFor="let i of area" [value]="i">{{i}}</mat-option>
     
                                             </mat-select>
                                         </mat-form-field>
                                     </div>
     
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 offset-1">
                                         <mat-form-field>
                                             <mat-label>Property Pincode</mat-label>
-                                            <mat-select formControlName="pincode">
+                                            <mat-select formControlName="pincode" (click)="progress()">
                                                 <mat-option *ngFor="let i of pincode" [value]="i">{{i}}</mat-option>
     
                                             </mat-select>
@@ -63,17 +64,19 @@
                                     <div class="col-md-3">
                                         <mat-form-field>
                                             <mat-label>You are...</mat-label>
-                                            <mat-select formControlName="propertyOwnership">
+                                            <mat-select formControlName="propertyOwnership" (click)="progress()">
                                                 <mat-option *ngFor="let i of propertyOwnership" [value]="i">{{i}}</mat-option>
     
                                             </mat-select>
                                         </mat-form-field>
                                     </div>
     
-                                    <div class="col-md-3">
-                                        <mat-radio-group aria-label="Property For:" formControlName="buildingType">
-                                            <br/>
-                                            <mat-radio-button value="Sale">Sale</mat-radio-button>
+                                    <div class="col-md-8 offset-1">
+                                        <mat-radio-group formControlName="buildingType" (change)="progress()">
+                                            
+                                            <!-- <mat-label>Property for:</mat-label> -->
+                                           <br/>
+                                            Property For: <mat-radio-button value="Sale">Sale</mat-radio-button>
                                             <mat-radio-button value="Rent">Rent</mat-radio-button>
                                         </mat-radio-group>
                                     </div>
@@ -81,10 +84,12 @@
                                 <!-- ############################################################################### -->
     
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <mat-radio-group aria-label="" formControlName="propertyType">
+                                    <div class="col-md-9">
+                                        <mat-radio-group formControlName="propertyType" (change)="progress()">
+                                           
+                                            <!-- <mat-label>Building Type:</mat-label> -->
                                             <br/>
-                                            <mat-radio-button value="Sale">
+                                            Building Type: <mat-radio-button value="Sale">
                                                 <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
                                                 House</mat-radio-button>
                                             <mat-radio-button value="Rent">
@@ -100,18 +105,21 @@
     
     
                                         <mat-form-field class="example-full-width">
-                                            <input type="number" matInput placeholder="No. of Bedrooms" formControlName="noOfBedrooms">
+                                            <input type="number" matInput placeholder="No. of Bedrooms" formControlName="noOfBedrooms" min="1" (change)="progress()">
                                             <mat-icon matSuffix>hotel</mat-icon>
                                         </mat-form-field>
+                                        <mat-error *ngIf="sellForm.controls.noOfBedrooms.errors?.min">Bedrooms cannot be less than 1</mat-error>
     
                                     </div>
     
                                     <div class="col-md-4">
     
                                         <mat-form-field class="example-full-width" >
-                                            <input type="number" matInput placeholder="No. of Bathrooms" formControlName="noOfBathrooms">
+                                            <input type="number" matInput placeholder="No. of Bathrooms" formControlName="noOfBathrooms" min="1" (change)="progress()">
                                             <mat-icon matSuffix>bathtub</mat-icon>
                                         </mat-form-field>
+                                        <mat-error *ngIf="sellForm.controls.noOfBathrooms.errors?.min">Bathrooms cannot be less than 1</mat-error>
+    
     
     
     
@@ -120,9 +128,11 @@
                                     <div class="col-md-4">
     
                                         <mat-form-field class="example-full-width">
-                                            <input type="number" matInput placeholder="No. of Balconies" formControlName="noOfBalconies">
+                                            <input type="number" matInput placeholder="No. of Balconies" formControlName="noOfBalconies" min="0" (change)="progress()">
                                             <mat-icon matSuffix>home</mat-icon>
                                         </mat-form-field>
+                                        <mat-error *ngIf="sellForm.controls.noOfBalconies.errors?.min">Balcony cannot be less than 0</mat-error>
+    
     
     
                                     </div>
@@ -135,13 +145,13 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <br/> Price:
-                                        <mat-slider formControlName="price" #propPrice min="20000" max="1000000"></mat-slider> {{propPrice.value}}
+                                        <mat-slider formControlName="price" #propPrice min="20000" max="1000000" (change)="progress()"></mat-slider> {{propPrice.value}}
                                     </div>
                                 </div>
                                 <!-- ############################################################################### -->
     
                                 <div class="row">
-                                      
+                                   <br/>
                                     <div class="col-md-1">
                                         <button type="submit" mat-raised-button color="primary"  [disabled]="sellForm.invalid">Post</button>
                                     </div>
@@ -153,6 +163,9 @@
                                     </div>
     
                                 </div>
+                                <br/>
+                                      
+
     
     
                             </div>
@@ -183,7 +196,7 @@
                             </div>
                             <!-- ############################################################################### -->
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-5">
                                     <mat-form-field>
                                         <mat-label>Select the availability</mat-label>
                                         <mat-select formControlName="availabilityBy">
@@ -196,19 +209,25 @@
                             <!-- ############################################################################### -->
                             <div class="row">
                                 <div class="col-md-8">
+                                        <mat-label>Select Furnishing:</mat-label>
+                                        <br/>
     
                                     <mat-radio-group formControlName="furnishing">
                                         <mat-radio-button value="Fully Furnished">Fully Furnished</mat-radio-button>
                                         <mat-radio-button value="Semi Furnished">Semi Furnished</mat-radio-button>
                                         <mat-radio-button value="Unfurnished">Unfurnished</mat-radio-button>
                                     </mat-radio-group>
-    
+                                    <br/>
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
     
                             <div class="row">
                                 <div class="col-md-8">
+                                    <br/>
+                                    <mat-label>Select Availability:</mat-label>
+                                    <br/>
+
     
                                     <mat-radio-group formControlName="furnishing">
                                         <mat-radio-button value="Ready to Move">Ready to Move</mat-radio-button>
@@ -221,7 +240,8 @@
                             <!-- ############################################################################### -->
                             <div class="row">
                                 <div class="col-md-5">
-                                    <mat-slide-toggle id="slideToggler" #park class="example-margin" >Parking</mat-slide-toggle>
+                                    <br/>
+                                    <mat-slide-toggle class="slideToggler" #park class="example-margin" >Parking</mat-slide-toggle>
                                     <div *ngIf="park.checked">
                                         <mat-slide-toggle formControlName="noOfOpenParking" value="1">Open Parking</mat-slide-toggle>
                                         <mat-slide-toggle formControlName="noOfCoveredParking" value="1">Covered Parking</mat-slide-toggle>
@@ -235,29 +255,64 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <br/> Area:
-                                    <mat-slider id="ageSlider" formControlName="propertyArea"></mat-slider> Sq.feets
+                                    <mat-slider id="ageSlider" formControlName="propertyArea" #propArea></mat-slider>{{propArea.value}} Sq.feets
                                 </div>
                             </div>
                             <!-- ############################################################################### -->
                             <div class="row">
-                                <div class="col-md-2">
-                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="lifts">Lifts</mat-slide-toggle>
+                                <div class="col-md-2" class="slideToggler">
+                                    <mat-slide-toggle  class="example-margin" formControlName="lifts">Lifts</mat-slide-toggle>
                                 </div>
                                 <div class="col-md-2">
-                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="ac">AC</mat-slide-toggle>
+                                    <mat-slide-toggle  class="example-margin" formControlName="ac">AC</mat-slide-toggle>
                                 </div>
                                 <div class="col-md-3">
-                                    <mat-slide-toggle id="slideToggler" class="example-margin" formControlName="heater">Water Heater</mat-slide-toggle>
+                                    <mat-slide-toggle class="example-margin" formControlName="heater">Water Heater</mat-slide-toggle>
                                 </div>
+                                <div class="col-md-3">
+                                        <mat-slide-toggle  class="example-margin" formControlName="poojaRoom">Pooja Room</mat-slide-toggle>
+                                    </div>
     
     
                             </div>
                             <!-- ############################################################################### -->
+                            <div class="row">
+                                <div class="col-md-9">
+                                        <br/>
+                                    <mat-label>Amenities:</mat-label>
+                                    
+                                    <section class="example-section">
+                                            <mat-checkbox class="example-margin" formControlName="IntercomFacility" >Intercom</mat-checkbox>
+                                            <mat-checkbox class="example-margin" formControlName="wifi" >Wifi</mat-checkbox>
+                                            <mat-checkbox class="example-margin" formControlName="WaterSupplyFor24Hours">24X7 Water Supply</mat-checkbox>
+                                    </section>
+                                </div>
+                            </div>
+                            <!-- ############################################################################### -->
+
+                            <div class="row">
+                                    <div class="col-md-9">
+                                            <br/>
+                                        <mat-label>Close To:</mat-label>
+                                        
+                                        <section class="example-section">
+                                                <mat-checkbox class="example-margin" formControlName="CloseToSchool" >School</mat-checkbox>
+                                                <mat-checkbox class="example-margin" formControlName="CloseToHospital" >Hospital</mat-checkbox>
+                                                <mat-checkbox class="example-margin" formControlName="CloseToRailwayStation">Railway Station</mat-checkbox>
+                                                <mat-checkbox class="example-margin" formControlName="CloseToAirport" >Airport</mat-checkbox>
+                                                <mat-checkbox class="example-margin" formControlName="CloseToBank" >Bank</mat-checkbox>
+                                        </section>
+                                    </div>
+                                </div>
+
+
+
+                            <!-- ############################################################################### -->
     
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-8">
                                     <mat-form-field>
-                                        <textarea matInput placeholder="Enter Property's Full Address" formControlName="Address"></textarea>
+                                        <textarea matInput placeholder="Enter Property's Full Address" width="400px" formControlName="Address"></textarea>
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -284,13 +339,7 @@
                                 </div>
                                 
                                
-                                                           
-                                                           
-                                                            
-                                                            
-                                                       
-                            
-                            
+                                                    
     
                         </mat-tab>
     

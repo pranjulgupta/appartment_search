@@ -10,3 +10,45 @@
     display: flex;
     flex-direction: column;
 }
+
+#imgAnimate{
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    bottom: -120px;
+    left:400px;
+}
+
+/* @keyframes imageAnimation {
+    0%	    {transform:rotate(120);}
+    50%     {transform: rotate(120)}
+    /* 25% 	{transform: scale(2,2);}
+    50% 	{transform: rotate(-60);}
+    75%     {transform: scale(1,1)} */
+    /* 100% 	{transform: rotate(120);} */
+/* } */ 
+
+/* .animate {
+    animation-name: imageAnimation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0.1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+ /* .animate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 50% { -moz-transform: rotate(60deg); } }
+@-webkit-keyframes spin { 50% { -webkit-transform: rotate(-90deg); } }
+@keyframes spin { 50% { -webkit-transform: rotate(60deg); transform:rotate(-90deg); } } 
+ */

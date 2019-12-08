@@ -7,13 +7,17 @@ import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule,ReactiveFormsModule } from '../../node_modules/@angular/forms';
-import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule } from '../../node_modules/@angular/material';
+import { HomeComponent } from './home/home.component';
+import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatButtonModule, MatButtonToggleModule, MatIconModule, MatProgressSpinnerModule, MatSidenavModule, MatDialogModule } from '../../node_modules/@angular/material';
+
 import { SellComponent } from './sell/sell.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { BuyComponent } from './buy/buy.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+
 
 
 
@@ -22,7 +26,10 @@ import { ViewDetailsComponent } from './viewDetails/view-details.component'
 
 @NgModule({
   declarations: [
-    AppComponent,HomeComponent, RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent, ViewDetailsComponent
+    DialogComponent, WishlistComponent ,
+   
+    AppComponent,HomeComponent, 
+    RegisterComponent, BuyComponent, SellComponent, AdminComponent,ProfileComponent, ViewDetailsComponent
   ],
   
   imports: [
@@ -36,8 +43,12 @@ import { ViewDetailsComponent } from './viewDetails/view-details.component'
     FormsModule,
     ReactiveFormsModule,
     MatCheckboxModule,MatRadioModule,MatSelectModule,MatInputModule,
-    MatButtonModule,MatButtonToggleModule,MatIconModule,MatProgressSpinnerModule,MatSidenavModule
+    MatButtonModule,MatButtonToggleModule,MatIconModule,MatProgressSpinnerModule,MatSidenavModule,
+    MatDialogModule
 
+  ],
+  entryComponents : [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,7 +38,11 @@ userModel.searchUser = (userId) => {
     })
 }
 
+<<<<<<< HEAD
 //View
+=======
+
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 userModel.viewDetails = (id) => {
     return dbModel.getPropertyCollection().then(model => {
 
@@ -64,12 +68,43 @@ userModel.addUser= (UserObj)=>{
                 return null;
             }else{
                 return userData;
+            }
+        })
+    })
+}
                 
+//to insert values in wishlist
+userModel.insertWishList = (userId,propertyId) => {
+    return dbModel.getUserCollection().then(model => {
+        return model.updateOne({userId:userid},{$push:{wishlist:propertyId}}).then(updatedData => {
+            if (updatedData.nModified == 1) {
+                return propertyId;
+            } else {
+                console.log(data, 99);
+                return null
 
             }
         })
     })
 }
+
+
+//to valuest values from user's wishlist
+userModel.deleteFromWishList = (userId,propertyId) => {
+    return dbModel.getUserCollection().then(model => {
+        return model.updateOne({userId:userid},{$pull:{wishlist:propertyId}}).then(updatedData => {
+            if (updatedData.nModified == 1) {
+                return propertyId;
+            } else {
+                console.log(data, 91);
+                return null
+            }
+        })
+    })
+}
+
+
+
 
 
 //profile comp
@@ -93,34 +128,79 @@ userModel.viewProfile = (emailid) => {
     })
 }
 
-
-//admin
-userModel.regUser=()=>{
-    return dbModel.getUserCollection().then(model=>{
-        return model.find({},{_id:0,userId:1,name:1,contactNo:1}).then((regData)=>{
-            if(regData.length==0){
-                return null;
+userModel.postedProperty=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"sellerId":userid}).then((data)=>{
+            console.log(userid,"sur")
+            if(data){
+                console.log(data,"sur");
+                return data
+                
             }else{
-                return regData;
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+//starwishlist
+userModel.wishlistProperty=(userid)=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"wish")
+            if(data){
+                console.log(data,"wish");
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+userModel.getOwnerDetails=(userid)=>{
+    console.log(userid,"dana")
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({"userId":userid}).then((data)=>{
+            console.log(userid,"danr")
+            if(data){
+                console.log(data,"dan");
+                return data
+                
+            }else{
+                let err = Error("Owner not found");
+                err.status = 404;
+                throw err; 
             }
         })
     })
 }
 
-//admin
-userModel.delUser=(Id)=>{
-    return dbModel.getUserCollection().then(model=>{
-        return model.deleteOne({userId:Id}).then(delData=>{
-            if(delData.deletedCount>0){
-                return Id;
-            }else{
-                return null;
-            }
-        })
-    })
-}
-
+<<<<<<< HEAD
 //buy            
+=======
+userModel.Propertywish=(userid)=>{
+    return dbModel.getPropertyCollection().then(model=>{
+        return model.find({"propertyId":propertyId}).then((data)=>{
+            
+            if(data){
+                
+                return data
+                
+            }else{
+                let err = Error("User not found");
+                err.status = 404;
+                throw err; 
+            }
+        })
+    })
+}
+
+
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 userModel.propertyDetails = () => {
     return dbModel.getPropertyCollection().then(model => {
         return model.find().then(data => {
@@ -135,6 +215,7 @@ userModel.propertyDetails = () => {
 }
 
 
+<<<<<<< HEAD
 //to insert values in wishlist
 userModel.insertWishList = (userId,propertyId) => {
     return dbModel.getUserCollection().then(model => {
@@ -144,11 +225,39 @@ userModel.insertWishList = (userId,propertyId) => {
             } else {
                 // console.log("nothing", 99);
                 return null
+=======
+
+
+
+userModel.generatePropertyId = () => {
+    return dbModel.getPropertyCollection().then((userModel) => {
+        return userModel.distinct("propertyId").then((ids) => {
+            let idarr = ids.map((data) => { 
+            return Number(data.slice(1)) })
+            let bId = Math.max(...idarr);
+            return "P" + (bId + 1);
+        })
+    })
+}
+
+
+
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
             }
         })
     })
 }
 
+<<<<<<< HEAD
 
 //to valuest values from user's wishlist
 userModel.deleteFromWishList = (userId,propertyId) => {
@@ -159,11 +268,80 @@ userModel.deleteFromWishList = (userId,propertyId) => {
             } else {
                 console.log(data, 91);
                 return null
+=======
+userModel.addProperty = (data) => {
+    console.log('k')
+    return dbModel.getPropertyCollection().then( model => {
+        console.log('l')
+        console.log(data)
+        return model.create(data).then(response => {
+            console.log('w')
+            if(response){
+                return response
+            }else{
+                return null
             }
         })
     })
 }
 
+     
+//search
+userModel.loc=()=>{
+    return dbModel.getLocationCollection().then(model=>{
+        return model.find().then(data=>{
+            if (data.length == 0) {
+                return null
+            } else {
+                console.log(data, 99);
+                return data
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
+            }
+        })
+    })
+}
+
+<<<<<<< HEAD
+=======
+// #############################################################################
+//admin
+userModel.regUser=()=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.find({},{_id:0,userId:1,name:1,contactNo:1}).then((regData)=>{
+            if(regData.length==0){
+                return null;
+            }else{
+                return regData;
+            }
+        })
+    })
+}
+
+//admin
+userModel.delUser=(userId)=>{
+    return dbModel.getUserCollection().then(umodel=>{
+        return umodel.deleteOne({userId:userId}).then(delData=>{
+            if(delData.deletedCount==1){
+                return dbModel.getRoleCollection().then(rmodel=>{
+                    return rmodel.updateOne({$pull:{registeredUsers:userId}}).then(delRole=>{
+                        if(delRole.nModified==1){
+                            return dbModel.getPropertyCollection().then(pmodel=>{
+                                return pmodel.deleteMany({sellerId:userId}).then(delprop=>{
+                                    return userId;
+                                })
+                            })
+                        }else{
+                            return null;
+                        }
+                    })
+                })
+            }else{
+                return null;
+            }
+        })
+    })
+}
+>>>>>>> e57dd763c5e0fe16261d682c6b3cac83cb63743b
 //admin
 userModel.buyerView=()=>{
     return dbModel.getRoleCollection().then(model=>{
@@ -211,6 +389,7 @@ userModel.propertyView=()=>{
     })
 }
 
+
 userModel.generatePropertyId = () => {
     return dbModel.getPropertyCollection().then((userModel) => {
         return userModel.distinct("propertyId").then((ids) => {
@@ -223,13 +402,29 @@ userModel.generatePropertyId = () => {
 }
 
 
+//wishlist
+userModel.searchUser=(userId=>{
+    return dbModel.getUserCollection().then(model=>{
+        return model.findOne({"userId":userId},{wishlist:1,_id:0}).then(user=>{
+            if(user){
+                return user.wishlist;
+            }else{
+                return null
+            }
+        })
+    })
+})
+
+
 //admin
 userModel.delProp=(propId)=>{
     return dbModel.getPropertyCollection().then(model=>{
         return model.deleteOne({propertyId:propId}).then(delData=>{
             if(delData.deletedCount>0){
-                return propId;
+                // console.log("h")
+                return delData;
             }else{
+                // console.log("i")
                 return null;
             }
         })
