@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component';
-
+import { SharedServService } from './shared-serv.service';
 import { RegisterComponent } from './register/register.component';
 import { SellComponent } from './sell/sell.component';
 import { AdminComponent } from './admin/admin.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
 },
 {
   path:"admin",
-  component:AdminComponent
+  component:AdminComponent,canActivate:[SharedServService]
 },
 
 {
@@ -32,11 +32,11 @@ const routes: Routes = [
 },
 {
   path:"view",
-  component:ViewDetailsComponent
+  component:ViewDetailsComponent,canActivate:[SharedServService]
 },
 {
   path:"sell",
-  component:SellComponent
+  component:SellComponent,canActivate:[SharedServService]
 },
 
 {
@@ -45,7 +45,7 @@ const routes: Routes = [
 },
 {
   path:"profile",
-  component: ProfileComponent
+  component: ProfileComponent,canActivate:[SharedServService]
 },
 {
   path:"**", 

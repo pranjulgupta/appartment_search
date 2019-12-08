@@ -429,3 +429,590 @@ TypeError: userService.getProperty is not a function
     at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
     at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
     at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:36:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:127:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:8:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+ValidationError: Property validation failed: status: Cast to Boolean failed for value "Available" at path "status"
+    at new ValidationError (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\error\validation.js:31:11)
+    at model.Document.invalidate (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:2413:32)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:1194:12)
+    at model._handleIndex (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:934:14)
+    at model.$set (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:878:22)
+    at model.Document (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\document.js:136:12)
+    at model.Model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:97:12)
+    at new model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:4430:15)
+    at Array.<anonymous> (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3214:17)
+    at _start (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:27:37)
+    at parallelLimit (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\helpers\parallelLimit.js:23:5)
+    at Function.Model.$__insertMany (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\mongoose\lib\model.js:3238:3)
+    at process.nextTick (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\kareem\index.js:369:33)
+    at process.internalTickCallback (internal/process/next_tick.js:70:11)
+TypeError: Cannot read property 'length' of null
+    at userdb.propertyDetails.then.data (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:229:18)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+Error: user not available!! Please register
+    at userdb.findUser.then.userData (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:10:23)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+Error: Password is Incorrect
+    at bcrypt.compare.then.res (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\service\userService.js:20:35)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:141:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+ReferenceError: userid is not defined
+    at dbModel.getUserCollection.then.model (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\model\userModel.js:156:40)
+    at process.internalTickCallback (internal/process/next_tick.js:77:7)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProfile is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:34:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+TypeError: userService.getProperty is not a function
+    at router.get (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\src\routes\userRouter.js:151:17)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:281:22
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:354:14)
+    at param (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:365:14)
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:410:3)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)
+    at jsonParser (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\body-parser\lib\types\json.js:110:7)
+    at Layer.handle [as handle_request] (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:317:13)
+    at C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\Users\dana.jacob\Desktop\FA4\infymansions\InfyMansions-WS\node_modules\express\lib\router\index.js:275:10)

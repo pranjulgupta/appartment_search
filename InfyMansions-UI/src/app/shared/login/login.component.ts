@@ -96,6 +96,13 @@ getRegisterPage(){
   //open register page if the user is not registered already
   this.router.navigate(['/register'])
 }
+down(event,value:string){
+  if(event.key==="Enter"){
+    sessionStorage.setItem("PreviousUrl","/home");
+    sessionStorage.setItem("search",value.toString());
+    this.router.navigate(['/buy']);
+  }
+}
 }
 
 

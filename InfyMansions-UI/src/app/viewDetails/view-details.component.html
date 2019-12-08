@@ -1,17 +1,17 @@
 <br>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 ">
-            <img src="{{data.imageUrls}}" class="img-fluid imgS" width="100%" height="100%">
+    <div class="row" >
+        <div class="col-md-4">
+            <img src="{{data.imageUrls}}" class="imgS" width="100%" height="100%">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" >
             <div class="row mat-title text-primary">Description</div>
-            <div class="row" class="mat-body-2">{{data.description}}</div>
+            <div class="row" class="mat-body-2 text-justify fontChange">{{data.description}}</div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="row" class="mat-subheading-2">AREA :{{data.propertyArea}} sq Ft</div>
-                    <div class="row" class="mat-subheading-2">TRANSACTION TYPE : {{data.transactionType}}</div>
-                    <div class="row" class="mat-subheading-2">BEDROOMS :{{data.noOfBedrooms}}
+                    <div class="row" class="mat-body-2 text-center">AREA :{{data.propertyArea}} sq Ft</div>
+                    <div class="row" class="mat-body-2 text-center">TRANSACTION TYPE : {{data.transactionType}}</div>
+                    <div class="row" class="mat-body-2 text-center">BEDROOMS :{{data.noOfBedrooms}}
                         <mat-icon class="button-side" matSuffix>king_bed</mat-icon>&nbsp;
                         <!-- <mat-icon  class="button-side" matSuffix>king_bed</mat-icon>&nbsp;
                         <mat-icon *ngIf="data.noOfBedrooms==2" class="button-side" matSuffix>king_bed</mat-icon>
@@ -26,21 +26,21 @@
 
                 </div>
                 <div class="col-md-4">
-                    <div class="row" class="mat-subheading-2">PRICE :{{data.price}}</div>
-                    <div class="row" class="mat-subheading-2">AGE : {{data.ageOfProperty}}</div>
+                    <div class="row" class="mat-body-2 text-center">PRICE :{{data.price}}</div>
+                    <div class="row"  class="mat-body-2 text-center">PROPERTY AGE : {{data.ageOfProperty}}</div>
                     <!-- <mat-icon class="button-side" matSuffix>bathtub</mat-icon> -->
-                    <div class="row" class="mat-subheading-2">BATHROOMS :{{data.noOfBathrooms}}
-                        <mat-icon color="red" class="button-side" matSuffix>bathtub</mat-icon>
+                    <div class="row" class="mat-body-2 text-center">BATHROOMS :{{data.noOfBathrooms}}
+                        <mat-icon color="red" class="button-side" matSuffix>bathtub</mat-icon>&nbsp;
                     </div>
                     <!-- <span *ngIf="prop.noOfBedrooms>4; else bedicons">{{prop.noOfBedrooms}}</span>
                     <ng-template #bedicons><span *ngFor="let i of Arr(prop.noOfBedrooms).fill(1)">
                     <sub><mat-icon class="icons">king_bed</mat-icon></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></ng-template> -->
                 </div>
                 <div class="col-md-4">
-                    <div class="row" class="mat-subheading-2">SECURITY DEPOSIT : {{data.Advance}}</div>
-                    <div class="row" class="mat-subheading-2">AVAILABILITY :{{data.availability}}</div>
-                    <div class="row" class="mat-subheading-2">BALCONIES :{{data.noOfBalconies}}
-                        <mat-icon color="red" class="button-side" matSuffix>store_front</mat-icon>
+                    <div class="row" class="mat-body-2 text-center">SECURITY DEPOSIT : {{data.Advance}}</div>
+                    <div class="row" class="mat-body-2 text-center">AVAILABILITY :{{data.availability}}</div>
+                    <div class="row" class="mat-body-2 text-center">BALCONIES :{{data.noOfBalconies}}
+                        <mat-icon color="red" class="button-side" matSuffix>store_front</mat-icon>&nbsp;
                     </div>
                     <!-- <span *ngIf="viewDet.noOfBedrooms>4; else bedicons">{{viewDet.noOfBedrooms}}</span>
                     <ng-template #bedicons><span *ngFor="let i of Arr(viewDet.noOfBedrooms).fill(1)">
@@ -49,49 +49,67 @@
             </div>
 
             <div class="row">
-                <button class="btn btn-block btn-light btn rounded text-success mat-display-4">Contact Owner</button>
+                <!-- <button class="btn btn-block btn-light btn rounded text-success mat-display-4">Contact Owner</button> -->
+                <button mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                <ng-template #iew>
+                    <button mat-raised-button color="warn" class="btn-block" (click)="popup('Please login to proceed')">Contact Owner</button>
+                </ng-template>
+                <br>
             </div>
+
+
+           
 
         </div>
 
     </div>
+    <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
             <mat-card>
                 <mat-card-title class="text-danger text-center">Features</mat-card-title>
                  <br>
-                <mat-card-content>
+                <mat-card-content class="text-center">
                     <button mat-raised-button style="border-radius:30px" class="btn btn btn-block" color="accent">Property Type : {{data.propertyType}}</button>
                     <br>
                     <br>
+                    <br>
+                    
                     <button mat-raised-button style="border-radius:30px" class="mat-warn btn btn-block">Ownwership :{{data.propertyOwnership}}</button>
                     <br>
                     <br>
+                    <br>
+                    
                     <button mat-raised-button style="border-radius:30px" class="btn btn btn-block" color="primary">Building Type :{{data.buildingType}}</button>
                     <br>
                     <br>
+                    <br>
+                    
                     <button mat-raised-button style="border-radius:30px" class="mat-warn btn btn-block">Furnishing :{{data.furnishing}}</button>
                     <br>
                     <br>
+                    <br>
+                    
                     <button mat-raised-button style="border-radius:30px" class="btn btn-block" color="accent">Availability : {{data.availability}}</button>
                     <br>
                     <br>
                 </mat-card-content>
             </mat-card>
         </div>
+       
         <div class="col-md-4">
             <mat-card>
                 <mat-card-title class="text-danger text-center">Highlights</mat-card-title>
                 <br>
                 <br>
-                <br>
-                <mat-card-content>
+                <br><br>
+                <mat-card-content class="text-center">
                     <div class="row">
                             <!-- *ngIf="CloseToRailwayStation" -->
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>view_headline</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.WaterSupplyFor24Hours">
+                            <mat-icon>waves</mat-icon>
                             
-                            <div class="customSize">Water</div>
+                            <div class="customSize">24Hours Water Supply</div>
                         </div>
                         <br>
                         <br>
@@ -99,10 +117,10 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToSchool">
                             <mat-icon>home_work</mat-icon>
                             <br>
-                            <div class="customSize">School</div>
+                            <div class="customSize">Close to School</div>
                         </div>
                         <br>
                         <br>
@@ -110,39 +128,44 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>directions_bus</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToRailwayStation">
+                            <mat-icon>directions_railway</mat-icon>
                             <br>
-                            <div class="customSize">Train</div>
+                            <div class="customSize">Close to Railway Station</div>
                         </div>
                         <br>
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                        
+    
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToBusStand">
                             <mat-icon>departure_board</mat-icon>
                             <br>
-                            <div class="customSize">Bustand</div>
+                            <div class="customSize">Close to Bustand</div>
                         </div>
                         <br>
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                        
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToBank"><br><br>
                             <mat-icon>business</mat-icon>
                             <br>
-                            <div class="customSize">Bank</div>
+                            <div class="customSize">Close to Bank</div>
                         </div>
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <br>
+                       
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToAirport">
+                                <mat-icon>flight_takeoff</mat-icon>
+                                <br>
+                                <div class="customSize">Close to Airport</div>
+                            </div>
+                            <br>
+                            <br>
+                            
                     </div>
                 </mat-card-content>
             </mat-card>
@@ -152,13 +175,13 @@
                 <mat-card-title class="text-danger text-center">Amenities</mat-card-title>
                 <br>
                 <br>
-                <br>
-                <mat-card-content>
+                <br><br>
+                <mat-card-content class="text-center">
                     <div class="row">
                         <!-- *ngIf="CloseToRailwayStation" -->
 
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>view_headline</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.lifts">
+                            <mat-icon>system_update</mat-icon>
                             <br>
                             <div class="customSize">LIFTS</div>
                         </div>
@@ -168,10 +191,10 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>home_work</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.ac">
+                            <mat-icon>calendar_view_day</mat-icon>
                             <br>
-                            <div class="customSize">AC</div>
+                            <div class="customSize">A.C</div>
                         </div>
                         <br>
                         <br>
@@ -179,8 +202,8 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>directions_bus</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.maintenenceStaff">
+                            <mat-icon>build</mat-icon>
                             <br>
                             <div class="customSize">MAINTAINENCE</div>
                         </div>
@@ -190,8 +213,8 @@
                         <br>
                         <br>
                         <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
-                            <mat-icon>departure_board</mat-icon>
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.visitorParking">
+                            <mat-icon>commute</mat-icon>
                             <br>
                             <div class="customSize">PARKING</div>
                         </div>
@@ -199,25 +222,28 @@
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <div class="col-md-3 offset-3" style="transform:scale(2)">
+                        
+    
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.CloseToRailwayStation">
                             <mat-icon>wifi</mat-icon>
                             <br>
                             <div class="customSize">WIFI</div>
                         </div>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+            
+                        <div class="col-md-3 offset-3" style="transform:scale(2)" *ngIf="data.poojaRoom">
+                                <mat-icon>airline_seat_flat_angled</mat-icon>
+                                <br>
+                                <div class="customSize">PRAYER ROOM</div>
+                            </div>
                     </div>
                 </mat-card-content>
             </mat-card>
         </div>
 
     </div>
+</div>
 </div>
 
 <br>

@@ -56,6 +56,15 @@ export class RegisterComponent implements OnInit {
        this.openSnackBar(errorResponse.error.message,'Ok');
       }
     )
-  };
+  }
+
+
+  down(event,value:string){
+    if(event.key==="Enter"){
+      sessionStorage.setItem("PreviousUrl","/home");
+      sessionStorage.setItem("search",value.toString());
+      this.router.navigate(['/buy']);
+    }
+  }
 }
 

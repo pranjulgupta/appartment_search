@@ -97,6 +97,10 @@ const featuresSchema = Schema({
 
 const propertySchema = Schema({
     // ids
+    area:{
+        type: String,
+        match:[/^.{3,}$/,'Area must have atleast 3 chars']
+    },
     propertyId: {
         type:String,
         required: [true, 'This field is Required'],
@@ -150,35 +154,79 @@ const propertySchema = Schema({
         validate:[(availability)=>(availability=='Ready to move'|| availability=='Under construction'),"Availability must be either 'Ready to move' or 'Under construction'"]
     }, 
     lifts:{
-        type: Boolean
+        type: Boolean,
+        default:false
     },
     ac: {
-        type: Boolean
+        type: Boolean,
+        default:true
     },
     heater: {
-        type: Boolean
+        type: Boolean,
+        default:false
     },
     maintenenceStaff: {
-        type: Boolean
+        type: Boolean,
+        default:true
     },
     visitorParking: {
-        type: Boolean
+        type: Boolean,
+        default:true
         //
     },
     IntercomFacility: Boolean,
-    wifi: Boolean,
-    fireAlarm: Boolean,
-    WaterPurifier: Boolean,
-    PowerBackup: Boolean,
-    WaterSupplyFor24Hours: Boolean,
-    CloseToSchool: Boolean,
-    CloseToHospital: Boolean,
-    CloseToRailwayStation: Boolean,
-    CloseToBusStand: Boolean,
-    CloseToAirport: Boolean,
-    CloseToBank: Boolean,
-    CloseToPark: Boolean,
-    status: String, 
+    wifi: {
+        type: Boolean,
+        default:true
+    },
+    fireAlarm: {
+        type: Boolean,
+        default:true
+    },
+    WaterPurifier: {
+        type: Boolean,
+        default:true
+    },
+    PowerBackup: {
+        type: Boolean,
+        default:true
+    },
+    WaterSupplyFor24Hours: {
+        type: Boolean,
+        default:true
+    },
+    CloseToSchool: {
+        type: Boolean,
+        default:true
+    },
+    CloseToHospital:  {
+        type: Boolean,
+        default:true
+    },
+    CloseToRailwayStation:  {
+        type: Boolean,
+        default:true
+    },
+    CloseToBusStand: {
+        type: Boolean,
+        default:true
+    },
+    CloseToAirport:  {
+        type: Boolean,
+        default:true
+    },
+    CloseToBank:  {
+        type: Boolean,
+        default:true
+    },
+    CloseToPark: {
+        type: Boolean,
+        default:true
+    },
+    status:  {
+        type: String,
+        // default:true
+    }, 
     Address: {
         type: String,
         
@@ -203,13 +251,20 @@ const propertySchema = Schema({
         type: Number,
         // required:[true, 'This is required']
     },
-    poojaRoom: Boolean,
-    servantRoonm: Boolean,
+    poojaRoom:  {
+        type: Boolean,
+        default:true
+    },
+    servantRoonm:  {
+        type: Boolean,
+        default:true
+    },
     noofCoveredParking: Number,
     noOfOpenParking: Number,
     description: String,
     imageUrls:  {
         type:String,
+        default: "../../../../assets/defaulthouse.jpg",
         // required: [true, 'This field is Required'],
     },
     extras: String
@@ -253,7 +308,7 @@ collection.getUserCollection = () => {
         throw err;
     })
 }
-console.log(collection.getUserCollection())
+// console.log(collection.getUserCollection())
 
 collection.getLocationCollection = () => {
     return Mongoose.connect(url, { useNewUrlParser: true }).then((database) => {

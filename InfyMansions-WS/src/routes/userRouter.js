@@ -21,7 +21,7 @@ router.post('/login', function (req, res, next) {
 router.post('/register', function (req, res, next) {
     const userObj= req.body;
     userService.addDetails(userObj).then((data)=>{
-        console.log(data)
+        // console.log(data)
         res.json({"message":"Registered successfully with User Id: "+data.userId});
     }).catch((err)=>next(err))
 })
@@ -30,9 +30,9 @@ router.post('/register', function (req, res, next) {
 //To get user properties
 router.get('/profile/:emailId',(req,res,next)=>{
     const emailid=req.params.emailId;
-    console.log(emailid,3);
+    // console.log(emailid,3);
     userService.getProfile(emailid).then(data=>{
-        console.log(data)
+        // console.log(data)
         res.json(data)
     }).catch(err=>{
         next(err)
@@ -59,21 +59,47 @@ router.get('/location', function (req, res, next) {
 })
 
 
-// router.get('/buy', function (req, res, next) {
-//     userService.showProperty().then((data)=>{
-//         res.json(data);
-//     }).catch((err)=>next(err))  
-// })
+/// to get propertyDb for buy component to display the properties
 
 router.get('/buy', function(req,res,next){
     userService.getPropertyDetails().then(data=>{
-        // console.log(3)
-        console.log(data,3);
+        // console.log(data,3);
         res.send(data)
     }).catch(err => next(err));
 })
 
+// to get from wishlist
+router.get('/wishlist/:userId', function(req,res,next){
+    let userId=req.params.userId;
+    userService.getWishList(userId).then(data=>{
+        // console.log(data,45);
+        res.json(data);
+    }).catch(err => next(err));
+})
 
+//to add data to wishlist
+router.put('/add/wishlist', function(req,res,next){
+    let userId=req.body.userId;
+    let propertyId=req.body.propertyId;
+    userService.addWishList(userId,propertyId).then(data=>{
+        // console.log(data,75);
+        res.json({message:"Property " + data + " has been added successfully to wishlist"});
+    }).catch(err => next(err));
+})
+
+//to delete from wishlist
+router.put('/remove/wishlist',function(req,res,next){
+    let userId=req.body.userId;
+    let propertyId=req.body.propertyId;
+    userService.deleteWishList(userId,propertyId).then(data=>{
+        // console.log(data,15);
+        res.json({message:"Property " + data + " has been removed successfully from wishlist"});
+    }).catch(err => next(err));
+})
+
+
+
+//admin
 router.get('/admin',function(req,res,next){
     userService.registeredUser().then((data)=>{
         res.json(data)
@@ -120,7 +146,7 @@ router.get('/search',function(req,res,next){
 
 router.get('/properties/:userId',(req,res,next)=>{
     const userid=req.params.userId
-    console.log(userid);
+    // console.log(userid);
     
     userService.getProperty(userid).then(result=>{
         res.json(result)
@@ -130,7 +156,7 @@ router.get('/properties/:userId',(req,res,next)=>{
 
 router.get('/view',(req,res,next)=>{
     const id=req.params.id;
-    console.log(id,11);
+    // console.log(id,11);
     
     userService.getViewDetails(id).then(result=>{
         res.json(result)
@@ -141,7 +167,7 @@ router.get('/view',(req,res,next)=>{
 
 //To Sell
 router.post('/sell', function(req, res, next){
-    console.log('z')
+    // console.log('z')
     let data=req.body;
     userService.addProperty(data).then( propdata => {
 
