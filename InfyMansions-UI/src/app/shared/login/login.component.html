@@ -10,18 +10,19 @@
     <mat-grid-tile [colspan]=3 [rowspan]=2 style.background="lightblue">
         <mat-card class="my-card offset-4">
             <h1 align="center">Login </h1>
-            <mat-card-content id="card-1">
+            <mat-card-content id="card1">
                 <form class="my-form" [formGroup]="loginForm" (ngSubmit)="login()">
                     <mat-form-field class="full-width">
                         <mat-label>Email</mat-label>
                         <input type="text" matInput placeholder="Email" name="contactEmail" required formControlName="contactEmail">
-                        <div id="ContactEmailError">
-                                <mat-error *ngIf="loginForm.controls.contactEmail.errors?.required && loginForm.controls.contactEmail?.touched">Field Required</mat-error>
-                                <mat-error *ngIf="loginForm.controls.contactEmail.errors?.pattern && loginForm.controls.contactEmail?.touched">Enter Valid Email ID</mat-error>
-                        </div>
                         
 
                     </mat-form-field>
+                    <div id="ContactEmailError">
+                            <mat-error *ngIf="loginForm.controls.contactEmail.errors?.required && loginForm.controls.contactEmail?.touched">Field Required</mat-error>
+                            <mat-error *ngIf="loginForm.controls.contactEmail.errors?.pattern && loginForm.controls.contactEmail?.touched">Enter Valid Email ID</mat-error>
+                    </div>
+                    
                     
                     <mat-form-field class="full-width">
                         <mat-label>Password</mat-label>
@@ -29,20 +30,22 @@
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
-                        <div id="passwordError">
-                         <mat-error *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password?.touched">Field Required</mat-error>
-                        </div>
+                        
                       </mat-form-field>
+                      <div id="passwordError">
+                            <mat-error *ngIf="loginForm.controls.password.errors?.required && loginForm.controls.password?.touched">Field Required</mat-error>
+                           </div>
 
                 </form>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-raised-button [disabled]="loginForm.invalid" (click)="login()" #selectIn (keydown)="down($event,selectIn.value)" color="primary">LOGIN</button>
+            
+                <button mat-raised-button [disabled]="loginForm.invalid" (click)="login()" #selectIn (keydown)="down($event,selectIn.value)" color="primary" class="btn btn-block">LOGIN</button>
                 <br />
                 <br />
-                <a class="link" (click)="getRegisterPage()" color="accent">Click here to register</a>
+                
+                <button mat-raised-button color="accent"(click)="getRegisterPage()" color="accent" class="text-center btn btn-block">Click here to register</button>
 
-            </mat-card-actions>
+           
             <div *ngIf="errorMessage!=null" class="text-danger">
                 {{errorMessage}}
             </div>

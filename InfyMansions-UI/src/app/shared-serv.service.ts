@@ -7,8 +7,10 @@ import { Router, CanActivate } from '../../node_modules/@angular/router';
 })
 export class SharedServService implements CanActivate{
 
-  prop:string;
+prop:string;
 userName:string;
+area:string;
+
   
   constructor(private _snackBar: MatSnackBar,private router:Router) { }
 
@@ -19,6 +21,14 @@ userName:string;
 
   sendProperty(){
     return this.prop;
+  }
+
+  getArea(area){
+    this.area=area;
+  }
+
+  putArea(){
+    return this.area;
   }
 
 

@@ -1,20 +1,30 @@
-
 <div id="bg-style">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-    <div class="row">
-        <div class="col-md-4 offset-4">
-            <div class="example-container">
-                <mat-form-field>
-                    <mat-select #selectInp (keydown)="down($event,selectInp.value)" placeholder="Search in">
-                        <mat-option *ngFor='let l of successData' value="option">{{l.area}}</mat-option>
-                    </mat-select>
-                    <button mat-button matSuffix mat-icon-button (click)="buy()"><mat-icon matSuffix>search</mat-icon></button>
-                </mat-form-field>
+        <div class="row">
+            <!-- <div class="col-md-4 offset-4"> -->
+                <div class="container-fluid text-center" style="margin-top:10rem">
+                    <mat-form-field style="background-color: rgb(133, 187, 248); opacity:0.7;border-radius:20px;" class="full-width col-md-4">
+    
+                        <!-- (select)='searchView()'  -->
+                        <mat-label><strong id="bold">Search In:</strong></mat-label>
+                        <mat-select matTooltip="SEARCH PROPERTY" #selectInp (keydown)="down($event,selectInp.value)" >
+                            <!-- <mat-option *ngFor='let l of successData' value="l" (click)="buy(l)">{{l.area}}</mat-option> -->
+                            <mat-option value="MandiMohalla">MandiMohalla</mat-option>
+                            <mat-option value="Krishna Rajendra Circle">Krishna Rajendra Circle</mat-option>
+                            <mat-option value="Mysore">Mysore</mat-option>
+                            <mat-option value="Hebbal">Hebbal</mat-option>
+                            
+    
+                        </mat-select>
+                    
+    
+                        <button mat-button matSuffix mat-icon-button matTooltip="SEARCH" (click)="buy(selectInp.value)" (keydown)="buy(selectInp.value)" (click)="filter()">
+                            <mat-icon matSuffix>search</mat-icon>
+                        </button>
+    
+                    </mat-form-field>
+                </div>
+                <div class="animate">
+                    <img id="imgAnimate" src="../../assets/home-animate.png" alt="home">
+                </div>
             </div>
-<div class="animate" >
-    <img id="imgAnimate" src="../../assets/home-animate.png" alt="home">
-</div>
+        <!-- </div> -->

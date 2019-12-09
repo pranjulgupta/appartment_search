@@ -4,8 +4,8 @@
         <br><br><br>
         <mat-form-field color="primary" class="example-full-width" appearance="legacy">
             <mat-label>Enter Area</mat-label>
-            <input autofocus #ar id="area" type="text" matInput [(ngModel)]="areaFilter" (change)="filter()" #selectI (keydown)="down($event,selectI.value)">
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="filter()">
+            <input autofocus #ar id="area" type="text" matInput [(ngModel)]="areaFilter" (change)="filter()"  #selectI (keydown)="down($event,selectI.value)">
+            <button mat-button matTooltip="Search" matSuffix mat-icon-button aria-label="Clear" (click)="filter()">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-form-field>
@@ -37,7 +37,7 @@
         <mat-form-field color="primary" class="example-full-width">
 
             <input matInput type="number" min="1" #bed [(ngModel)]="bedFilter" (change)="filter()" placeholder="Bedrooms:">
-            <mat-icon matSuffix class="sidenav-btn">king_bed</mat-icon>
+            <mat-icon matSuffix class="sidenav-btn">hotel</mat-icon>
         </mat-form-field>
         <div *ngIf="bed.value<0 && bed.value.touched"> Minimum number of bedrooms should be 1</div>
 
@@ -60,7 +60,7 @@
         </mat-form-field>
         <br>
         <br>
-        <button mat-raised-button layout-align="center" class="btn-block" color="accent" (click)="ar.value='';clear()">&nbsp;&nbsp;Clear Field</button>
+        <button mat-raised-button matTooltip="Clear Field" layout-align="center" class="btn-block" color="accent" (click)="ar.value='';clear()">&nbsp;&nbsp;Clear Field</button>
         <br>
         <br>
         <br>
@@ -82,12 +82,12 @@
 
                             <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)!=-1">
                                     <mat-icon matSuffix [id]="p.propertyId" color="accent">favorite_border</mat-icon>
-                            </button>
-                            <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="!userName"(click)="popup('Please login to proceed')">
-                                <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
-                            </button> -->
-                                        
-                             <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" color="accent" class="heart" (click)="wishChange(p.propertyId)">
+                            </button>-->
+                            <button align="align-left" mat-icon-button matTooltip='Add/Remove to Wishlist' aria-label="example icon-button with a heart icon" class="heart" *ngIf="!userName;else wishLogin"(click)="popup('Please login to proceed')">
+                                <mat-icon  matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                            </button> 
+                                  <ng-template #wishLogin>    
+                             <button align="align-left" mat-icon-button matTooltip='Add/Remove from Wishlist' aria-label="example icon-button with a heart icon" color="accent" class="heart" (click)="wishChange(p.propertyId)">
                                 <mat-icon matSuffix [id]="p.propertyId">
                                     <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
                                 <ng-template #liked>
@@ -95,6 +95,7 @@
                                 </ng-template>
                                 </mat-icon>  
                             </button>
+                        </ng-template>  
                              <!-- <ng-template #vi>
                                         <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
                                     </ng-template> -->
@@ -131,19 +132,19 @@
 
                     <mat-card-actions class="card-button-container">
 
-                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                        <button mat-raised-button matTooltip='Contact Owner' style="display:block; text-align:center; margin:auto;" color="warn" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
                         <ng-template #iew>
-                            <button mat-raised-button color="warn" (click)="popup('Please login to proceed')">Contact Owner</button>
+                            <button mat-raised-button matTooltip='Contact Owner' color="warn" style="display:block; text-align:center; margin:auto;" (click)="popup('Please login to proceed')">Contact Owner</button>
                         </ng-template>
                         <br>
 
                         <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
 
                         
-                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view"
+                        <button mat-raised-button matTooltip='View Details' style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view"
                             (click)="reroute(p)">View Details</button>
                         <ng-template #view>
-                            <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                            <button mat-raised-button matTooltip='View Details' style="display:block; text-align:center; margin:auto;" color="primary" (click)="popup('Please login to proceed')">View Details</button>
                         </ng-template>
                         
                     
@@ -166,4 +167,5 @@
             </div>
         </div>
     </mat-sidenav-content>
+
 </mat-sidenav-container>

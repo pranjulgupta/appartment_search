@@ -3,6 +3,8 @@ const router = express.Router();
 const userService = require('../service/userService');
 var bodyParser = require('body-parser');
 const create = require( '../model/dbsetup' );
+const bcrypt = require('bcryptjs')
+
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -19,7 +21,12 @@ router.post('/login', function (req, res, next) {
 
 
 router.post('/register', function (req, res, next) {
-    const userObj= req.body;
+    bcrypt.genSalt(10,function(err,salt){
+        bcrypt.hash(req.body.password,salt,function(err,hash){
+            req.body.password=hash;
+        })
+    })
+    let userObj= req.body;
     userService.addDetails(userObj).then((data)=>{
         // console.log(data)
         res.json({"message":"Registered successfully with User Id: "+data.userId});

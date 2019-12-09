@@ -35,15 +35,18 @@ export class AppComponent {
   }
 
   loginSell(){
-    this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');}
+    this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');
+    this.router.navigate(['/home'])
+  }
 
   buy(){
     this.router.navigate(['/buy'])
   }
 
-  
-
-
+  sell(){
+    this.router.navigate(['./sell'])
+  }
+ 
   signOut(){
     sessionStorage.clear();
     this.openSnackBar('Logged out successfully','Ok');
@@ -56,10 +59,10 @@ export class AppComponent {
     this.openSnackBar(data,"Ok");
     console.log(data,454)
   }
-  
+ 
   reroute(){
     this.router.navigate(['/profile'])
   }
-  
+ 
 
 }

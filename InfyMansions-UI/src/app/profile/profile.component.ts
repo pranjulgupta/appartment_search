@@ -4,6 +4,8 @@ import {MatDialog} from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
 import { DialogService } from '../dialog/dialog.service';
 import { WishlistService } from '../wishlist.service';
+import { SharedServService } from '../shared-serv.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -22,29 +24,29 @@ wishlist;
 
 
   constructor(private profileServ:ProfileService , public dialog : MatDialog ,
-    private dialogServ:DialogService, private wishServ:WishlistService) { }
+    private dialogServ:DialogService, private wishServ:WishlistService , private gd:SharedServService ,private router:Router) { }
 
   //dialog
-  contactOwner(sellerId:String):void{
-    this.dialogServ.getUserById(sellerId).subscribe(data=>{
-      console.log(data,"success")
-      this.ownerDetails=data
-      const dialogRef = this.dialog.open(DialogComponent,{
-        width : '600px',
-        height :'125px',
-        data : this.ownerDetails,
-        position : {
-          left : '400px',
-          top : '250px'
-        }
-      });
-      dialogRef.afterClosed().subscribe(result=>{
-        console.log("The dialoge box closed")
-      })
+//   contactOwner(sellerId:String):void{
+//     this.dialogServ.getUserById(sellerId).subscribe(data=>{
+//       console.log(data,"success")
+//       this.ownerDetails=data
+//       const dialogRef = this.dialog.open(DialogComponent,{
+//         width : '600px',
+//         height :'125px',
+//         data : this.ownerDetails,
+//         position : {
+//           left : '400px',
+//           top : '250px'
+//         }
+//       });
+//       dialogRef.afterClosed().subscribe(result=>{
+//         console.log("The dialoge box closed")
+//       })
 
-    })
+//     })
 
- }
+//  }
  
 
 //  wishlist
@@ -109,6 +111,10 @@ wishlist;
   }
 
   
+  reroute(property){
+    this.gd.getDescription(property);
+    this.router.navigate(['/view'])
+  }
   
 
   }

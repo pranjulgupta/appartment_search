@@ -6,17 +6,19 @@
                 <h4>Instructions to fill the Form:</h4>
                 <div class="text-left">Please Provide all the details of your properties one by one. Depending upon the values you are give. We will add your
                     property in our Website. </div>
-                <img id="imgSidenav" src="../../assets/house5.jpg">
+                <img id="imgSidenav" src="../../assets/house5.jpg"><br/>
             </div>
         </mat-sidenav>
         <mat-sidenav opened mode="side" position="end">
             <br/><br/><br/>
             <div class="container-fluid">
+                <div class="sidenav2">
                 <h4>Completion Meter</h4>
                 <div>It shows how much you fill the form..!</div>
                 <br/>
                 <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
                 </mat-progress-spinner>
+                </div>
             </div>
         </mat-sidenav>
         <mat-sidenav-content>
@@ -29,7 +31,7 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <mat-form-field >
-                                            <mat-label>Please mention area</mat-label>
+                                            <mat-label>Please mention area*</mat-label>
                                             <mat-select formControlName="area" (click)="progress()">
                                                 <mat-option *ngFor="let i of area" [value]="i">{{i}}</mat-option>
                                             </mat-select>
@@ -37,7 +39,7 @@
                                     </div>
                                     <div class="col-md-3 offset-1">
                                         <mat-form-field>
-                                            <mat-label>Property Pincode</mat-label>
+                                            <mat-label>Property Pincode*</mat-label>
                                             <mat-select formControlName="pincode" (click)="progress()">
                                                 <mat-option *ngFor="let i of pincode" [value]="i">{{i}}</mat-option>
                                             </mat-select>
@@ -48,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <mat-form-field>
-                                            <mat-label>You are...</mat-label>
+                                            <mat-label>You are...*</mat-label>
                                             <mat-select formControlName="propertyOwnership" (click)="progress()">
                                                 <mat-option *ngFor="let i of propertyOwnership" [value]="i">{{i}}</mat-option>
                                             </mat-select>
@@ -58,7 +60,7 @@
                                         <mat-radio-group formControlName="buildingType" (change)="progress()">
                                             <!-- <mat-label>Property for:</mat-label> -->
                                            <br/>
-                                            Property For: <mat-radio-button value="Sale">Sale</mat-radio-button>
+                                            Property For:* <mat-radio-button value="Sale">Sale</mat-radio-button>
                                             <mat-radio-button value="Rent">Rent</mat-radio-button>
                                         </mat-radio-group>
                                     </div>
@@ -69,7 +71,7 @@
                                         <mat-radio-group formControlName="propertyType" (change)="progress()">
                                             <!-- <mat-label>Building Type:</mat-label> -->
                                             <br/>
-                                            Building Type: <mat-radio-button value="Sale">
+                                            Building Type:* <mat-radio-button value="Sale">
                                                 <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
                                                 House</mat-radio-button>
                                                 <mat-radio-button value="Rent">
@@ -79,23 +81,23 @@
                                 </div>
                                 <!-- ############################################################################### -->
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <mat-form-field class="example-full-width">
-                                            <input type="number" matInput placeholder="No. of Bedrooms" formControlName="noOfBedrooms" min="1" (change)="progress()">
+                                            <input type="number" matInput placeholder="No. of Bedrooms*" formControlName="noOfBedrooms" min="1" (change)="progress()">
                                             <mat-icon matSuffix>hotel</mat-icon>
                                         </mat-form-field>
                                         <mat-error *ngIf="sellForm.controls.noOfBedrooms.errors?.min">Bedrooms cannot be less than 1</mat-error>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <mat-form-field class="example-full-width" >
-                                            <input type="number" matInput placeholder="No. of Bathrooms" formControlName="noOfBathrooms" min="1" (change)="progress()">
+                                            <input type="number" matInput placeholder="No. of Bathrooms*" formControlName="noOfBathrooms" min="1" (change)="progress()">
                                             <mat-icon matSuffix>bathtub</mat-icon>
                                         </mat-form-field>
                                         <mat-error *ngIf="sellForm.controls.noOfBathrooms.errors?.min">Bathrooms cannot be less than 1</mat-error>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <mat-form-field class="example-full-width">
-                                            <input type="number" matInput placeholder="No. of Balconies" formControlName="noOfBalconies" min="0" (change)="progress()">
+                                            <input type="number" matInput placeholder="No. of Balconies*" formControlName="noOfBalconies" min="0" (change)="progress()">
                                             <mat-icon matSuffix>home</mat-icon>
                                         </mat-form-field>
                                         <mat-error *ngIf="sellForm.controls.noOfBalconies.errors?.min">Balcony cannot be less than 0</mat-error>
@@ -104,22 +106,29 @@
                                 <!-- ############################################################################### -->
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <br/> Price:
+                                        <br/> Price:*
                                         <mat-slider formControlName="price" #propPrice min="20000" max="1000000" (change)="progress()"></mat-slider> {{propPrice.value}}
                                     </div>
                                 </div>
                                 <!-- ############################################################################### -->
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="text-danger">* Marked Fields are Mandatory</span>
+                                    </div>
+                                </div>
+
+                                <!-- ############################################################################### -->
+                                <div class="row">
                                    <br/>
                                     <div class="col-md-1">
-                                        <button type="submit" mat-raised-button color="primary"  [disabled]="sellForm.invalid">Post</button>
+                                        <button type="submit" mat-raised-button matTooltip='Post' color="primary"  [disabled]="sellForm.invalid">Post</button>
                                     </div>
                                     <div class="col-md-6 offset-1">If you want to add more details, go to step 2</div>
                                     <div class="col-md-1">
-                                        <button type="button" mat-raised-button color="accent"  [disabled]="sellForm.invalid" (click)="matgroup.selectedIndex=1" >Next</button>
+                                        <button type="button" mat-raised-button matTooltip='Next' color="accent"  [disabled]="sellForm.invalid" (click)="matgroup.selectedIndex=1" >Next</button>
                                     </div>
                                 </div>
-                                <br/>
+                                <br/><br/><br/>
                             </div>
                         </mat-tab>
                         <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
@@ -222,6 +231,8 @@
                                     </section>
                                 </div>
                             </div>
+
+                            
                             <!-- ############################################################################### -->
                             <div class="row">
                                     <div class="col-md-9"><br/>
@@ -244,22 +255,25 @@
                                     </mat-form-field>
                                 </div>
                             </div>
+                            
                             <!-- ############################################################################### -->
                             <div class="row">                       
-                                <div class="col-md-4">
-                                    <button type="submit" class="example-button-row" mat-raised-button color="primary">Post</button>
-                                 </div>  
-                                <div class="col-md-4">
-                                    <button type="button" id="btnPrev" (click)="matgroup.selectedIndex=0" mat-raised-button color="accent">Previous</button>
-                                </div>  
-                            </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="example-button-row" mat-raised-button color="primary">Post</button>
+                                     </div>  
+                                    <div class="col-md-4">
+                                        <button type="button" id="btnPrev" (click)="matgroup.selectedIndex=0" mat-raised-button color="accent">Previous</button>
+                                    </div>  
+                                </div>
                               <!-- ############################################################################### -->
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div *ngIf="errorMessage!=null" class="text-danger">{{errorMessage}}</div>
                                     </div>
                                 </div>
+                                <br/><br/><br/><br/>
                         </mat-tab>
+                        
     
                     </mat-tab-group>
                 </form>

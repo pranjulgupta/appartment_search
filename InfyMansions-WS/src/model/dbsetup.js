@@ -7,9 +7,10 @@ const userDb = [
         emailId: "admin@gmail.com",
         contactNo: 1234567890,
         city: "Mysore",
+        
         area: "Hebbal",
         pincode: 123457,
-        password: "Admin@123",
+        password: "$2a$10$ujdKjbOPAkZTAS7DrebZUObN1dhMqNQjfXEjAPfoh8gzBcS3gGB6O",
         userId: "U1001"
     },
     {
@@ -20,7 +21,7 @@ const userDb = [
         city: "Mysore",
         area: "Hebbal",
         pincode: 123457,
-        password: "User@123",
+        password: "$2a$10$5TG8MoPelLgbfdjoqy.8LeWLkwAcItO5HdgxB8bCnzgcofumNmqMu",
         userId: "U1002"
     }
 

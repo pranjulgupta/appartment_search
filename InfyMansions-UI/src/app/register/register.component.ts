@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       // /^([a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?)|[7-9][0-9]{9}$/
       name:['',[Validators.required, Validators.pattern(/[^ ][a-zA-Z]{1,}$/)]],
       emailId: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]{1,}(.co.in||.com)$/)]],
-      contactNo:['',[Validators.required,Validators.pattern(/[1-9]{1}[0-9]{9}/)]],
+      contactNo:['',[Validators.required,Validators.pattern(/[1-9]{1}[0-9]{9}/), Validators.minLength(10), Validators.maxLength(10)]],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{7,20}$/)]]
     })
   }

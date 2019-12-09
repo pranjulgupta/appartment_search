@@ -1,125 +1,115 @@
-<mat-toolbar color="primary" class="header fixed-top toolbar navbar-expand-md navbar-dark">
-    <button mat-button class="navbar-brand" [routerLink]="['/home']">Infy<img class="icons" src="../assets/logo.png">ansions</button>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse">
+<mat-toolbar color="primary" class="header fixed-top toolbar navbar navbar-expand-md navbar-light">
+        <button mat-button matTooltip="InfyMansions" class="navbar-brand text-light" [routerLink]="['/home']">Infy<img class="icons" src="../assets/logo.png">ansions</button>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
-         </button> -->
+        </button>
+       
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button mat-button matTooltip="Buy" class="nav-link text-light" (click)='buy()'>BUY</button>
+            </li>
+            <li class="nav-item">
+                <button mat-button matTooltip="Sell" class="nav-link text-light" (click)='sell()' *ngIf="userName">SELL</button>
+                <button mat-button matTooltip="Sell" class="nav-link text-light" *ngIf="!userName" (click)="loginSell()">SELL</button>
+            </li>
+        </ul>
     
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <button mat-button class="nav-link" [routerLink]="['/buy']">BUY</button>
-        </li>
-        <li class="nav-item">
-            <button mat-button class="nav-link" [routerLink]="['/sell']" *ngIf="userName">SELL</button>
-            <button mat-button class="nav-link" [routerLink]="['/home']" *ngIf="!userName" (click)="loginSell()">SELL</button>
-        </li>
-    </ul>
-
-
-    <ul class="navbar-nav ml-auto">
-
-        <li class="nav-item">
-            <button *ngIf="userName" mat-button [matTooltip]="userName" class="nav-link" [routerLink]="['/buy']">Welcome {{userName|titlecase}}</button>
-        </li>
-        <!-- <li></li> -->
-        <li class="nav-item">
-            <button mat-button matTooltip="wishlist"  [routerLink]="['/wishlist']" class="nav-link" *ngIf="userName">
-                <mat-icon>grade</mat-icon>
-            </button>   
-            
-            <button mat-button matTooltip="wishlist" class="nav-link" *ngIf="!userName" (click)="popup('Please login to proceed')">
-                <mat-icon>grade</mat-icon>
-            </button>
-        </li>
-        <li class="nav-item">
-                <button mat-button matTooltip="profile" class="nav-link" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button>  
-                <ng-template #view>
-                    <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
-                </ng-template>   
-        </li>
-        <li class="nav-item">
-                <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button> 
-        </li>
-        <li class="nav-item">
-                <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button>
-        </li>
-    </ul>
-</div>
-<!-- 
-    <span class="spacing"></span>
-    <!-- This fills the remaining space of the current row -->
-    <!-- <span class="spacing"></span>
-    <span *ngIf="userName">
-        Welcome {{userName}}
-    </span>
-    <button mat-button matTooltip="wishlist" class="nav-link" *ngIf="userName" [routerLink]="['/starWish']">
-        <mat-icon>grade</mat-icon>
-    </button>&nbsp;&nbsp;&nbsp;
-
-    <button mat-button matTooltip="wishlist" class="nav-link" *ngIf="!userName" (click)="popup('Please Sign in to View Wishlist')" [routerLink]="['/home']">
-        <mat-icon>grade</mat-icon>
-    </button>&nbsp;&nbsp;&nbsp;
-
-    <button mat-button matTooltip="profile" class="nav-link" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button>  
-    <ng-template #view>
-        <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
-    </ng-template>  -->
-
-    <!-- <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
-        <mat-icon>person</mat-icon>
-    </button> -->
-    <!-- <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
-    <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button> -->
-</mat-toolbar>
-
-<br><br> -->
-
     
-
-<div class="flex-wrapper">
+        <ul class="navbar-nav ml-auto">
     
-    <router-outlet class="page-content top-margin"></router-outlet>
+            <li class="nav-item">
+                <button *ngIf="userName" mat-button matTooltip="Welcome {{userName}}" class="nav-link text-light" [routerLink]="['/buy']">Welcome {{userName|titlecase}}</button>
+            </li>
+            <!-- <li></li> -->
+            <li class="nav-item">
+                <button mat-button matTooltip="wishlist"  [routerLink]="['/wishlist']" class="nav-link text-light" *ngIf="userName">
+                    <mat-icon>grade</mat-icon>
+                </button>   
+               
+                <button mat-button matTooltip="wishlist" class="nav-link text-light" *ngIf="!userName" (click)="popup('Please login to proceed')">
+                    <mat-icon>grade</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item">
+                    <button mat-button matTooltip="profile" class="nav-link text-light" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button> 
+                    <ng-template #view>
+                        <button mat-button matTooltip="profile" class="nav-link text-light" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
+                    </ng-template>   
+            </li>
+            <li class="nav-item">
+                <button mat-button matTooltip="SignIn" [routerLink]="['/login']" class="nav-link text-light" (click)="login()" *ngIf="!userName">SIGN IN</button> 
+            </li>
+            <li class="nav-item">
+                <button mat-button matTooltip="SignOut" *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link text-light">SIGN OUT</button>
+            </li>
+        </ul>
+    </div>
+    <!--
+        <span class="spacing"></span>
+        <!-- This fills the remaining space of the current row -->
+        <!-- <span class="spacing"></span>
+        <span *ngIf="userName">
+            Welcome {{userName}}
+        </span>
+        <button mat-button matTooltip="wishlist" class="nav-link" [routerLink]="['/starWish']">
+            <mat-icon>grade</mat-icon>
+        </button>&nbsp;&nbsp;&nbsp;
     
-    <mat-toolbar color="primary" class="text-white-50 footer fixed-bottom toolbar">
-        <div class="container-fluid">
-            <div class="row">
-                <br>
-                <div class="col-md-2 offset-1 mr-auto">
-                    <span>&copy; InfyMansions</span>
-                </div>
-                <div class="col-md-3 offset-1">
-                    <span>
-                        www.infymansions.com
-                    </span>
-                </div>
-                <div class="col-md-3 offset-1 ml-auto">
-                    <span>Powered by Angular 8.3.3</span>
-                </div>
-                <br>
-            </div>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <button mat-button matTooltip="profile" class="nav-link" *ngIf="userName;else view" (click)="reroute()"><mat-icon>person</mat-icon></button>  
+        <ng-template #view>
+            <button mat-raised-button class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')"><mat-icon>person</mat-icon></button>
+        </ng-template>  -->
+    
+        <!-- <button mat-button matTooltip="profile" class="nav-link" [routerLink]="['/profile']">
+            <mat-icon>person</mat-icon>
+        </button> -->
+        <!-- <button mat-button [routerLink]="['/login']" class="nav-link" (click)="login()" *ngIf="!userName">SIGN IN</button>
+        <button mat-button *ngIf="userName" [routerLink]="['/home']"  (click)="signOut()"  class="nav-link">SIGN OUT</button> -->
     </mat-toolbar>
-</div> 
-
-<script>
- /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        } 
-</script> 
-
-
-
-   
-
-
+    
+    <br><br> 
+    
+       
+    
+    <div class="flex-wrapper">
+        <router-outlet class="page-content top-margin"></router-outlet>
+    </div>
+       
+    <footer class="text-white-50 footer fixed-bottom toolbar">
+        <mat-toolbar color="primary">
+            <div class="container-fluid">
+                <div class="row">
+                    <br>
+                    <div class="col-md-2 offset-1 mr-auto">
+                        <span>&copy; InfyMansions</span>
+                    </div>
+                    <div class="col-md-3 offset-1">
+                        <span>
+                            www.infymansions.com
+                        </span>
+                    </div>
+                    <div class="col-md-3 offset-1 ml-auto">
+                        <span>Powered by Angular 8.3.3</span>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a> -->
+        </mat-toolbar>
+    </footer>
+       
+    
+    <!-- Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon  -->
+    <!-- <script>
+            function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav") {
+                x.className += " responsive";
+              } else {
+                x.className = "topnav";
+              }
+            }
+    </script>  -->
+    

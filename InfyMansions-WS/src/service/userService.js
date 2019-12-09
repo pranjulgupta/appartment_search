@@ -1,5 +1,5 @@
 const userdb = require('../model/userModel');
-// const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs')
 
 let hUserService = {}
 //To check whether the user registered if so, then allow him/her to login
@@ -11,17 +11,16 @@ hUserService.checkUser = (emailId, password) => {
             err.status = 404;
             throw err;
         } else {
-            if (userData.emailId === emailId) {
-
-                // return bcrypt.compare(password, userData.password).then(res => {
-                    if (userData.password===password)
-                        return userData;
+            if (userData.emailId == emailId) {
+                return bcrypt.compare(password, userData.password).then(res => {
+                    if (res){
+                        return userData;}
                     else {
                         let err = new Error("Password is Incorrect");
                         err.status = 404;
                         throw err;
                     }
-                // })
+                })
             }
             else {
                 let err = new Error("Authentication failed");

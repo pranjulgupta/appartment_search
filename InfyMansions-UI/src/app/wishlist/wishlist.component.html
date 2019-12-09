@@ -1,52 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
 
-<br><br>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="cardStyle col-md-3 "*ngFor= "let e of propertyDb">
-                <br>
-                <mat-card class="cardp"*ngIf="wishlist.includes(e.propertyId)">
-                    <mat-card-header>
-                        
-                         <mat-card-title>{{e.price | currency:"INR" : 'symbol'}}</mat-card-title>
-                        <mat-card-subtitle>{{e.propertyType}}</mat-card-subtitle> 
-                        <div style="flex:1">
-                        <button align="align-left" (click)="wishlist(e.propertyId)" mat-icon-button aria-label="example icon button with a heart icon" class="heart">
-                            <mat-icon matSuffix [id]="e.propertyId">favorite_border</mat-icon>
-                        </button>
-                    </div>
-                    </mat-card-header>
-                    <div class="text-center">
-                        <img class="img-thumbnail img-fluid img-rounded card-img" mat-card-image src="{{e.imageUrls}}" alt="A house">
-                    </div>
-                    <mat-card-content>
-                        <table class="text-center" width="250px">
-                            <tr>
-                                 <td>{{e.propertyArea}} sq Ft</td>
-                                <td>{{e.noOfBedrooms}} BHK House</td> 
+        <div *ngFor="let p of propertyDb" class="col-md-3">
+            <!-- <div > -->
+                <div *ngIf="wishlist.includes(p.propertyId)">
 
-                            </tr>
-                            <tr>
-                                <td>{{e.furnishing}}</td>
-                                <td>{{e.availability}}</td>
-                            </tr>
-                        </table>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <div class="text-center text-primary">
-                            <button mat-stroked-button (click)="contactOwner(e.sellerId)">Contact Owner</button>
-                        </div>
+
+                    <mat-card class="card">
+
+                        <mat-card-title style="display:flex">
+                            <div style="flex:1" class="currFont">&nbsp;{{p.price | currency:"INR" : 'symbol'}}</div>
+                            <div style="flex:2"></div>
+                            <div style="flex:1" class="container">
+                                <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)==-1" >
+                        <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                    </button>
+
+                    <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)!=-1">
+                            <mat-icon matSuffix [id]="p.propertyId" color="accent">favorite_border</mat-icon>
+                    </button>
+                    <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="!userName"(click)="popup('Please login to proceed')">
+                        <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                    </button> -->
+
+                                <button align="align-left" mat-icon-button matTooltip='Remove from Wishlist' aria-label="example icon-button with a heart icon" color="accent" class="heart"
+                                    (click)="wishChange(p.propertyId)">
+                                    <mat-icon matSuffix [id]="p.propertyId">
+                                        <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                        <ng-template #liked>
+                                            <span color="accent">favorite</span>
+                                        </ng-template>
+                                    </mat-icon>
+                                </button>
+                                <!-- <ng-template #vi>
+                                <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
+                            </ng-template> -->
+                                <!-- *ngIf="userName;else vi"  -->
+                                <!-- <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="wishChange(p.propertyId)">
+                        <mat-icon matSuffix [id]="p.propertyId" color="accent">
+                            <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                            <ng-template #liked>
+                                <span>favorite</span>
+                            </ng-template>
+                        </mat-icon>
+                    </button>
+                    -->
+                            </div>
+                        </mat-card-title>
+
+                        <mat-card-content>
+                            <span style="color:brown" class="mat-subheading-2">For {{p.propertyType}}</span>
+                        </mat-card-content>
+
                         <br>
-                        <div class="text-center text-primary">
-                            <button mat-raised-button color="primary" (click)="viewDetails(wishlistproperty)">viewDetails</button>
-                            
-                        </div>
+                        <mat-card-content>
+                            <div class="d">
+                                <img class="container-fluid cardimg" *ngIf="p" mat-card-image src="{{p.imageUrls}}" alt="A house">
+                                <br>
+                            </div>
+                            <span align="start">{{p.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                            <span align="end">{{p.noOfBedrooms}} BHK {{p.buildingType}}</span>
+                            <br>
+                            <span align="align-left">{{p.furnishing}} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span align="align-right">{{p.availability}}</span>
+                        </mat-card-content>
 
-                    </mat-card-actions>
-                </mat-card>
+                        <mat-card-actions class="card-button-container">
+
+                            <button mat-raised-button matTooltip='Contact Owner' style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                            <ng-template #iew>
+                                <button mat-raised-button matTooltip='Contact Owner' color="warn" (click)="popup('Please login to proceed')">Contact Owner</button>
+                            </ng-template>
+                            <br>
+
+                            <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
+
+
+                            <button mat-raised-button matTooltip='View Details' style="display:block; text-align:center; margin:auto;" color="primary" *ngIf="userName;else view"
+                                (click)="reroute(p)">View Details</button>
+                            <ng-template #view>
+                                <button mat-raised-button matTooltip='View Details' class="c-button" mat-raised-button color="primary" (click)="popup('Please login to proceed')">View Details</button>
+                            </ng-template>
+
+
+                        </mat-card-actions>
+
+                    </mat-card>
+                </div>
             </div>
         </div>
-        </div>
-
-
-
+    </div><br><br><br><br>
+<!-- </div> -->

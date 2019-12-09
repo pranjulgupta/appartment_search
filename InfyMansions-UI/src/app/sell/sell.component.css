@@ -21,7 +21,7 @@
     height: 60px;
   }
   .example-margin {
-    margin: 0 10px;
+    margin: 10px;
   }
   .slideToggler{
     margin-left: 16px;
@@ -31,10 +31,17 @@
     flex-direction: column;
   }
   #sidenav1{
-    width:180px;
+    width:200px;
     height:auto;
     margin:10px;
     padding:20px;
+  }
+
+  #sidenav2{
+    width:180px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
   }
   #imgSidenav{
     height: 120px;

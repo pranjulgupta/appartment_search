@@ -16,37 +16,38 @@
                         <mat-form-field class="full-width">
                             <mat-label>Name</mat-label>
                             <input type="text" matInput placeholder="Name" name="name" required formControlName="name">
-                            <div id="nameError">
-                                    <mat-error *ngIf="registerForm.controls.name.errors?.required  && registerForm.controls.name?.touched" >Field Required</mat-error>
-
-                                    <mat-error *ngIf="registerForm.controls.name.errors?.pattern  && registerForm.controls.name?.touched">Name can contain only alphabets and spaces</mat-error>
-        
-
-                            </div>
                             
-                        </mat-form-field> <br>
+                            
+                        </mat-form-field> 
+                        <div id="nameError">
+                                <mat-error *ngIf="registerForm.controls.name.errors?.required  && registerForm.controls.name?.touched" >Field Required</mat-error>
+
+                                <mat-error *ngIf="registerForm.controls.name.errors?.pattern  && registerForm.controls.name?.touched">Name can contain only alphabets and spaces</mat-error>
+                        </div>
 
 
                         <mat-form-field class="full-width">
                             <mat-label>Email</mat-label>
                             <input type="email" matInput placeholder="Email" name="emailId" required formControlName="emailId">
-                            <div id="emailIdError">
-                                    <mat-error *ngIf="registerForm.controls.emailId.errors?.required && registerForm.controls.emailId?.touched" >Field Required</mat-error>
-                                    <mat-error *ngIf="registerForm.controls.emailId.errors?.pattern && registerForm.controls.emailId?.touched">Enter valid EmailId</mat-error>
-                            </div>
                             
-                        </mat-form-field> <br>
+                        </mat-form-field> 
+                        <div id="emailIdError">
+                                <mat-error *ngIf="registerForm.controls.emailId.errors?.required && registerForm.controls.emailId?.touched" >Field Required</mat-error>
+                                <mat-error *ngIf="registerForm.controls.emailId.errors?.pattern && registerForm.controls.emailId?.touched">Enter valid EmailId</mat-error>
+                        </div>
+                        
 
 
                         <mat-form-field class="full-width">
                             <mat-label>ContactNo</mat-label>
-                            <input type="number" matInput placeholder="ContactNo" name="contactNo" required formControlName="contactNo">
-                            <div id="ContactNoError">
-                                    <mat-error *ngIf="registerForm.controls.contactNo.errors?.required && registerForm.controls.contactNo?.touched" >Field Required</mat-error>
-                                    <mat-error *ngIf="registerForm.controls.contactNo.errors?.pattern && registerForm.controls.contactNo?.touched">Enter valid ContactNo</mat-error>
-                            </div>
+                            <input type="number" matInput placeholder="ContactNo" name="contactNo" required formControlName="contactNo" minlength="10" maxlength="10" min="1000000000" max="9999999999">
                             
-                        </mat-form-field> <br>
+                            
+                        </mat-form-field>
+                        <div id="ContactNoError">
+                                <mat-error *ngIf="registerForm.controls.contactNo.errors?.required && registerForm.controls.contactNo?.touched" >Field Required</mat-error>
+                                <mat-error *ngIf="registerForm.controls.contactNo.errors?.pattern && registerForm.controls.contactNo?.touched">Enter valid ContactNo</mat-error>
+                        </div>
 
 
                         <mat-form-field class="full-width">
@@ -55,17 +56,18 @@
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                             </button>
-                            <div id="PasswordError">
-                                    <mat-error *ngIf="registerForm.controls.password.errors?.required && registerForm.controls.password.errors?.touched">Field required</mat-error>
-                                    <mat-error *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.errors?.touched">Password should be of 7 characters minimum and must contain an Uppercase letter, a Lower case letter, number and a special character</mat-error>
-                            </div>
                             
-                          </mat-form-field> <br>
+                            
+                          </mat-form-field> 
+                          <div id="PasswordError">
+                                <mat-error *ngIf="registerForm.controls.password.errors?.required && registerForm.controls.password.errors?.touched">Field required</mat-error>
+                                <mat-error *ngIf="registerForm.controls.password.errors?.pattern && registerForm.controls.password.errors?.touched">Password should be of 7 characters minimum and must contain an Uppercase letter, a Lower case letter, number and a special character</mat-error>
+                        </div><br/><br/>
     
                     </form>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button [disabled]="registerForm.invalid" (click)="register()" color="primary">REGISTER</button>
+                    <button mat-raised-button [disabled]="registerForm.invalid" (click)="register()" color="primary" class="btn btn-block">REGISTER</button>
                     <br />
                     <br />
                    

@@ -40,51 +40,89 @@
 
 
      <mat-tab label="Posted Properties">
+      
+
         <div class="container-fluid">
             <div class="row">
-                <div class="cardStyle col-md-3 "*ngFor= "let e of property">
-                    <br>
-                    <mat-card class="cardp">
-                        <mat-card-header>
-                             <mat-card-title>{{e.price | currency:"INR" : 'symbol'}}</mat-card-title>
-                            <mat-card-subtitle>{{e.propertyType}}</mat-card-subtitle> 
-                            <div style="flex:1">
-                            <!-- <button align="align-left" (click)="wishlist(e.propertyId)" mat-icon-button aria-label="example icon button with a heart icon" class="heart">
-                                <mat-icon matSuffix [id]="e.propertyId">favorite_border</mat-icon>
+
+                <mat-card *ngFor= "let e of property" class="col-md-3 card">
+                    <mat-card-title style="display:flex">
+                        <div style="flex:1" class="currFont">&nbsp;{{e.price | currency:"INR" : 'symbol'}}</div>
+                        <!-- <div style="flex:2"></div> -->
+                        <!-- <div style="flex:1" class="container"> -->
+                            <!-- <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)==-1" >
+                                <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
+                            </button>
+
+                            <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" (click)="wishChange(p.propertyId)" class="heart" *ngIf="userName && wishlist.indexOf(p.propertyId)!=-1">
+                                    <mat-icon matSuffix [id]="p.propertyId" color="accent">favorite_border</mat-icon>
+                            </button>
+                            <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" *ngIf="!userName"(click)="popup('Please login to proceed')">
+                                <mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon>
                             </button> -->
-                        </div>
-                        </mat-card-header>
-                        <div class="text-center">
-                            <img class="img-thumbnail img-fluid img-rounded card-img" mat-card-image src="{{e.imageUrls}}" alt="A house">
-                        </div>
-                        <mat-card-content>
-                            <table class="text-center" width="250px">
-                                <tr>
-                                     <td>{{e.propertyArea}} sq Ft</td>
-                                    <td>{{e.noOfBedrooms}} BHK House</td> 
+<!--                                         
+                             <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" color="accent" class="heart" (click)="wishChange(p.propertyId)">
+                                <mat-icon matSuffix [id]="p.propertyId">
+                                    <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                <ng-template #liked>
+                                    <span  color="accent">favorite</span>
+                                </ng-template>
+                                </mat-icon>  
+                            </button> -->
+                             <!-- <ng-template #vi>
+                                        <button align="align-left" mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="popup('Please login to proceed')"><mat-icon matSuffix [id]="p.propertyId">favorite_border</mat-icon></button>
+                                    </ng-template> -->
+                             <!-- *ngIf="userName;else vi"  -->
+                            <!-- <button mat-icon-button aria-label="example icon-button with a heart icon" class="heart" (click)="wishChange(p.propertyId)">
+                                <mat-icon matSuffix [id]="p.propertyId" color="accent">
+                                    <span *ngIf="wishlist.indexOf(p.propertyId)==-1;else liked">favorite_border</span>
+                                    <ng-template #liked>
+                                        <span>favorite</span>
+                                    </ng-template>
+                                </mat-icon>
+                            </button>
+                            -->
+                        <!-- </div> -->
+                    </mat-card-title>
 
-                                </tr>
-                                <tr>
-                                    <td>{{e.furnishing}}</td>
-                                    <td>{{e.availability}}</td>
-                                </tr>
-                            </table>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <div class="text-center text-primary">
-                                <button mat-stroked-button (click)="contactOwner(e.sellerId)">Contact Owner</button>
-                            </div>
+                    <mat-card-content>
+                        <span style="color:brown" class="mat-subheading-2">For {{e.propertyType}}</span>
+                    </mat-card-content>
+
+                    <br>
+                    <mat-card-content>
+                        <div class="d">
+                            <img class="container-fluid cardimg" *ngIf="e" mat-card-image src="{{e.imageUrls}}" alt="A house">
                             <br>
-                            <div class="text-center text-primary">
-                                <button mat-raised-button color="primary" (click)="viewDetails(property)">viewDetails</button>
-                                
-                            </div>
+                        </div>
+                        <span align="start">{{e.propertyArea}} sq. ft</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                        <span align="end">{{e.noOfBedrooms}} BHK {{e.buildingType}}</span>
+                        <br>
+                        <span align="align-left">{{e.furnishing}} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span align="align-right">{{e.availability}}</span>
+                    </mat-card-content>
 
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
+                    <mat-card-actions class="card-button-container">
+<!-- 
+                        <button mat-raised-button style="display:block; text-align:center; margin:auto;" *ngIf="userName;else iew" (click)="contactOwner(p.sellerId)">Contact Owner</button>
+                        <ng-template #iew>
+                            <button mat-raised-button color="warn" (click)="popup('Please login to proceed')">Contact Owner</button>
+                        </ng-template>
+                        <br> -->
+
+                        <!-- <button mat-raised-button style="display:block; text-align:center; margin:auto;" (click)="contactOwner(p.sellerId)">Contact Owner</button> -->
+
+                        
+                        <button mat-raised-button matTooltip='View Details' style="display:block; text-align:center; margin:auto;" color="primary"
+                            (click)="reroute(e)">View Details</button>
+                            <br>
+                            <br>
+                    
+                    </mat-card-actions>
+                </mat-card>
             </div>
-            </div>
+        </div>
 
     </mat-tab> 
 

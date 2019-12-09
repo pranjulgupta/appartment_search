@@ -11,6 +11,11 @@
     flex-direction: column;
 }
 
+#bold{
+    font-style: bold;
+    font-weight: 15px;
+    color: black;
+}
 #imgAnimate{
     position: fixed;
     height: 100px;
