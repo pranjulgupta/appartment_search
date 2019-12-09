@@ -77,7 +77,7 @@ userModel.deleteFromWishList = (userId,propertyId) => {
             if (updatedData.nModified == 1) {
                 return propertyId;
             } else {
-                console.log(data, 91);
+                // console.log(data, 91);
                 return null
             }
         })
@@ -112,9 +112,9 @@ userModel.viewProfile = (emailid) => {
 userModel.postedProperty=(userid)=>{
     return dbModel.getPropertyCollection().then(model=>{
         return model.find({"sellerId":userid}).then((data)=>{
-            console.log(userid,"sur")
+            // console.log(userid,"sur")
             if(data){
-                console.log(data,"sur");
+                // console.log(data,"sur");
                 return data
                 
             }else{
@@ -129,9 +129,9 @@ userModel.postedProperty=(userid)=>{
 userModel.wishlistProperty=(userid)=>{
     return dbModel.getUserCollection().then(model=>{
         return model.find({"userId":userid}).then((data)=>{
-            console.log(userid,"wish")
+            // // // console.log(userid,"wish")
             if(data){
-                console.log(data,"wish");
+                // console.log(data,"wish");
                 return data
                 
             }else{
@@ -143,12 +143,12 @@ userModel.wishlistProperty=(userid)=>{
     })
 }
 userModel.getOwnerDetails=(userid)=>{
-    console.log(userid,"dana")
+    // console.log(userid,"dana")
     return dbModel.getUserCollection().then(model=>{
         return model.find({"userId":userid}).then((data)=>{
-            console.log(userid,"danr")
+            // console.log(userid,"danr")
             if(data){
-                console.log(data,"dan");
+                // console.log(data,"dan");
                 return data
                 
             }else{
@@ -227,7 +227,7 @@ userModel.loc=()=>{
             if (data.length == 0) {
                 return null
             } else {
-                console.log(data, 99);
+                // console.log(data, 99);
                 return data
             }
         })
@@ -243,7 +243,7 @@ userModel.loc=()=>{
                                 return propertyId;
                             }
                             else {
-                                console.log(data, 91);
+                                // console.log(data, 91);
                                 return null
                             }
                         })
@@ -251,12 +251,12 @@ userModel.loc=()=>{
                 }
 
 userModel.addProperty = (data) => {
-    console.log('k')
+    // console.log('k')
     return dbModel.getPropertyCollection().then( model => {
-        console.log('l')
-        console.log(data)
+        // console.log('l')
+        // console.log(data)
         return model.create(data).then(response => {
-            console.log('w')
+            // console.log('w')
             if(response){
                 return response
             }else{
@@ -274,7 +274,7 @@ userModel.loc=()=>{
             if (data.length == 0) {
                 return null
             } else {
-                console.log(data, 99);
+                // console.log(data, 99);
                 return data
             }
         })
@@ -403,7 +403,7 @@ userModel.addProperty = (data) => {
         // console.log('l')
         // console.log(data)
         return model.create(data).then(response => {
-            console.log('w')
+            // console.log('w')
             if(response){
                 return response
             }else{

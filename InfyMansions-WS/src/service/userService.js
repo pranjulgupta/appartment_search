@@ -1,9 +1,9 @@
 const userdb = require('../model/userModel');
 const bcrypt = require('bcryptjs')
 
-let hUserService = {}
+let userService = {}
 //To check whether the user registered if so, then allow him/her to login
-hUserService.checkUser = (emailId, password) => {
+userService.checkUser = (emailId, password) => {
     return userdb.findUser(emailId).then(userData => {
 
         if (userData == null) {
@@ -33,7 +33,7 @@ hUserService.checkUser = (emailId, password) => {
 }
 
 //To check while registering that whether the login credential already exist or not.If not allow him/her to register
-hUserService.addDetails = (UserObj) => {
+userService.addDetails = (UserObj) => {
     return userdb.findUser(UserObj.contactNo, UserObj.emailId).then(object => {
         {
             if (object != null) {
@@ -62,7 +62,7 @@ hUserService.addDetails = (UserObj) => {
     })
 }
 
-// hUserService.showProperty=()=>{
+// userService.showProperty=()=>{
 //     return userdb.findProperty().then(object=>{
 //         if(object==null){
 //             let err= new Error("");
@@ -74,7 +74,7 @@ hUserService.addDetails = (UserObj) => {
 //     })
 // }
 
-hUserService.getViewDetails=(id)=>{
+userService.getViewDetails=(id)=>{
     return userdb.viewDetails(id).then((data)=>{
         if(data){
             return data;
@@ -89,27 +89,27 @@ hUserService.getViewDetails=(id)=>{
 }
 
 
-hUserService.getPropertyDetails=()=>{
+userService.getPropertyDetails=()=>{
     return userdb.propertyDetails().then(data=>{
 
         if(data.length==0){
-            console.log(44);
+            // console.log(44);
             let err = new Error("Error in fetching Properties");
                 err.status = 404;
                 throw err;
         }
         else{
-            console.log(data,55);
+            // console.log(data,55);
             return data
         }
     })
 }
 
-hUserService.addProperty = (dataObj) => {
-    console.log('g')
+userService.addProperty = (dataObj) => {
+    // console.log('g')
     return userdb.generatePropertyId().then(id => {
         if (id) {
-            console.log('h')
+            // console.log('h')
             dataObj.propertyId = id;
             return userdb.addProperty(dataObj).then(modelRes => {
                 if (modelRes) {
@@ -121,7 +121,7 @@ hUserService.addProperty = (dataObj) => {
                 }
             })
         }else{
-            console.log('v')
+            // console.log('v')
             let err = new Error("Property cannot be added! Try Again.")
                     err.status = 404;
                     throw err;
@@ -131,7 +131,7 @@ hUserService.addProperty = (dataObj) => {
 
 
 //to get the wishlist
-hUserService.getWishList=(userId)=>{
+userService.getWishList=(userId)=>{
     return userdb.searchUser(userId).then(data=>{
         if(data){
             return data;
@@ -144,7 +144,7 @@ hUserService.getWishList=(userId)=>{
 }
 
 //to add the wishlist
-hUserService.addWishList=(userId,propertyId)=>{
+userService.addWishList=(userId,propertyId)=>{
     return userdb.insertWishList(userId,propertyId).then(data=>{
         if(data){
             return data;
@@ -157,7 +157,7 @@ hUserService.addWishList=(userId,propertyId)=>{
 }
 
 //admin
-            hUserService.buyerUser = () => {
+            userService.buyerUser = () => {
                 return userdb.buyerView().then(buyData => {
                     if (buyData) {
                         return buyData;
@@ -168,7 +168,7 @@ hUserService.addWishList=(userId,propertyId)=>{
             }
 
 //to delete from the wishlist
-hUserService.deleteWishList=(userId,propertyId)=>{
+userService.deleteWishList=(userId,propertyId)=>{
     return userdb.deleteFromWishList(userId,propertyId).then(data=>{
         if(data){
             return data;
@@ -182,7 +182,7 @@ hUserService.deleteWishList=(userId,propertyId)=>{
 
 
 //admin
-hUserService.sellerUser = () => {
+userService.sellerUser = () => {
     return userdb.sellerView().then(sellData => {
         if (sellData) {
             return sellData;
@@ -194,7 +194,7 @@ hUserService.sellerUser = () => {
 }
 
             
-hUserService.registeredUser=()=>{
+userService.registeredUser=()=>{
     return userdb.regUser().then(regData=>{
         if(regData){
             return regData
@@ -208,7 +208,7 @@ hUserService.registeredUser=()=>{
 }
 
 //admin
-hUserService.deleteUser = (Id) => {
+userService.deleteUser = (Id) => {
     return userdb.delUser(Id).then(delData => {
         if (delData == null) {
             let err = new Error("User cannot be deleted");
@@ -221,7 +221,7 @@ hUserService.deleteUser = (Id) => {
 }
 
 //admin
-hUserService.buyerUser = () => {
+userService.buyerUser = () => {
     return userdb.buyerView().then(buyData => {
         if (buyData) {
             return buyData;
@@ -234,7 +234,7 @@ hUserService.buyerUser = () => {
 }
 
 //admin
-hUserService.sellerUser = () => {
+userService.sellerUser = () => {
     return userdb.sellerView().then(sellData => {
         if (sellData) {
             return sellData;
@@ -247,7 +247,7 @@ hUserService.sellerUser = () => {
 }
 
 //admin
-hUserService.propDetails=()=>{
+userService.propDetails=()=>{
     return userdb.propertyView().then(propData=>{
         if(propData==null){
             let err = new Error("Property Details cannot be fetched");
@@ -260,7 +260,7 @@ hUserService.propDetails=()=>{
 }
 
 //admin
-hUserService.deleteProperty = (propId) => {
+userService.deleteProperty = (propId) => {
     return userdb.delProp(propId).then(delData => {
         if (delData == null) {
             let err = new Error("Property cannot be deleted");
@@ -273,7 +273,7 @@ hUserService.deleteProperty = (propId) => {
 }
 
 //admin
-hUserService.locationProp = () => {
+userService.locationProp = () => {
     return userdb.loc().then(data => {
         if (data) {
             return data;
@@ -286,7 +286,7 @@ hUserService.locationProp = () => {
 }
 
 
-// hUserService.showProperty=()=>{
+// userService.showProperty=()=>{
 //     return userdb.findProperty().then(object=>{
 //         if(object==null){
 //             let err= new Error("");
@@ -298,7 +298,7 @@ hUserService.locationProp = () => {
 //     })
 // }
 
-hUserService.getViewDetails = (id) => {
+userService.getViewDetails = (id) => {
     return userdb.viewDetails(id).then((data) => {
         if (data) {
             // console.log(data, 2222)
@@ -314,7 +314,7 @@ hUserService.getViewDetails = (id) => {
 }
 
 ///buy
-hUserService.getPropertyDetails = () => {
+userService.getPropertyDetails = () => {
     return userdb.propertyDetails().then(data => {
         // console.log(data, 33);
         if (data.length == 0) {
@@ -332,7 +332,7 @@ hUserService.getPropertyDetails = () => {
 
 
 
-hUserService.getOwner = (userid)=>{
+userService.getOwner = (userid)=>{
     return userdb.getOwnerDetails(userid).then((data)=>{
         if(data){
             return data
@@ -343,10 +343,10 @@ hUserService.getOwner = (userid)=>{
         }
     })
 }
-module.exports = hUserService;
+module.exports = userService;
 
 ///Profile component
-hUserService.getProfile=(emailId)=>{
+userService.getProfile=(emailId)=>{
     return userdb.viewProfile(emailId).then((data)=>{
         if(data){
             return data
@@ -358,7 +358,7 @@ hUserService.getProfile=(emailId)=>{
     })
 }
 
-hUserService.getProperty=(userid)=>{
+userService.getProperty=(userid)=>{
     return userdb.postedProperty(userid).then((data)=>{
         if(data){
             return data
@@ -373,7 +373,7 @@ hUserService.getProperty=(userid)=>{
    
 }
 //starwishlist
-hUserService.getwishlistProperty=(userid)=>{
+userService.getwishlistProperty=(userid)=>{
     return userdb.wishlistProperty(userid).then((data)=>{
         if(data){
             return data
@@ -391,7 +391,7 @@ hUserService.getwishlistProperty=(userid)=>{
 
 
 
-hUserService.getPropertywish=(propertyId)=>{
+userService.getPropertywish=(propertyId)=>{
     return userdb.Propertywish(propertyId).then((data)=>{
         if(data){
             return data
@@ -406,7 +406,7 @@ hUserService.getPropertywish=(propertyId)=>{
    
 }
 //wishlist
-hUserService.getWishList=(userId)=>{
+userService.getWishList=(userId)=>{
     return userdb.searchUser(userId).then(wishlist=>{
         if(wishlist){
             return wishlist
@@ -421,7 +421,7 @@ hUserService.getWishList=(userId)=>{
 
 
 //to get the wishlist
-hUserService.getWishList=(userId)=>{
+userService.getWishList=(userId)=>{
     return userdb.searchUser(userId).then(data=>{
         if(data){
             return data;
@@ -434,7 +434,7 @@ hUserService.getWishList=(userId)=>{
 }
 
 //to add the wishlist
-hUserService.addWishList=(userId,propertyId)=>{
+userService.addWishList=(userId,propertyId)=>{
     return userdb.insertWishList(userId,propertyId).then(data=>{
         if(data){
             return data;
@@ -447,7 +447,7 @@ hUserService.addWishList=(userId,propertyId)=>{
 }
 
 //to delete from the wishlist
-hUserService.deleteWishList=(userId,propertyId)=>{
+userService.deleteWishList=(userId,propertyId)=>{
     return userdb.deleteFromWishList(userId,propertyId).then(data=>{
         if(data){
             return data;
@@ -459,7 +459,7 @@ hUserService.deleteWishList=(userId,propertyId)=>{
     })
 }
 
-hUserService.addProperty = (dataObj) => {
+userService.addProperty = (dataObj) => {
     // console.log('g')
     return userdb.generatePropertyId().then(id => {
         if (id) {
@@ -486,4 +486,4 @@ hUserService.addProperty = (dataObj) => {
         
 
 
-module.exports = hUserService;
+module.exports = userService;

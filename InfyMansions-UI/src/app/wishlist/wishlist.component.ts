@@ -37,12 +37,12 @@ userName;
         
         // this.wishlistproperty=res;
         this.wishlist=res[0].wishlist
-        console.log(this.wishlist,"whatever........")
+        // console.log(this.wishlist)
         
         // for(let i=0;i<this.wishlist.length;i++){
         //   this.eachPropid=this.wishlist[i]
         //   }
-        console.log(this.wishlist,"wish");
+        // console.log(this.wishlist);
         
 
       },(error)=>{
@@ -52,7 +52,7 @@ userName;
     this.wishServ.getWishlistPropertis().subscribe(
       (good)=>{
         
-        console.log(good,"wishlist objects");
+        // console.log(good,"wishlist objects");
         this.propertyDb=good
 
         
@@ -75,12 +75,13 @@ userName;
     popup(data){
       this.openSnackBar(data,"Ok");
     }
+  
 
 
     
   contactOwner(sellerId:String):void{
     this.dialogServ.getUserById(sellerId).subscribe(data=>{
-      console.log(data,"success")
+      // console.log(data,"success")
       this.ownerDetails=data
       const dialogRef = this.dialog.open(DialogComponent,{
         width : '600px',
@@ -92,7 +93,7 @@ userName;
         }
       });
       dialogRef.afterClosed().subscribe(result=>{
-        console.log("The dialoge box closed")
+        // console.log("The dialoge box closed")
       })
 
     })

@@ -73,16 +73,16 @@ export class SellComponent implements OnInit {
   }
   sell() {
     this.errorMessage = null;
-    console.log(this.sellForm.value)
+    // console.log(this.sellForm.value)
     this.sellerId = sessionStorage.getItem('userId')
     this.sellForm.value.sellerId = this.sellerId
     this.service.sellProperty(this.sellForm.value).subscribe(
       (good) => {
-        console.log(good)
+        // console.log(good)
         this.openSnackBar("Property added successfully", "ok")
       },
       (bad) => {
-        console.log(bad)
+        // console.log(bad)
         this.errorMessage = bad.error.message
       }
     )

@@ -9,7 +9,7 @@ export class ViewService {
 
   constructor(private http:HttpClient) { }
   getView(id:String):Observable<any>{
-    // console.log("http://localhost:3000/user/view"+id+454);
+    
     return this.http.get<any>("http://localhost:3000/user/view"+id);
     
   }

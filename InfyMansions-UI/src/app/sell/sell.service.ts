@@ -10,7 +10,7 @@ export class SellService {
   constructor( private http : HttpClient) { }
 
   sellProperty(data:any):Observable<any>{
-    console.log(data);
+    // console.log(data);
     return <Observable<any>> this.http.post('http://localhost:3000/user/sell',data)
 
   }

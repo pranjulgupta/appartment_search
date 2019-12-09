@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     this.service.serachLoc().subscribe(
       resp=>{
         this.successData=resp
-        console.log(this.successData)
+        // console.log(this.successData)
       },
       err=>{
         this.errorMessage=err.error.message
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   buy(area){
     this.gd.getArea(area);
-   console.log(area)
+  //  console.log(area)
    if(area){
     this.router.navigate(['/buy'])
    }

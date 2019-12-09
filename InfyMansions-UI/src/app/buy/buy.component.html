@@ -1,5 +1,11 @@
+<div *ngIf="!filtered" class="loading">
+  <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="filtered">
 <mat-sidenav-container class="example-container">
+    
     <mat-sidenav mode="side" opened class="scrollable"> 
+        <div class="container-fluid">
         <div style="color:royalblue" class="ft">Use the below filters to find your desired  property</div>
         <br><br><br>
         <mat-form-field color="primary" class="example-full-width" appearance="legacy">
@@ -29,7 +35,7 @@
         <br>
         <mat-radio-group [(ngModel)]="propTypeFilter" (change)="filter()">
             <mat-radio-button value="House" color="accent">House</mat-radio-button>&nbsp;&nbsp;
-            <mat-radio-button value="Apartments" color="accent">Apartments</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="Apartment" color="accent">Apartment</mat-radio-button>
             <mat-radio-button value="Both" color="accent">Both</mat-radio-button>&nbsp;&nbsp;
         </mat-radio-group>
         <br>
@@ -65,8 +71,9 @@
         <br>
         <br>
         <br>
+    </div>
     </mat-sidenav>
-
+    
     <mat-sidenav-content class="out-card">
         <div class="container-fluid">
             <div class="row">
@@ -167,5 +174,5 @@
             </div>
         </div>
     </mat-sidenav-content>
-
 </mat-sidenav-container>
+</div>

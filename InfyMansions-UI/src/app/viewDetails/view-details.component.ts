@@ -51,7 +51,7 @@ userName:string;
 
 
   this.data=this.gd.sendProperty();
-  console.log(this.data);
+  // console.log(this.data);
 
   }
 
@@ -69,7 +69,7 @@ userName:string;
         }
       });
       dialogRef.afterClosed().subscribe(result=>{
-        console.log("The dialog box closed")
+        // console.log("The dialog box closed")
       })
     })
   }
@@ -85,7 +85,7 @@ userName:string;
   
   popup(data){
     this.openSnackBar(data,"Ok");
-    console.log(data,4544)
+    // console.log(data,4544)
   }
   
 }

@@ -137,4 +137,9 @@ mat-sidenav-container {
    font-size: 15px;
    color:violet;
  }
+ .loading{
+   position:absolute;
+   top:50%;
+   right:50%
+ }
  

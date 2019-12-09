@@ -24,7 +24,7 @@ export class BuyComponent implements OnInit {
   tempArr: any[] = [];
   propertyDb = [];
 
-  filtered = [];
+  filtered = null;
   areaFilter: String = "";
   propTypeFilter: String = null;
   propForFilter: String = null;
@@ -203,6 +203,7 @@ export class BuyComponent implements OnInit {
 
   popup(data) {
     this.openSnackBar(data, "Ok");
+    this.router.navigate(['/login']);
   }
 
   contactOwner(sellerId: String): void {
@@ -218,7 +219,7 @@ export class BuyComponent implements OnInit {
         }
       });
       dialogRef.afterClosed().subscribe(result => {
-        console.log("The dialog box closed")
+        // console.log("The dialog box closed")
       })
     })
   }

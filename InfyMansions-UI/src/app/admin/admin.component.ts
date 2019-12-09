@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from './admin.service';
+import { MatSnackBar } from '../../../node_modules/@angular/material';
 
 @Component({
   selector: 'app-admin',
@@ -12,7 +13,7 @@ export class AdminComponent implements OnInit {
   propData:String[];
   buyerData:String[];
   sellerData:String[];
-  constructor(private service:AdminService) { }
+  constructor(private service:AdminService,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.adminView();
@@ -65,7 +66,7 @@ export class AdminComponent implements OnInit {
   deleteReg(userId){
     this.service.delUser(userId).subscribe(
       resp=>{
-        // this.openSnackBar("User"+resp+" has been removed. ","Ok");
+        this.openSnackBar("User"+resp+" has been removed. ","Ok");
         this.ngOnInit();
       },
       err=>{
@@ -87,6 +88,18 @@ export class AdminComponent implements OnInit {
   }
 
   
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      verticalPosition: "top",
+      panelClass: ['snackbar-position'],
+      horizontalPosition: "center"
+    });
+  }
+
+  popup(data) {
+    this.openSnackBar(data, "Ok");
+  }
 
 
 }

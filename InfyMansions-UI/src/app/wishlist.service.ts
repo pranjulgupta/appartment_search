@@ -9,7 +9,7 @@ export class WishlistService {
 
   constructor(private http:HttpClient) { }
   getWishList(userId:String):Observable<any>{
-    console.log(userId,"varamo")
+    // console.log(userId)
      
      return this.http.get<any>("http://localhost:3000/user/wishList"+userId)
       

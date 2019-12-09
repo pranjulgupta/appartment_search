@@ -135,10 +135,10 @@ button:hover{
   }
 .currFont{
   font-size: 15px;
-  color:violet;
-}
-.loading{
-  position:absolute;
-  top:50%;
-  right:50%;
-}
+  color:violet;}
+  
+  .loading{
+    position:absolute;
+    top:50%;
+    right:50%
+  }

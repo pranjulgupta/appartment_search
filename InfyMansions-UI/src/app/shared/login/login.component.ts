@@ -72,7 +72,7 @@ login() {
       this.app.reload()
     },
     (errorResponse) => {
-     console.log(errorResponse);
+    //  console.log(errorResponse);
      
       this.errorMessage = errorResponse.error.message;
       sessionStorage.clear();

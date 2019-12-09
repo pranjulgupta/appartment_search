@@ -69,7 +69,7 @@ wishlist;
    
     this.profileServ.getProfile(this.email).subscribe(
       (res)=>{
-        console.log(res);
+        // console.log(res);
         
         this.details=res;
       },(error)=>{
@@ -91,16 +91,16 @@ wishlist;
 
     //wishlist
     if(this.userId){
-      console.log(this.userId,"onn vaaaaa")
+     
       
         this.wishServ.getWishList(this.userId).subscribe(success=>{
           
           this.wishlist=success;
-          console.log(this.wishlist,"wishlist")
+          // console.log(this.wishlist,"wishlist")
         },
       (err)=>{
         
-        console.log("Empty wishlist")
+        // console.log("Empty wishlist")
       })
     }else{
       this.wishlist=[]

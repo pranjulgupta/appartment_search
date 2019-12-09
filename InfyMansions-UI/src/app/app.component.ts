@@ -36,7 +36,7 @@ export class AppComponent {
 
   loginSell(){
     this.openSnackBar('Please Sign in to Sell a Property!', 'Ok');
-    this.router.navigate(['/home'])
+    this.router.navigate(['/login'])
   }
 
   buy(){
@@ -57,7 +57,8 @@ export class AppComponent {
 
   popup(data){
     this.openSnackBar(data,"Ok");
-    console.log(data,454)
+    this.router.navigate(['/login']);
+    // console.log(data,454)
   }
  
   reroute(){
