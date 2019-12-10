@@ -46,7 +46,7 @@ userName;
         
 
       },(error)=>{
-        this.errorMessage=error.error.message;
+        this.errorMessage=error;
       }
     )
     this.wishServ.getWishlistPropertis().subscribe(
@@ -59,7 +59,7 @@ userName;
       },
       (bad)=>{
         
-        this.errorMessage=bad.error.message
+        this.errorMessage=bad.error
       })
     }
 

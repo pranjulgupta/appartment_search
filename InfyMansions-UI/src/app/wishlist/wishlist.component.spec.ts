@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WishlistComponent } from './wishlist.component';
+import { MatGridListModule, MatCardModule, MatIconModule, MatSpinner, MatProgressSpinnerModule, MatSnackBar, MatDialog, MatDialogModule } from '../../../node_modules/@angular/material';
+import {  HttpClient, HttpHandler } from '../../../node_modules/@angular/common/http';
+import { Overlay } from '../../../node_modules/@angular/cdk/overlay';
+import { Router } from '../../../node_modules/@angular/router';
+import { RouterTestingModule } from '../../../node_modules/@angular/router/testing';
 
 describe('WishlistComponent', () => {
   let component: WishlistComponent;
@@ -8,7 +13,13 @@ describe('WishlistComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WishlistComponent ]
+      declarations: [ WishlistComponent],
+      imports:[MatGridListModule,
+        MatDialogModule,
+        MatIconModule,
+        MatCardModule,
+        MatProgressSpinnerModule,RouterTestingModule],
+      providers:[HttpClient, HttpHandler, MatSnackBar, Overlay, RouterTestingModule, MatDialog, MatDialogModule]
     })
     .compileComponents();
   }));

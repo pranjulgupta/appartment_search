@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
         // console.log(this.successData)
       },
       err=>{
-        this.errorMessage=err.error.message
+        this.errorMessage=err
+        // this.errorMessage=err.error.message
       }
     )
   }

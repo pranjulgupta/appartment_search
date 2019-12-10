@@ -1,4 +1,4 @@
-const collection = require('../utilities/connection');
+const collection = require( '../utilities/connection' );
 
 const userDb = [
     {
@@ -638,72 +638,72 @@ const locationDb = [
 
 
 exports.setupDb = () => {
-    return collection.getUserCollection().then((user) => {
-        return user.deleteMany().then(() => {
-            return user.insertMany(userDb).then((data) => {
-                if (data) {
-                    return collection.getRoleCollection().then((user) => {
-                        return user.deleteMany().then(() => {
-                            return user.insertMany(roleDb).then((data) => {
-                                if (data) {
-                                    return collection.getLocationCollection().then((user) => {
-                                        return user.deleteMany().then(() => {
-                                            return user.insertMany(locationDb).then((data) => {
-                                                if (data) {
-                                                    return collection.getFeaturesCollection().then((user) => {
-                                                        return user.deleteMany().then(() => {
-                                                            return user.insertMany(featuresDb).then((data) => {
-                                                                if (data) {
-                                                                    return collection.getPropertyCollection().then((user) => {
-                                                                        return user.deleteMany().then(() => {
-                                                                            return user.insertMany(propertyDb).then((data) => {
-                                                                                if (data) {
-                                                                                    return "Insertion Successfull"
+    return collection.getUserCollection().then( ( user ) => {
+        return user.deleteMany().then( () => {
+            return user.insertMany( userDb ).then( ( data ) => {
+                if( data ) {
+                    return collection.getRoleCollection().then( ( user ) => {
+                        return user.deleteMany().then( () => {
+                            return user.insertMany( roleDb ).then( ( data ) => {
+                                if( data ) {
+                                    return collection.getLocationCollection().then( ( user ) => {
+                                        return user.deleteMany().then( () => {
+                                            return user.insertMany( locationDb ).then( ( data ) => {
+                                                if( data ) {
+                                                    return collection.getFeaturesCollection().then( ( user ) => {
+                                                        return user.deleteMany().then( () => {
+                                                            return user.insertMany( featuresDb ).then( ( data ) => {
+                                                                if( data ) {
+                                                                    return collection.getPropertyCollection().then( ( user ) => {
+                                                                        return user.deleteMany().then( () => {
+                                                                            return user.insertMany( propertyDb ).then( ( data ) => {
+                                                                                if( data ) {
+                                                                                    return"Insertion Successfull"
                                                                                 }
-                                                                                else {
-                                                                                    let err = new Error("Insertion failed");
+                                                                                else{
+                                                                                    let err = new Error( "Insertion failed" );
                                                                                     err.status = 400;
                                                                                     throw err;
                                                                                 }
-                                                                            })
-                                                                        })
-                                                                    })
+                                                                            } )
+                                                                        } )
+                                                                    } )
                                                                 }
-                                                                else {
-                                                                    let err = new Error("Insertion failed");
+                                                                else{
+                                                                    let err = new Error( "Insertion failed" );
                                                                     err.status = 400;
                                                                     throw err;
                                                                 }
-                                                            })
-                                                        })
-                                                    })
+                                                            } )
+                                                        } )
+                                                    } )
                                                 }
-                                                else {
-                                                    let err = new Error("Insertion failed");
+                                                else{
+                                                    let err = new Error( "Insertion failed" );
                                                     err.status = 400;
                                                     throw err;
                                                 }
-                                            })
-                                        })
-                                    })
+                                            } )
+                                        } )
+                                    } )
                                 }
-                                else {
-                                    let err = new Error("Insertion failed");
+                                else{
+                                    let err = new Error( "Insertion failed" );
                                     err.status = 400;
                                     throw err;
                                 }
-                            })
-                        })
-                    })
+                            } )
+                        } )
+                    } )
                 }
-                else {
-                    let err = new Error("Insertion failed");
+                else{
+                    let err = new Error( "Insertion failed" );
                     err.status = 400;
                     throw err;
                 }
-            })
-        })
-    })
+            } )
+        } )
+    } )
 }
 
 
