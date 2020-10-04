@@ -1188,3 +1188,6 @@ Tue Dec 10 2019 07:39:59 GMT+0530 (India Standard Time) POST /user/login
 Tue Dec 10 2019 07:40:00 GMT+0530 (India Standard Time) GET /user/search
 Tue Dec 10 2019 07:40:24 GMT+0530 (India Standard Time) POST /user/login
 Tue Dec 10 2019 07:40:25 GMT+0530 (India Standard Time) GET /user/search
+Sun Oct 04 2020 11:22:13 GMT+0530 (India Standard Time) GET /favicon.ico
+Sun Oct 04 2020 11:23:42 GMT+0530 (India Standard Time) GET /user/search
+Sun Oct 04 2020 11:24:03 GMT+0530 (India Standard Time) GET /user/buy
