@@ -15,6 +15,7 @@ userModel.findUser = ( emailId ) => {
     return dbModel.getUserCollection().then( model => {
 
         return model.findOne( { "emailId": emailId } ).then( ( userData ) => {
+            console.log("user",userData);
 
             if( userData === null ) {
                 return null;

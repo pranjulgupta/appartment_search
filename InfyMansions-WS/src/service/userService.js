@@ -10,26 +10,10 @@ userService.checkUser = ( emailId, password ) => {
             let err = new Error( "user not available!! Please register" );
             err.status = 404;
             throw err;
-        } else{
-            if( userData.emailId == emailId ) {
-                return bcrypt.compare( password, userData.password ).then( res => {
-                    if( res ){
-                        return userData;}
-                    else{
-                        let err = new Error( "Password is Incorrect" );
-                        err.status = 404;
-                        throw err;
-                    }
-                } )
-            }
-            else{
-                let err = new Error( "Authentication failed" );
-                err.status = 404;
-                throw err;
-            }
-
         }
-    } )
+            else return userData
+        }
+     )
 }
 
 //To check while registering that whether the login credential already exist or not.If not allow him/her to register

@@ -21,11 +21,11 @@ router.post( '/login', function ( req, res, next ) {
 
 //To Register and Encrypting Password
 router.post( '/register', function ( req, res, next ) {
-    bcrypt.genSalt( 10,function ( err,salt ){
-        bcrypt.hash( req.body.password,salt,function ( err,hash ){
-            req.body.password=hash;
-        } )
-    } )
+    // bcrypt.genSalt( 10,function ( err,salt ){
+    //     bcrypt.hash( req.body.password,salt,function ( err,hash ){
+    //         req.body.password=hash;
+    //     } )
+    // } )
     let userObj= req.body;
     userService.addDetails( userObj ).then( ( data )=>{
         // console.log(data)

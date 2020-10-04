@@ -16,12 +16,12 @@ const userDb = [
     {
         wishlist: ["P1001", "P1002"],
         name: "user",
-        emailId: "user@gmail.com",
+        emailId: "pranjul@gmail.com",
         contactNo: 9874567890,
         city: "Mysore",
         area: "Hebbal",
         pincode: 123457,
-        password: "$2a$10$5TG8MoPelLgbfdjoqy.8LeWLkwAcItO5HdgxB8bCnzgcofumNmqMu",
+        password: "Pranjul@123?",
         userId: "U1002"
     }
 
