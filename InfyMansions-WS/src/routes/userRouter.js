@@ -3,7 +3,6 @@ const router = express.Router();
 const userService = require( '../service/userService' );
 var bodyParser = require( 'body-parser' );
 // const create = require( '../model/dbsetup' );
-const bcrypt = require( 'bcryptjs' )
 
 
 router.use( bodyParser.urlencoded( { extended: false } ) );
@@ -37,16 +36,16 @@ router.post( '/register', function ( req, res, next ) {
 
 
 //To get User Properties in Profile
-router.get( '/profile/:emailId',( req,res,next )=>{
-    const emailid=req.params.emailId;
-    // console.log(emailid,3);
-    userService.getProfile( emailid ).then( data=>{
-        // console.log(data)
-        res.json( data )
-    } ).catch( err=>{
-        next( err )
-    } )
-} )
+// router.get( '/profile/:emailId',( req,res,next )=>{
+//     const emailid=req.params.emailId;
+//     // console.log(emailid,3);
+//     userService.getProfile( emailid ).then( data=>{
+//         // console.log(data)
+//         res.json( data )
+//     } ).catch( err=>{
+//         next( err )
+//     } )
+// } )
 
 //buy
 // router.get('/properties', function (req, res, next) {
@@ -108,37 +107,6 @@ router.put( '/remove/wishlist',function ( req,res,next ){
 
 
 //To get Registered Users in Admin
-router.get( '/admin',function ( req,res,next ){
-    userService.registeredUser().then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
-
-// //To Delete Registered User in Admin
-// router.delete('/deleteuser/:id',function(req,res,next){
-//     const Id=parseInt(req.params.id);
-//     userService.deleteUser(Id).then((data)=>{
-//         res.json(data)
-//     }).catch((err)=>next(err))
-// })
-
-
-//To View Buyers in Admin
-router.get( '/admin/buyer',function ( req,res,next ){
-    userService.buyerUser().then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
-
-//To View Sellers in Admin
-router.get( '/admin/seller',function ( req,res,next ){
-    userService.sellerUser().then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
 
 //To Search in Home Page
 router.get( '/search',function ( req,res,next ){
@@ -177,16 +145,7 @@ router.get( '/view',( req,res,next )=>{
         next( err ) )
 } )
 
-//
-// router.get('/wishlistProperties/:propertyId',(req,res,next)=>{
-//     const propertyId=req.params.propertyId
-//     console.log(propertyId,7889);
-    
-//     userService.getPropertywish(propertyId).then(result=>{
-//         res.json(result)
-//     }).catch(err=>
-//         next(err))
-// })
+
 
 //to get propdb for wishlist
 router.get( '/wishProp', function ( req,res,next ){
@@ -211,15 +170,6 @@ router.get( '/find/:userId',( req,res,next )=>{
     
 } )
 
-//To Sell and post the property details
-router.post( '/sell', function ( req, res, next ){
-    // console.log('z')
-    let data=req.body;
-    userService.addProperty( data ).then( propdata => {
-        res.json( propdata )
-    } ).catch( err => next( err ) )
-
-} )
 
 
 
@@ -253,56 +203,4 @@ router.put( '/remove/wishlist',function ( req,res,next ){
 } )
 
 
-// //to fetch details in admin component
-// router.get('/admin',function(req,res,next){
-//     userService.registeredUser().then((data)=>{
-//         res.json(data)
-//     }).catch((err)=>next(err))
-// })
-
-
-//to delete details in admin component
-router.delete( '/deleteuser/:userId',function ( req,res,next ){
-    let userId=( req.params.userId );
-    userService.deleteUser( userId ).then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
-// router.get('/admin/buyer',function(req,res,next){
-//     userService.buyerUser().then((data)=>{
-//         res.json(data)
-//     }).catch((err)=>next(err))
-// })
-
-// router.get('/admin/seller',function(req,res,next){
-//     userService.sellerUser().then((data)=>{
-//         res.json(data)
-//     }).catch((err)=>next(err))
-// })
-
-
-//to get the properties in admin component
-router.get( '/admin/property',function ( req,res,next ){
-    userService.propDetails().then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
-//to delete properties in admin
-router.delete( '/deleteprop/:propertyId',function ( req,res,next ){
-    let propertyId=( req.params.propertyId );
-    userService.deleteProperty( propertyId ).then( ( data )=>{
-        res.json( data )
-    } ).catch( ( err )=>next( err ) )
-} )
-
-//wishlist
-// router.get('/wishList/:userId',(req,res,next)=>{
-//     let userId=req.params.userId;
-//     userService.getWishList(userId).then(data=>{
-//         res.json(data)
-//     }).catch( err => next(err))
-// })
-    
 module.exports = router;

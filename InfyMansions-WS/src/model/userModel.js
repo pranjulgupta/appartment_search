@@ -70,63 +70,6 @@ userModel.addUser= ( UserObj )=>{
     } )
 }
                 
-
-//to valuest values from user's wishlist
-userModel.deleteFromWishList = ( userId,propertyId ) => {
-    return dbModel.getUserCollection().then( model => {
-        return model.updateOne( {userId: userId},{$pull: {wishlist: propertyId}} ).then( updatedData => {
-            if( updatedData.nModified == 1 ) {
-                return propertyId;
-            } else{
-                // console.log(data, 91);
-                return null
-            }
-        } )
-    } )
-}
-
-
-
-
-
-//profile comp
-userModel.viewProfile = ( emailid ) => {
-    // console.log(emailid, 11);
-
-    return dbModel.getUserCollection().then( ( data ) => {
-        // console.log(data)
-        return data.findOne( { "emailId": emailid }, { _id: 0, name: 1, emailId: 1, contactNo: 1 } ).then( ( data1 ) => {
-            // console.log(data1);
-
-            if( data1 ) {
-                return data1;
-            } else{
-                let err = Error( "User not found" );
-                err.status = 404;
-                throw err;
-
-            }
-        } )
-    } )
-}
-
-userModel.postedProperty=( userid )=>{
-    return dbModel.getPropertyCollection().then( model=>{
-        return model.find( {"sellerId": userid} ).then( ( data )=>{
-            // console.log(userid,"sur")
-            if( data ){
-                // console.log(data,"sur");
-                return data
-                
-            } else{
-                let err = Error( "User not found" );
-                err.status = 404;
-                throw err; 
-            }
-        } )
-    } )
-}
-//starwishlist
 userModel.wishlistProperty=( userid )=>{
     return dbModel.getUserCollection().then( model=>{
         return model.find( {"userId": userid} ).then( ( data )=>{
@@ -235,38 +178,6 @@ userModel.loc=()=>{
     } )
 }
 
-
-//to valuest values from user's wishlist
-                userModel.deleteFromWishList = ( userId, propertyId ) => {
-                    return dbModel.getUserCollection().then( model => {
-                        return model.updateOne( { userId: userId }, { $pull: { wishlist: propertyId } } ).then( updatedData => {
-                            if( updatedData.nModified == 1 ) {
-                                return propertyId;
-                            }
-                            else{
-                                // console.log(data, 91);
-                                return null
-                            }
-                        } )
-                    } )
-                }
-
-userModel.addProperty = ( data ) => {
-    // console.log('k')
-    return dbModel.getPropertyCollection().then( model => {
-        // console.log('l')
-        // console.log(data)
-        return model.create( data ).then( response => {
-            // console.log('w')
-            if( response ){
-                return response
-            } else{
-                return null
-            }
-        } )
-    } )
-}
-
      
 //search
 userModel.loc=()=>{
@@ -283,43 +194,6 @@ userModel.loc=()=>{
 }
 
 // #############################################################################
-//admin
-userModel.regUser=()=>{
-    return dbModel.getUserCollection().then( model=>{
-        return model.find( {},{_id: 0,userId: 1,name: 1,contactNo: 1} ).then( ( regData )=>{
-            if( regData.length==0 ){
-                return null;
-            } else{
-                return regData;
-            }
-        } )
-    } )
-}
-
-//admin
-userModel.delUser=( userId )=>{
-    return dbModel.getUserCollection().then( umodel=>{
-        return umodel.deleteOne( {userId: userId} ).then( delData=>{
-            if( delData.deletedCount==1 ){
-                return dbModel.getRoleCollection().then( rmodel=>{
-                    return rmodel.updateOne( {$pull: {registeredUsers: userId}} ).then( delRole=>{
-                        if( delRole.nModified==1 ){
-                            return dbModel.getPropertyCollection().then( pmodel=>{
-                                return pmodel.deleteMany( {sellerId: userId} ).then( userId=>{
-                                    return userId;
-                                } )
-                            } )
-                        } else{
-                            return null
-                        }
-                    } )
-                } )
-            } else{
-                return null;
-            }
-        } )
-    } )
-}
 //admin
 userModel.buyerView=()=>{
     return dbModel.getRoleCollection().then( model=>{
@@ -338,21 +212,7 @@ userModel.buyerView=()=>{
 }
 
 //admin
-userModel.sellerView=()=>{
-    return dbModel.getRoleCollection().then( model=>{
-        return model.findOne( {},{sellers: 1,_id: 0} ).then( sellerData=>{
-            return dbModel.getUserCollection().then( umodel=>{
-                return umodel.find( {userId: {$in: sellerData.sellers}} ).then( userData=>{
-                    if( userData.length>0 ){
-                        return userData;
-                    } else{
-                        return null;
-                    }
-                } )
-            } )
-        } )
-    } )
-}
+
 
 //admin
 userModel.propertyView=()=>{
@@ -375,41 +235,6 @@ userModel.generatePropertyId = () => {
             return Number( data.slice( 1 ) ) } )
             let bId = Math.max( ...idarr );
             return"P" + ( bId + 1 );
-        } )
-    } )
-}
-
-
-
-
-
-//admin
-userModel.delProp=( propId )=>{
-    return dbModel.getPropertyCollection().then( model=>{
-        return model.deleteOne( {propertyId: propId} ).then( delData=>{
-            if( delData.deletedCount>0 ){
-                // console.log("h")
-                return delData;
-            } else{
-                // console.log("i")
-                return null;
-            }
-        } )
-    } )
-}
-
-userModel.addProperty = ( data ) => {
-    // console.log('k')
-    return dbModel.getPropertyCollection().then( model => {
-        // console.log('l')
-        // console.log(data)
-        return model.create( data ).then( response => {
-            // console.log('w')
-            if( response ){
-                return response
-            } else{
-                return null
-            }
         } )
     } )
 }
