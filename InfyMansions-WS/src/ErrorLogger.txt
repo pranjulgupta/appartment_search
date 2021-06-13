@@ -266,3 +266,15 @@ Error: Password is Incorrect
 Error: Authentication failed
     at C:\Users\pranjul.gupta\Desktop\infymansions\InfyMansions-WS\src\service\userService.js:15:27
     at processTicksAndRejections (internal/process/task_queues.js:85:5)
+Error: Could not connect to Database
+    at Mongoose.connect.then.catch (F:\infymansion\InfyMansions-WS\src\utilities\connection.js:303:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+Error: Could not connect to Database
+    at Mongoose.connect.then.catch (F:\infymansion\InfyMansions-WS\src\utilities\connection.js:303:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+Error: Could not connect to Database
+    at Mongoose.connect.then.catch (F:\infymansion\InfyMansions-WS\src\utilities\connection.js:303:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+Error: Could not connect to Database
+    at Mongoose.connect.then.catch (F:\infymansion\InfyMansions-WS\src\utilities\connection.js:303:19)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
